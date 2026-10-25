@@ -48,6 +48,11 @@ Preço alvo: R$ 500. Custo alvo de fabricação: R$ 100 a 150 por kit completo (
 - Se o público brasileiro já conhece o conceito de copo de vácuo ou se vai ser preciso educar o mercado.
 - Quais canais de divulgação funcionam para produto adulto no Brasil.
 
+## Mercado-alvo
+**Brasil, somente.** Venda online, com estoque e envio de dentro do país, nota fiscal, atendimento em português. Isso simplifica tudo: um regime regulatório, uma moeda, um idioma, uma estrutura tributária.
+
+América Latina fica como possibilidade futura, só depois de o Brasil estar rodando. Implicações para não fechar portas: embalagem e manual projetados para tradução fácil (espanhol), marca que funcione em espanhol e não tenha registro conflitante nos países vizinhos, e nenhuma dependência de canal que só exista no Brasil.
+
 ## Produtos futuros
 - Bomba peniana a vácuo com cilindros de acrílico de alta qualidade, nos moldes da LA Pump (EUA). Mesma lógica: hardware simples (tubo de acrílico cortado e polido, bomba manual, manômetro), preço premium.
 

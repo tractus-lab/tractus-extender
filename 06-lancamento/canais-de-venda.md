@@ -1,5 +1,7 @@
 # Canais de venda
 
+Escopo: Brasil. Todos os canais abaixo são nacionais.
+
 | Canal | Vantagem | Desvantagem | Comissão / custo | Prioridade |
 |---|---|---|---|---|
 | Loja própria (Shopify, Nuvemshop, Loja Integrada) | Margem, dados do cliente, marca | Precisa trazer tráfego | Mensalidade + taxa de pagamento | |
