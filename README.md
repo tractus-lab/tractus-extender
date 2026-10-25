@@ -1,6 +1,6 @@
-# Projeto: [nome provisório do produto]
+# Projeto: extensor de tração (nome provisório)
 
-Repositório de trabalho para o desenvolvimento de um produto físico e a criação da empresa que vai fabricá-lo e vendê-lo no Brasil.
+Repositório de trabalho para o desenvolvimento de um extensor peniano de tração com fixação a vácuo, de qualidade equivalente aos importados premium (Epic Extender, Penimaster), vendido no Brasil por cerca de R$ 500, e para a criação da empresa que vai fabricá-lo e vendê-lo. Produto futuro: bomba a vácuo com cilindros de acrílico (referência: LA Pump).
 
 ## Como navegar
 
@@ -31,6 +31,6 @@ As pastas seguem a ordem natural do projeto. Nada impede trabalhar em paralelo, 
 
 ## Estado atual
 
-- **Fase:** Ideia
+- **Fase:** Ideia descrita; pesquisa inicial feita
 - **Última atualização:** 2026-10-25
-- **Próximo passo:** preencher `00-ideia/ideia.md`
+- **Próximos passos:** (1) comprar 1 Epic Extender e 1 genérico chinês para desmontar; (2) busca de patentes no INPI; (3) levantamento manual de preços no Mercado Livre e Shopee; (4) instalar FreeCAD e começar o tutorial.

@@ -3,11 +3,15 @@
 Fases do projeto, do zero ao produto vendido. Marque `[x]` quando concluir.
 
 ## Fase 0 — Ideia (em andamento)
-- [ ] Descrever a ideia e o problema (`00-ideia/ideia.md`)
-- [ ] Definir o público-alvo (`00-ideia/publico-alvo.md`)
-- [ ] Listar hipóteses que precisam ser validadas
+- [x] Descrever a ideia e o problema (`00-ideia/ideia.md`)
+- [x] Definir o público-alvo, versão inicial (`00-ideia/publico-alvo.md`)
+- [x] Listar hipóteses que precisam ser validadas
 
 ## Fase 1 — Pesquisa e validação
+- [ ] Comprar e desmontar 1 Epic Extender + 1 genérico chinês (P00)
+- [ ] Busca de patentes no INPI e Espacenet (família BR)
+- [ ] Levantamento manual de preços e avaliações no Mercado Livre e Shopee
+- [ ] Ler políticas de produtos adultos de Mercado Livre, Shopee, Amazon, Meta Ads, Google Ads
 - [ ] Mapear o mercado e tamanho de oportunidade (`01-pesquisa/mercado.md`)
 - [ ] Analisar concorrentes e produtos substitutos (`01-pesquisa/concorrentes.md`)
 - [ ] Entrevistar pelo menos 10 pessoas do público-alvo (`01-pesquisa/entrevistas/`)

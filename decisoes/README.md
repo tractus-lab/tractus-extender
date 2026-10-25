@@ -8,3 +8,5 @@ Copie `000-modelo.md`, numere em sequência e dê um nome curto:
 ## Índice
 | Nº | Decisão | Data | Status |
 |---|---|---|---|
+| 001 | Mecanismo de tração: mola ou rosca | 2026-10-25 | proposta |
+| 002 | Onde fabricar: Brasil, China ou híbrido | 2026-10-25 | proposta |
