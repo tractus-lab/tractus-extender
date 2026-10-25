@@ -19,6 +19,8 @@ Fases do projeto, do zero ao produto vendido. Marque `[x]` quando concluir.
 - [ ] Decisão: seguir, ajustar ou abandonar a ideia
 
 ## Fase 2 — Definição do produto
+- [x] Pipeline de CAD paramétrico em Python (`02-produto/cad/`), versão 0.1 com dimensões estimadas
+- [ ] Substituir dimensões estimadas pelas medidas reais (após P00)
 - [ ] Escrever requisitos do produto (`02-produto/requisitos.md`)
 - [ ] Especificação técnica inicial (`02-produto/especificacao-tecnica.md`)
 - [ ] Conceitos de design industrial (`02-produto/design-industrial/`)

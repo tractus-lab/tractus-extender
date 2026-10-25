@@ -27,3 +27,8 @@ _autosave-*
 # Segredos e dados sensíveis (contratos assinados, senhas, dados bancários)
 secrets/
 *.env
+
+# CAD gerado
+02-produto/cad/.venv/
+02-produto/cad/saida/
+02-produto/cad/__pycache__/

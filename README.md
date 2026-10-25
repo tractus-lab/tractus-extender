@@ -33,4 +33,4 @@ As pastas seguem a ordem natural do projeto. Nada impede trabalhar em paralelo, 
 
 - **Fase:** Ideia descrita; pesquisa inicial feita
 - **Última atualização:** 2026-10-25
-- **Próximos passos:** (1) comprar 1 Epic Extender e 1 genérico chinês para desmontar; (2) busca de patentes no INPI; (3) levantamento manual de preços no Mercado Livre e Shopee; (4) instalar FreeCAD e começar o tutorial.
+- **Próximos passos:** (1) comprar 1 Epic Extender e 1 genérico chinês e seguir `02-produto/engenharia/mecanica/como-fazer-o-blueprint.md`; (2) preencher `levantamento-dimensional.md` e atualizar `02-produto/cad/parametros.py`; (3) busca de patentes no INPI; (4) levantamento manual de preços no Mercado Livre e Shopee.
