@@ -42,4 +42,18 @@ Este é o concorrente real. Um kit de vácuo chinês chega ao consumidor brasile
 - Nenhum concorrente nacional oferece suporte ou conteúdo educativo em português.
 
 ## Posicionamento (rascunho)
-Para homens que pesquisaram e sabem o que querem, [marca] é o extensor de tração com fixação a vácuo feito no Brasil, com qualidade de importado premium e suporte de gente de verdade, por um quarto do preço de importar.
+Para homens que pesquisaram e sabem o que querem, [marca] é o extensor de tração com fixação a vácuo mais bem construído do mercado, feito no Brasil, melhor que o importado premium e com suporte de gente de verdade, por um quarto do preço de importar.
+
+## O que "melhor" significa, de forma mensurável
+Para não virar slogan vazio, "melhor que o Epic" precisa ser verificável lado a lado. Critérios propostos (completar com as melhorias em `02-produto/melhorias-sobre-o-epic.md`):
+
+| Critério | Como medir | Epic (a medir ao desmontar) | Nossa meta |
+|---|---|---|---|
+| Vedação do copo | Tempo até perder vácuo em bancada | | ≥ 2x o Epic |
+| Precisão da tensão | Desvio entre escala e dinamômetro | | ≤ 5% |
+| Conforto em 1 h de uso | Teste com usuários, escala 1–5 | | ≥ 4,5 |
+| Tempo para colocar | Cronômetro, usuário treinado | | menor que o Epic |
+| Durabilidade da membrana | Ciclos até rasgar | | ≥ 2x |
+| Acabamento | Rebarbas, folgas, ruído, aparência | | zero rebarba, folga ≤ 0,2 mm |
+| Materiais | Laudo de silicone, inox 304, PC/PMMA | | todos com laudo |
+| Garantia | Prazo | 180 dias devolução | 1 ano + peças de reposição |

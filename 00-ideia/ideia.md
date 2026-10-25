@@ -1,7 +1,10 @@
 # A ideia
 
 ## Em uma frase
-Um extensor peniano de tração com fixação a vácuo, de qualidade equivalente ao Epic Extender (EUA, ~US$ 260 + impostos, cerca de R$ 2.000 entregue no Brasil), fabricado ou montado no Brasil e vendido por cerca de R$ 500.
+O melhor extensor peniano de tração com fixação a vácuo do mercado: superior ao Epic Extender (hoje a referência, ~US$ 260 + impostos, cerca de R$ 2.000 entregue no Brasil) em qualidade de construção, conforto e usabilidade, fabricado ou montado no Brasil e vendido por cerca de R$ 500.
+
+## O que este projeto NÃO é
+Não é uma réplica barata. O mercado já está cheio de cópias de qualidade ruim (R$ 70 a 300). O Epic é o melhor que existe hoje, e a meta é superá-lo. O preço menor vem de não pagar a margem de importação e marketing americano, não de economizar em material ou acabamento.
 
 ## O problema
 Quem quer um extensor de tração de boa qualidade no Brasil tem duas opções ruins:
@@ -11,7 +14,7 @@ Quem quer um extensor de tração de boa qualidade no Brasil tem duas opções r
 Não há, até onde a pesquisa inicial mostrou, uma marca brasileira que ocupe o meio do caminho: produto bem feito, fixação a vácuo, suporte e garantia locais, preço acessível.
 
 ## A solução proposta
-Um extensor com os mesmos elementos funcionais dos produtos premium:
+Um extensor que parte dos elementos funcionais dos produtos premium e melhora cada um deles. As melhorias específicas estão em `02-produto/melhorias-sobre-o-epic.md`. Base funcional:
 - Base (anel) acolchoada que apoia no púbis.
 - Duas hastes com tração regulável e mensurável (mola ou rosca), com capacidade comparável às marcas premium (Epic anuncia até 10 kg).
 - Copo de vácuo para a glande em vários tamanhos (Epic oferece 28 a 44 mm), com membrana de silicone e bomba manual pequena.
@@ -21,8 +24,9 @@ Um extensor com os mesmos elementos funcionais dos produtos premium:
 Preço alvo: R$ 500. Custo alvo de fabricação: R$ 100 a 150 por kit completo (a confirmar na BOM).
 
 ## Por que eu
+- Conheço o produto como usuário e sei onde o Epic falha. Tenho ideias concretas de melhoria (ver `02-produto/melhorias-sobre-o-epic.md`).
 - Formação em computação: consigo construir o lado digital (loja, app de acompanhamento, conteúdo) sem depender de terceiros.
-- Enxergo uma assimetria de preço óbvia: o hardware é simples, o preço premium é marca e marketing.
+- Enxergo uma assimetria de preço óbvia: o hardware é simples, o preço premium é marca e marketing. Dá para entregar qualidade superior e ainda cobrar um quarto.
 
 ## O que descobri na pesquisa inicial (2026-10-25)
 - **O Epic Extender não é tecnologia proprietária.** O site não cita nenhuma patente. Os componentes (copo de vácuo 28–44 mm, mangas de silicone, hastes) são idênticos aos de kits vendidos por vendedores de Shenzhen no eBay por US$ 11 a 25 no varejo. O que a Epic vende é marca, curso, app, garantia de 180 dias e suporte. Isso é bom (dá pra fazer) e ruim (qualquer um pode fazer; o diferencial precisa ser o mesmo que o deles: confiança).
