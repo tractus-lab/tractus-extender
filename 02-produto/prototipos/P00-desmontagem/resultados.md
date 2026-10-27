@@ -21,12 +21,17 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
 4. **Barra superior "EPIC"**: alumínio anodizado preto. Dois cilindros (16 × 38 mm) unidos por uma tira plana de ~17 mm de altura; olhal (~11 mm, furo ~5 mm) na ponta de cada cilindro. Comprimento total ~117 mm.
 5. **Copo de vácuo**: transparente (acrílico ou policarbonato), formato de sino. Corpo ~47 mm de diâmetro externo e ~44 mm de altura, três anéis externos junto à boca (passo ~9,5 mm, diâmetro ~49 mm nos anéis), ombro cônico, pescoço ~13 × 7 mm, corpo de válvula branco ~20 × 28 mm com marca vermelha, alça triangular de arame inox (~39 mm de comprimento, ~33 mm de largura, arame ~2 mm). Comprimento total com alça ~92 mm. **Tamanho nominal a confirmar** (provável 40 ou 44).
 
-## Hipótese de funcionamento (confirmar girando o punho)
-- A haste roscada inferior é fixa à base pelo tambor e pela porca.
-- O punho é uma porca longa: girar move o punho ao longo da rosca.
-- O tubo da escala está ligado à parte superior (haste superior + barra) e desliza sobre o topo do punho. Dentro há uma mola apoiada no punho.
-- Girar o punho para cima pré-carrega a mola, que empurra tubo, haste superior, barra e copo. Quando o copo resiste, a mola comprime e o tubo desce sobre o punho; o número da escala visível na borda do punho é a força ("0" fica junto ao punho sem carga, "22" no outro extremo).
-- O pescoço do copo passa pelo entalhe central da guia, que o mantém centrado entre as hastes; a alça de arame engancha na tira da barra superior.
+## Funcionamento (descrição do usuário, 2026-10-27)
+- Uma haste roscada única atravessa cada lado do aparelho da base até a barra superior: é o "parafuso".
+- O punho serrilhado é uma porca comprida nessa rosca. Girar faz subir ou descer e define o comprimento do aparelho.
+- Dentro do tubo da escala há uma mola com medidor de força. Ao puxar, a mola comprime e a escala mostra a força em libras (0 a 22 lb).
+- Uso: girar o punho até o comprimento que estica, ler a força.
+
+### A confirmar (define as peças internas)
+1. Ao puxar a barra com a base presa, o que desliza: o tubo da escala desce sobre o punho, ou a rosca superior sai do tubo?
+2. Onde se lê o número: borda do punho, borda da guia central ou janela no tubo?
+3. Passo da rosca: girar o punho 10 voltas e medir a variação de comprimento (10 mm = M6 padrão).
+4. O pescoço do copo passa pelo entalhe central da guia e a alça de arame engancha na tira da barra? (confirmar com foto montada)
 
 ## Lista de peças vista até agora
 | # | Peça | Qtd | Material aparente | Foto |
