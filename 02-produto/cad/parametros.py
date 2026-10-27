@@ -50,12 +50,12 @@ TUBO_MOLA_D = 18.0       # FOTO  tubo com a escala em libras (0 a 22 lb)
 TUBO_MOLA_PAREDE = 1.0   # EST
 TUBO_MOLA_VISIVEL = 50.0 # FOTO  trecho fora do punho em repouso
 TUBO_DENTRO_PUNHO = 12.0 # EST   trecho dentro do punho em repouso; comprimento total = visível + dentro
-CURSO_ESCALA = 40.0      # FOTO  deslocamento do 0 ao 22 lb (distância entre as marcas na foto 08)
+CURSO_ESCALA = 40.0      # MED   2 kg = 8 mm de curso (régua, 2026-10-27) → 4 mm/kg → 10 kg = 40 mm; bate com a foto 08
 ESCALA_LB_MAX = 22       # MED   escala em libras numa face do tubo; na face oposta há escala em kg (0 a ~10)
 MOLA_D_EXT = 15.0        # EST   mola de compressão em volta da haste (furo interno > 6 mm)
 MOLA_ARAME_D = 1.6       # EST
 MOLA_ESPIRAS = 14        # EST   espiras ativas (comprimento livre ~105 mm, 65 mm a 22 lb, bloco ~22 mm)
-MOLA_K = ESCALA_LB_MAX * 4.448 / CURSO_ESCALA  # N/mm, calculado: ~2,4 N/mm (0,25 kgf/mm)
+MOLA_K = ESCALA_LB_MAX * 4.448 / CURSO_ESCALA  # MED   2,45 N/mm (0,25 kgf/mm), confirmado: 2 kg em 8 mm
 CARGA_LB = 0.0           # DEF   estado mostrado na montagem: 0 = repouso; 22 = escala toda
 ROSCA_SUP_EXPOSTA = 40.0 # FOTO  rosca visível entre o porta-copo e a barra (foto 08), em repouso
 ROSCA_NA_BARRA = 30.0    # EST   quanto a haste entra no cilindro da barra

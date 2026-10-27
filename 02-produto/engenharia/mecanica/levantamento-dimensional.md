@@ -58,7 +58,7 @@ Todas as medidas em mm, pesos em g, forças em kgf. Medir duas vezes. Se os valo
 | Comprimento máximo (sem extensões) | | |
 | Diâmetro externo do tubo externo | | |
 | Diâmetro externo do tubo interno | | |
-| Curso da mola | | |
+| Curso da mola | 8 mm por 2 kg (régua, 2026-10-27) → 4 mm/kg, 40 mm no fundo de escala | constante 0,25 kgf/mm = 2,45 N/mm |
 | Escala impressa: unidades e marcas | | |
 | Força real na marca 1 (dinamômetro) | | |
 | Força real na marca 2 | | |
