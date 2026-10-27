@@ -94,9 +94,7 @@ COPO_PESCOCO_D = 13.0    # FOTO
 COPO_PESCOCO_L = 7.0     # FOTO
 VALVULA_D = 20.0         # FOTO  corpo da válvula (branco, com marca vermelha)
 VALVULA_L = 28.0         # FOTO
-ALCA_ARAME_D = 2.0       # FOTO  alça de arame inox
-ALCA_COMP = 39.0         # FOTO  do corpo da válvula até o ápice
-ALCA_LARG = 33.0         # FOTO  largura na base do triângulo
+# Alça de arame do copo: não modelada (é de outro sistema de tração; fora do projeto)
 
 # ---------- Membrana e mangas (ainda não fotografadas) ----------
 MEMB_ESP = 1.2           # EST

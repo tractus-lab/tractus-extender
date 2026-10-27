@@ -41,7 +41,7 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
 1. Passo da rosca: girar o punho 10 voltas e medir a variação de comprimento (10 mm = M6 passo 1).
 2. Curso real: puxar até o 22 e medir quanto o tubo entrou no punho (modelo usa 40 mm).
 3. Força real: dinamômetro no copo, ler no 11 e no 22, comparar com a escala.
-4. Diâmetro do rebaixo da ponte e para que lado ele abre (mesmo lado da abertura da ferradura?). Para que serve a alça de arame do copo?
+4. Diâmetro do rebaixo da ponte e para que lado ele abre (mesmo lado da abertura da ferradura?).
 
 ## Foto 08: kit montado com o copo (2026-10-27, noite)
 
@@ -60,7 +60,7 @@ O que a foto mostra, da barra para a base, ao longo de cada haste (medidas pela 
 
 Comprimento total neste ajuste: ~353 mm (borda externa da barra até a borda externa da base). Hastes a ~83 mm entre eixos.
 
-**Copo**: fica entre as duas hastes, com a válvula voltada para a barra e a boca (com a manga preta de silicone montada) voltada para a base. O pescoço está encaixado no entalhe da ponte. A alça de arame em U contorna o pescoço; função a confirmar. A manga preta é a que estava montada; a membrana não aparece.
+**Copo**: fica entre as duas hastes, com a válvula voltada para a barra e a boca (com a manga preta de silicone montada) voltada para a base. O pescoço está encaixado no entalhe da ponte. A alça de arame em U que contorna o pescoço é de outro sistema de tração (cinta/elástico) e fica fora do projeto: não será modelada nem fabricada. A manga preta é a que estava montada; a membrana não aparece.
 
 **Leitura da escala em repouso**: a borda do punho está exatamente no 0. Isso sugere que a borda do punho é a referência de leitura e que, sob tração, o tubo da escala desliza para dentro do punho (o punho tem 26 mm de diâmetro e o tubo 18). Teste 1 e 2 confirmam.
 

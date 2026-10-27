@@ -4,6 +4,8 @@
 O melhor extensor peniano de tração com fixação a vácuo do mercado: superior ao Epic Extender (hoje a referência, ~US$ 260 + impostos, cerca de R$ 2.000 entregue no Brasil) em qualidade de construção, conforto e usabilidade, fabricado ou montado no Brasil e vendido por cerca de R$ 500.
 
 ## O que este projeto NÃO é
+
+- Não inclui o sistema de tração por cinta/elástico que usa a alça de arame do copo (presente no kit do Epic). Só a tração por hastes com mola. Decisão de 2026-10-27.
 Não é uma réplica barata. O mercado já está cheio de cópias de qualidade ruim (R$ 70 a 300). O Epic é o melhor que existe hoje, e a meta é superá-lo. O preço menor vem de não pagar a margem de importação e marketing americano, não de economizar em material ou acabamento.
 
 ## O problema

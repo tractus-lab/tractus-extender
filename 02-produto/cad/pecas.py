@@ -107,7 +107,7 @@ def barra_superior():
 
 # ---------------- Copo ----------------
 def copo(d_ext=None):
-    """Copo em forma de sino com anéis na boca, pescoço, válvula e alça de arame.
+    """Copo em forma de sino com anéis na boca, pescoço e válvula (sem a alça de arame).
     Boca em z=0 voltada para -Z; o copo se estende para +Z."""
     d_ext = d_ext or P.COPO_FOTO_D_EXT
     r = d_ext / 2
@@ -124,15 +124,8 @@ def copo(d_ext=None):
         c += Pos(0, 0, z) * (Cylinder(r + P.COPO_ANEIS_ALT, P.COPO_ANEIS_LARG) - Cylinder(r - 0.1, P.COPO_ANEIS_LARG))
     z_valv = Lc + Lo + Lp
     c += Pos(0, 0, z_valv + P.VALVULA_L / 2) * Cylinder(P.VALVULA_D / 2, P.VALVULA_L)
-    # alça triangular de arame, no plano XZ, presa ao corpo da válvula
-    z_pe = z_valv + P.VALVULA_L * 0.35
-    apice = (0, 0, z_valv + P.ALCA_COMP)
-    pe_e = (-P.ALCA_LARG / 2, 0, z_pe)
-    pe_d = (P.ALCA_LARG / 2, 0, z_pe)
-    d = P.ALCA_ARAME_D
-    c += _cil_entre(pe_e, apice, d) + _cil_entre(pe_d, apice, d)
-    c += _cil_entre(pe_e, pe_d, d)  # travessa que atravessa o corpo da válvula
-    c += Pos(*apice) * Sphere(d / 2)
+    # A alça triangular de arame do copo original foi deixada de fora: serve a outro sistema de tração
+    # (cinta/elástico), não à ponte. Decisão do usuário em 2026-10-27.
     return c
 
 
