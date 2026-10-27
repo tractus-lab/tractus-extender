@@ -52,7 +52,7 @@ O que a foto mostra, da barra para a base, ao longo de cada haste (medidas pela 
 | Cilindro da barra "EPIC" | 39 | porca sextavada preta entre o cilindro e a rosca |
 | Rosca inox exposta (superior) | 40 | |
 | Ponte | 13 | plataforma única entre as hastes, com entalhe em U para o pescoço do copo (vista de lado na foto) |
-| Tubo da escala "LB" | 50 | marcas 22 20 18 15 13 11 9 7 4 2 0; o **22 fica junto ao porta-copo e o 0 junto ao punho** |
+| Tubo da escala "LB" | 50 | marcas 22 20 18 15 13 11 9 7 4 2 0; o **22 fica junto à ponte e o 0 junto ao punho**. Na face oposta há escala em kg (usuário, 2026-10-27) |
 | Punho serrilhado | 68 | |
 | Rosca inox exposta (inferior) | 64 | depende do ajuste do punho |
 | Porca + tambor do pivô | 10 + 27 | porca preta encostada no tambor |

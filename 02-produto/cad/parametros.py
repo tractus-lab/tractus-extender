@@ -51,7 +51,7 @@ TUBO_MOLA_PAREDE = 1.0   # EST
 TUBO_MOLA_VISIVEL = 50.0 # FOTO  trecho fora do punho em repouso
 TUBO_DENTRO_PUNHO = 12.0 # EST   trecho dentro do punho em repouso; comprimento total = visível + dentro
 CURSO_ESCALA = 40.0      # FOTO  deslocamento do 0 ao 22 lb (distância entre as marcas na foto 08)
-ESCALA_LB_MAX = 22       # MED   especificação pública e impressa no tubo
+ESCALA_LB_MAX = 22       # MED   escala em libras numa face do tubo; na face oposta há escala em kg (0 a ~10)
 MOLA_D_EXT = 15.0        # EST   mola de compressão em volta da haste (furo interno > 6 mm)
 MOLA_ARAME_D = 1.6       # EST
 MOLA_ESPIRAS = 14        # EST   espiras ativas (comprimento livre ~105 mm, 65 mm a 22 lb, bloco ~22 mm)
