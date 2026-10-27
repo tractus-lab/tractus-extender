@@ -17,6 +17,9 @@ As pastas seguem a ordem natural do projeto. Nada impede trabalhar em paralelo, 
 | `06-lancamento/` | Marketing, canais de venda, lançamento | Como as pessoas vão conhecer e comprar? |
 | `decisoes/` | Registro de decisões importantes | Por que escolhemos isso e não aquilo? |
 
+## Links
+- Modelo 3D interativo (CAD v0.2): https://claude.ai/artifact/Fv6SJXkGiewzNcLF17xVJy (privado; republicar a cada versão do CAD)
+
 ## Arquivos na raiz
 
 - `roadmap.md` — fases do projeto, marcos e o que está em andamento.

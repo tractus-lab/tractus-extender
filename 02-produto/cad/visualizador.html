@@ -1,0 +1,255 @@
+<title>Extensor CAD v0.2</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  /* Layout: a bancada ocupa a tela inteira; um painel flutuante de instrumento no canto, como a etiqueta de um desenho técnico. */
+  :root {
+    --bg: #eef0ee;
+    --fg: #1a1d1f;
+    --muted: #5d656b;
+    --panel: rgba(255, 255, 255, 0.86);
+    --line: #c9cfd2;
+    --accent: #0f6b8c;
+    --grid: #d98b5a;
+    --font-ui: "IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --bg: #15181b; --fg: #e6e9ea; --muted: #9aa3a9; --panel: rgba(24, 28, 31, 0.88);
+      --line: #333a40; --accent: #5cb8d9; --grid: #a8673f; color-scheme: dark;
+    }
+  }
+  :root[data-theme="dark"] {
+    --bg: #15181b; --fg: #e6e9ea; --muted: #9aa3a9; --panel: rgba(24, 28, 31, 0.88);
+    --line: #333a40; --accent: #5cb8d9; --grid: #a8673f; color-scheme: dark;
+  }
+  html, body { height: 100%; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg); font-family: var(--font-ui);
+    overflow: hidden; position: relative;
+  }
+  #cena { position: absolute; inset: 0; width: 100%; height: 100%; display: block; touch-action: none; }
+  .painel {
+    position: absolute; top: calc(12px + env(safe-area-inset-top, 0px));
+    left: max(16px, env(safe-area-inset-left, 0px));
+    width: min(300px, calc(100vw - max(16px, env(safe-area-inset-left, 0px)) - max(16px, env(safe-area-inset-right, 0px))));
+    background: var(--panel); border: 1px solid var(--line); border-radius: 6px;
+    padding: 14px 16px; backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    display: flex; flex-direction: column; gap: 12px; box-sizing: border-box;
+    max-height: calc(100% - 24px - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+    overflow-y: auto;
+  }
+  .painel.recolhido > *:not(.cabecalho) { display: none; }
+  .cabecalho { display: flex; align-items: baseline; justify-content: space-between; gap: 8px; }
+  h1 { font-size: 15px; font-weight: 600; margin: 0; letter-spacing: 0.01em; }
+  .versao { font-family: var(--font-data); font-size: 12px; color: var(--muted); }
+  .cabecalho button { font-size: 12px; }
+  .sub { font-size: 12px; color: var(--muted); margin: 0; line-height: 1.45; }
+  .rotulo { font-size: 11px; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); margin: 0; }
+  .grupos { display: flex; flex-direction: column; gap: 6px; margin: 0; padding: 0; list-style: none; }
+  .grupos label { display: flex; align-items: center; gap: 10px; font-size: 13px; cursor: pointer; }
+  .grupos input { accent-color: var(--accent); margin: 0; }
+  .amostra { width: 14px; height: 14px; border-radius: 3px; border: 1px solid var(--line); flex: none; }
+  .vistas { display: flex; flex-wrap: wrap; gap: 6px; }
+  button {
+    font: inherit; font-size: 13px; color: var(--fg); background: transparent;
+    border: 1px solid var(--line); border-radius: 4px; padding: 5px 10px; cursor: pointer;
+  }
+  button:hover { border-color: var(--accent); color: var(--accent); }
+  button:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+  .dados { font-family: var(--font-data); font-size: 12px; line-height: 1.5; margin: 0; font-variant-numeric: tabular-nums; }
+  .dados b { font-weight: 500; color: var(--muted); }
+  .opcoes { display: flex; flex-direction: column; gap: 6px; }
+  .opcoes label { display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; }
+  #estado { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); font-size: 14px; color: var(--muted); pointer-events: none; }
+  .dica {
+    position: absolute; bottom: calc(10px + env(safe-area-inset-bottom, 0px)); right: max(16px, env(safe-area-inset-right, 0px));
+    font-size: 11px; color: var(--muted); pointer-events: none; text-align: right;
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<canvas id="cena" aria-label="Modelo 3D do extensor"></canvas>
+<p id="estado">Carregando modelo…</p>
+
+<section class="painel" id="painel" aria-label="Controles">
+  <div class="cabecalho">
+    <h1>Extensor CAD <span class="versao">v0.2</span></h1>
+    <button id="recolher" type="button" aria-expanded="true">Recolher</button>
+  </div>
+  <p class="sub">Arquitetura observada nas fotos do Epic Extender em 2026-10-27. Dimensões estimadas pela grade do papel, com erro de cerca de 2 mm. Não serve para fabricar.</p>
+
+  <p class="rotulo">Grupos por material</p>
+  <ul class="grupos" id="grupos"></ul>
+
+  <p class="rotulo">Vistas</p>
+  <div class="vistas">
+    <button type="button" data-vista="iso">Isométrica</button>
+    <button type="button" data-vista="frente">Frente</button>
+    <button type="button" data-vista="lado">Lado</button>
+    <button type="button" data-vista="topo">Topo</button>
+  </div>
+
+  <p class="rotulo">Opções</p>
+  <div class="opcoes">
+    <label><input type="checkbox" id="grade" checked> Papel milimetrado (10 mm)</label>
+    <label><input type="checkbox" id="girar"> Girar sozinho</label>
+  </div>
+
+  <p class="rotulo">Dimensões da montagem</p>
+  <p class="dados" id="dados"><b>largura</b> … × <b>prof.</b> … × <b>altura</b> … mm</p>
+</section>
+<p class="dica">Arrastar: girar · roda ou pinça: zoom · botão direito ou dois dedos: mover</p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/examples/js/controls/OrbitControls.js"></script>
+<script>
+(function () {
+  var MATERIAIS = {
+    plastico: { cor: 0x1e2022, metal: 0.05, rugoso: 0.85, amostra: "#1e2022" },
+    inox:     { cor: 0xc8ccd0, metal: 0.95, rugoso: 0.30, amostra: "#c8ccd0" },
+    aluminio: { cor: 0x2c2f33, metal: 0.70, rugoso: 0.45, amostra: "#2c2f33" },
+    copo:     { cor: 0xbfe0ef, metal: 0.00, rugoso: 0.10, amostra: "#bfe0ef", transparente: true }
+  };
+
+  var canvas = document.getElementById("cena");
+  var renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true });
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+  var cena = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(35, 1, 1, 5000);
+  camera.up.set(0, 0, 1);
+  var controles = new THREE.OrbitControls(camera, canvas);
+  controles.enableDamping = true;
+  controles.dampingFactor = 0.08;
+
+  cena.add(new THREE.HemisphereLight(0xffffff, 0x60656a, 0.9));
+  var sol = new THREE.DirectionalLight(0xffffff, 0.8);
+  sol.position.set(200, -300, 400);
+  cena.add(sol);
+  var contra = new THREE.DirectionalLight(0xffffff, 0.3);
+  contra.position.set(-300, 200, 100);
+  cena.add(contra);
+
+  var modelo = new THREE.Group();
+  cena.add(modelo);
+  var grade = null;
+
+  function corTema(nome) {
+    return getComputedStyle(document.documentElement).getPropertyValue(nome).trim();
+  }
+  function aplicarTema() {
+    renderer.setClearColor(new THREE.Color(corTema("--bg")));
+    if (grade) {
+      grade.material.color.set(corTema("--grid"));
+    }
+  }
+  function redimensionar() {
+    var w = canvas.clientWidth, h = canvas.clientHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w / h;
+    camera.updateProjectionMatrix();
+  }
+  window.addEventListener("resize", redimensionar);
+  if (window.matchMedia) {
+    window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change", aplicarTema);
+  }
+  new MutationObserver(aplicarTema).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+
+  var caixa = new THREE.Box3();
+  var centro = new THREE.Vector3();
+  var raio = 200;
+
+  function enquadrar(vista) {
+    var dist = raio / Math.sin((camera.fov * Math.PI / 180) / 2) * 1.05;
+    var dir = { iso: [1, -1, 0.7], frente: [0, -1, 0.0001], lado: [1, 0, 0.0001], topo: [0.0001, 0.0001, 1] }[vista || "iso"];
+    var v = new THREE.Vector3(dir[0], dir[1], dir[2]).normalize().multiplyScalar(dist);
+    camera.position.copy(centro).add(v);
+    controles.target.copy(centro);
+    controles.update();
+  }
+
+  function montarGrade() {
+    var tam = 400, passo = 10;
+    var pontos = [];
+    for (var i = -tam / 2; i <= tam / 2; i += passo) {
+      pontos.push(i, -tam / 2, 0, i, tam / 2, 0, -tam / 2, i, 0, tam / 2, i, 0);
+    }
+    var geo = new THREE.BufferGeometry();
+    geo.setAttribute("position", new THREE.Float32BufferAttribute(pontos, 3));
+    grade = new THREE.LineSegments(geo, new THREE.LineBasicMaterial({ color: corTema("--grid"), transparent: true, opacity: 0.45 }));
+    cena.add(grade);
+  }
+
+  var lista = document.getElementById("grupos");
+  var pendentes = 0;
+  var estado = document.getElementById("estado");
+
+  function carregar(manifest) {
+    pendentes = manifest.grupos.length;
+    manifest.grupos.forEach(function (g) {
+      var m = MATERIAIS[g.grupo] || MATERIAIS.plastico;
+      var mat = new THREE.MeshStandardMaterial({ color: m.cor, metalness: m.metal, roughness: m.rugoso });
+      if (m.transparente) { mat.transparent = true; mat.opacity = 0.38; mat.depthWrite = false; mat.side = THREE.DoubleSide; }
+      var li = document.createElement("li");
+      var id = "grupo-" + g.grupo;
+      li.innerHTML = '<label for="' + id + '"><input type="checkbox" id="' + id + '" checked><span class="amostra" style="background:' + m.amostra + '"></span><span>' + g.rotulo + ' · ' + g.pecas + (g.pecas === 1 ? ' peça' : ' peças') + '</span></label>';
+      lista.appendChild(li);
+      fetch(g.arquivo).then(function (r) { return r.json(); }).then(function (tri) {
+        var geometria = new THREE.BufferGeometry();
+        geometria.setAttribute("position", new THREE.Float32BufferAttribute(tri, 3));
+        geometria.computeVertexNormals();
+        var malha = new THREE.Mesh(geometria, mat);
+        malha.renderOrder = m.transparente ? 2 : 1;
+        modelo.add(malha);
+        li.querySelector("input").addEventListener("change", function (e) { malha.visible = e.target.checked; });
+        if (--pendentes === 0) {
+          caixa.setFromObject(modelo);
+          caixa.getCenter(centro);
+          raio = caixa.getSize(new THREE.Vector3()).length() / 2;
+          var t = caixa.getSize(new THREE.Vector3());
+          document.getElementById("dados").innerHTML = "<b>largura</b> " + t.x.toFixed(0) + " × <b>prof.</b> " + t.y.toFixed(0) + " × <b>altura</b> " + t.z.toFixed(0) + " mm";
+          grade.position.z = caixa.min.z - 0.5;
+          estado.hidden = true;
+          enquadrar("iso");
+        }
+      }).catch(function () {
+        estado.textContent = "Não consegui carregar " + g.arquivo + ". Recarregue a página.";
+      });
+    });
+    var dadosVersao = document.querySelector(".versao");
+    if (manifest.versao) dadosVersao.textContent = "v" + manifest.versao;
+  }
+
+  montarGrade();
+  aplicarTema();
+  redimensionar();
+  enquadrar("iso");
+
+  fetch("manifest.json").then(function (r) { return r.json(); }).then(carregar).catch(function () {
+    estado.textContent = "Não consegui ler o manifesto do modelo. Recarregue a página.";
+  });
+
+  document.querySelectorAll("[data-vista]").forEach(function (b) {
+    b.addEventListener("click", function () { enquadrar(b.getAttribute("data-vista")); });
+  });
+  document.getElementById("grade").addEventListener("change", function (e) { grade.visible = e.target.checked; });
+  var girar = document.getElementById("girar");
+  girar.addEventListener("change", function (e) { controles.autoRotate = e.target.checked; controles.autoRotateSpeed = 1.2; });
+  var painel = document.getElementById("painel");
+  var recolher = document.getElementById("recolher");
+  recolher.addEventListener("click", function () {
+    var fechado = painel.classList.toggle("recolhido");
+    recolher.textContent = fechado ? "Mostrar" : "Recolher";
+    recolher.setAttribute("aria-expanded", String(!fechado));
+  });
+  try { if (window.innerWidth < 600) { painel.classList.add("recolhido"); recolher.textContent = "Mostrar"; recolher.setAttribute("aria-expanded", "false"); } } catch (e) {}
+
+  function animar() {
+    requestAnimationFrame(animar);
+    controles.update();
+    renderer.render(cena, camera);
+  }
+  animar();
+})();
+</script>

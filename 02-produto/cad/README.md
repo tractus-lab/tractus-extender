@@ -38,5 +38,8 @@ Saída:
 ## Estado atual
 Versão 0.2 (2026-10-27): arquitetura observada nas fotos do P00 (base em ferradura com pivôs, hastes com punho e tubo de mola, guia central, barra superior com olhais, copo em sino com válvula e alça). Dimensões marcadas **FOTO** (±2 mm) em `parametros.py`. Não serve para fabricar. Faltam: medidas de paquímetro, rosca real, mola, interior da válvula, membrana, mangas, bomba, arredondamentos.
 
-## Visualizador rápido sem instalar nada
-Arraste um `.stl` em https://3dviewer.net/ ou abra o STEP no FreeCAD.
+## Ver o modelo 3D
+Três jeitos, do mais fácil ao mais completo:
+1. **Página publicada** (link no README principal): gira no navegador, sem instalar nada. Gerada por `gerar_visualizador.py` a partir de `visualizador.html` + STLs em `saida/visualizador/`. Precisa ser republicada a cada versão.
+2. **https://3dviewer.net/**: arraste qualquer `.stl` de `saida/stl/` ou de `saida/visualizador/`.
+3. **FreeCAD**: Arquivo → Importar → `saida/step/montagem.step`. É o jeito de medir, cortar e editar.
