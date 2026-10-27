@@ -37,8 +37,8 @@ PIVO_PINO_L = 26.0       # EST
 #   haste, que continua para dentro do tubo da escala e apoia no porta-copo (o tubo é aberto
 #   embaixo: uma mola só no punho não teria curso de 40 mm). O tubo é fixo ao porta-copo e entra
 #   deslizando no punho; sob tração a mola comprime e a borda do punho aponta a força (lb).
-ROSCA_D = 6.0            # DEF   haste roscada M6 (o Epic pode ser M6 ou 1/4"-28; decisão 003: usamos M6)
-ROSCA_PASSO = 1.0        # DEF   M6 x 1,0 (decisão 003). No Epic, 10 voltas = 9,3 mm com régua
+ROSCA_D = 6.0            # MED   paquímetro 5,9 mm no Epic (2026-10-27) = M6 comercial; nominal 6,0
+ROSCA_PASSO = 1.0        # MED   M6 x 1,0 (diâmetro 5,9 confirma; 10 voltas = 9,3 mm foi erro de régua)
 PORCA_AF = 10.0          # FOTO  porca sextavada (contraporca), medida entre faces
 PORCA_ESP = 5.0          # FOTO
 ROSCA_INF_EXPOSTA = 64.0 # FOTO  rosca visível entre a porca do pivô e o punho (foto 08; varia com o ajuste)

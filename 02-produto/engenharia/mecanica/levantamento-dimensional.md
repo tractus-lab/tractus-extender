@@ -64,7 +64,7 @@ Todas as medidas em mm, pesos em g, forças em kgf. Medir duas vezes. Se os valo
 | Força real na marca 2 | | |
 | Força real na marca 3 | | |
 | Força real na marca máxima | | |
-| Rosca de conexão com a base: diâmetro e passo | passo ~0,93 mm (10 voltas = 9,3 mm, régua, 2026-10-27) | M6x1 ou 1/4"-28 no Epic; nosso produto usa M6x1 (decisão 003) |
+| Rosca de conexão com a base: diâmetro e passo | 5,9 mm (paquímetro), passo 1,0 (10 voltas = 9,3 mm, régua) | M6 x 1,0 confirmado (2026-10-27) |
 | Rosca de conexão com extensões: diâmetro e passo | | |
 | Extensões: comprimentos disponíveis | | |
 | Mola: diâmetro do arame, diâmetro externo, espiras, comprimento livre | | |
