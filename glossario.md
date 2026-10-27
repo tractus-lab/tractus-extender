@@ -18,3 +18,18 @@ Termos e siglas usados no projeto. Adicione conforme aparecerem.
 | LTDA | Sociedade Limitada. Tipo jurídico mais comum para pequenas empresas com ou sem sócios (SLU para sócio único). |
 | Simples Nacional | Regime tributário simplificado para micro e pequenas empresas. |
 | CNAE | Classificação Nacional de Atividades Econômicas. Define a atividade da empresa. |
+
+## Mecânica (hastes do extensor)
+
+| Termo | Significado |
+|---|---|
+| Barra roscada / haste roscada | Nome comercial da barra de metal com rosca ao longo de todo o comprimento (ex.: "barra roscada M6 inox 304"). É a haste das pernas do extensor. |
+| Fuso | Nome de engenharia da barra roscada quando a função é transformar giro em deslocamento linear. |
+| Porca / castanha | Peça com rosca interna que gira sobre o fuso e avança. No extensor, o punho serrilhado faz esse papel. "Fuso e castanha" é o par clássico (morsa, macaco, impressora 3D). |
+| Passo | Avanço por volta. Rosca M6 padrão: 1 mm por volta. |
+| Rosca métrica (M6, M8) | Perfil de rosca comum; o número é o diâmetro externo em mm. |
+| Rosca trapezoidal (Tr8x2) | Perfil mais robusto para fusos de carga; usado em impressoras 3D. Mais caro e grosso do que o necessário aqui. |
+| Contraporca | Segunda porca apertada contra outra peça para travar a posição (as porcas pretas junto ao tambor e à barra do Epic). |
+| Inox 304 | Aço inoxidável comum para peças em contato com a pele e umidade; não enferruja em uso normal. |
+| Pivô / tambor | Cilindro de inox alojado na base, onde a haste rosqueia; o pino transversal faz a dobradiça. |
+| Porta-copo | Bloco em cada haste, com braço curvo, onde a alça de arame do copo engancha. |

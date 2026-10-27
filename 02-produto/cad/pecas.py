@@ -46,6 +46,7 @@ def porca():
 
 
 def rosca(comp):
+    """Trecho de barra roscada (fuso) exposto. Nome comercial: barra roscada M6 inox 304."""
     """Trecho de haste roscada (modelada lisa). Origem na base, eixo Z."""
     return Pos(0, 0, comp / 2) * Cylinder(P.ROSCA_D / 2, comp)
 
