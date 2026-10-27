@@ -14,7 +14,7 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
    | Haste roscada inox exposta | 53 | 6 | |
    | Punho serrilhado preto | 65 | 26 | porca longa de ajuste |
    | Tubo da escala (preto, "LB 0–22") | 50 | 18 | abriga a mola |
-   | Guia central (duas metades) | 13 de espessura | 112 de comprimento | une os dois tubos; entalhe central ~13 mm |
+   | Porta-copo (um por haste) | 13 | ~22 | bloco preto com braço curvo voltado para o centro; a alça do copo engancha nele (ver foto 08) |
    | Haste roscada inox exposta | 43 | 6 | varia com o ajuste |
    | Cilindro da barra superior | 38 | 16 | com porca por baixo |
    Entre eixos das hastes: ~83 mm.
@@ -31,7 +31,30 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
 1. Ao puxar a barra com a base presa, o que desliza: o tubo da escala desce sobre o punho, ou a rosca superior sai do tubo?
 2. Onde se lê o número: borda do punho, borda da guia central ou janela no tubo?
 3. Passo da rosca: girar o punho 10 voltas e medir a variação de comprimento (10 mm = M6 padrão).
-4. O pescoço do copo passa pelo entalhe central da guia e a alça de arame engancha na tira da barra? (confirmar com foto montada)
+4. ~~Como o copo se prende?~~ **Resolvido pela foto 08**: a alça de arame do copo engancha nos braços curvos dos dois porta-copos, um em cada haste. A barra "EPIC" não segura o copo; ela só une as pontas das hastes e tem os olhais para a fita.
+
+## Foto 08: kit montado com o copo (2026-10-27, noite)
+
+O que a foto mostra, da barra para a base, ao longo de cada haste (medidas pela grade, ±2 mm):
+
+| Trecho | Comp. (mm) | Observação |
+|---|---|---|
+| Cilindro da barra "EPIC" | 39 | porca sextavada preta entre o cilindro e a rosca |
+| Rosca inox exposta (superior) | 40 | |
+| Porta-copo | 13 | bloco preto com braço curvo; os dois braços seguram a alça do copo |
+| Tubo da escala "LB" | 50 | marcas 22 20 18 15 13 11 9 7 4 2 0; o **22 fica junto ao porta-copo e o 0 junto ao punho** |
+| Punho serrilhado | 68 | |
+| Rosca inox exposta (inferior) | 64 | depende do ajuste do punho |
+| Porca + tambor do pivô | 10 + 27 | porca preta encostada no tambor |
+| Base (lobo até a borda externa) | 42 | |
+
+Comprimento total neste ajuste: ~353 mm (borda externa da barra até a borda externa da base). Hastes a ~83 mm entre eixos.
+
+**Copo**: fica entre as duas hastes, com a válvula voltada para a barra e a boca (com a manga preta de silicone montada) voltada para a base. A alça de arame em U contorna o pescoço do copo e as duas pontas engancham nos braços dos porta-copos. A manga preta é a que estava montada; a membrana não aparece.
+
+**Leitura da escala em repouso**: a borda do punho está exatamente no 0. Isso sugere que a borda do punho é a referência de leitura e que, sob tração, o tubo da escala desliza para dentro do punho (o punho tem 26 mm de diâmetro e o tubo 18). Teste 1 e 2 confirmam.
+
+**Porcas**: há uma porca sextavada em cada extremidade das hastes (junto ao tambor e junto à barra). Isso indica que o trecho roscado inferior é fixo no tambor (porca trava) e o superior é fixo na barra (porca trava); o punho é a única "porca" que gira para ajustar. Se for assim, são **duas hastes roscadas por lado**, não uma: a inferior entra no punho e a superior termina dentro do tubo (pistão da mola). Teste 1 decide entre essa hipótese e a de haste única.
 
 ## Lista de peças vista até agora
 | # | Peça | Qtd | Material aparente | Foto |
@@ -42,11 +65,13 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
 | 4 | Haste roscada | 2 (ou 4, se a superior for separada) | inox | 01, 02 |
 | 5 | Punho serrilhado | 2 | plástico ou alumínio preto | 01, 02 |
 | 6 | Tubo da escala com mola interna | 2 | alumínio preto | 01, 02 |
-| 7 | Guia central | 1 (duas metades) | plástico preto | 01, 02 |
+| 7 | Porta-copo com braço curvo | 2 (um por haste) | plástico preto | 01, 02, 08 |
 | 8 | Barra superior "EPIC" | 1 | alumínio anodizado | 06 |
 | 9 | Copo de vácuo com válvula e alça | 1 fotografado (de 5) | transparente + branco + inox | 03, 04, 05 |
 
-Ainda não fotografados: demais copos, membranas, mangas de silicone, bomba, fita coesiva, extensões de haste (se houver), embalagem, manual.
+Fotos: 01–02 kit dobrado, 03–05 copo solto, 06 barra, 07 base, 08 kit montado com copo.
+
+Ainda não fotografados: demais copos, membranas, demais mangas de silicone, bomba, fita coesiva, extensões de haste (se houver), embalagem, manual.
 
 ## Qualidade percebida (primeira impressão pelas fotos)
 - Acabamento muito bom: anodização uniforme, serrilhado limpo, inox polido.
