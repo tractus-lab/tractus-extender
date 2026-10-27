@@ -32,4 +32,4 @@ Termos e siglas usados no projeto. Adicione conforme aparecerem.
 | Contraporca | Segunda porca apertada contra outra peça para travar a posição (as porcas pretas junto ao tambor e à barra do Epic). |
 | Inox 304 | Aço inoxidável comum para peças em contato com a pele e umidade; não enferruja em uso normal. |
 | Pivô / tambor | Cilindro de inox alojado na base, onde a haste rosqueia; o pino transversal faz a dobradiça. |
-| Porta-copo | Bloco em cada haste, com braço curvo, onde a alça de arame do copo engancha. |
+| Ponte | Plataforma única entre as duas hastes, no topo dos tubos da escala, com um rebaixo circular aberto de um lado onde o pescoço do copo encaixa. |

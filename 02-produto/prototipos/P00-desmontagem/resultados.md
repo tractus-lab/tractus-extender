@@ -14,7 +14,7 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
    | Haste roscada inox exposta | 53 | 6 | |
    | Punho serrilhado preto | 65 | 26 | porca longa de ajuste |
    | Tubo da escala (preto, "LB 0–22") | 50 | 18 | abriga a mola |
-   | Porta-copo (um por haste) | 13 | ~22 | bloco preto com braço curvo voltado para o centro; a alça do copo engancha nele (ver foto 08) |
+   | Ponte | 13 | 112 | plataforma única; rebaixo circular aberto de um lado para o pescoço do copo |
    | Haste roscada inox exposta | 43 | 6 | varia com o ajuste |
    | Cilindro da barra superior | 38 | 16 | com porca por baixo |
    Entre eixos das hastes: ~83 mm.
@@ -28,7 +28,7 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
 3. **Barra "EPIC"**: só proteção das pontas e batente. Sem função mecânica.
 4. **Punho serrilhado** (castanha): gira guiado pela rosca e define o comprimento do aparelho. Esconde a mola.
 5. **Tubo da escala** (mais fino, marcado em libras): preso ao punho por dentro, pela mola, e com a "ponte" no topo.
-6. **Ponte** entre as duas hastes, no topo do tubo: segura a ponta do copo pela alça de arame. (Na foto 08 aparecem dois blocos com braço, um por haste, e a alça entre eles; confirmar se é uma peça única atrás do copo ou dois blocos.)
+6. **Ponte** entre as duas hastes, no topo dos tubos: plataforma única com um rebaixo circular no meio, aberto de um lado, onde encaixa o pescoço cilíndrico do copo. Na foto 08 ela aparece de lado, e o entalhe visto de perfil é o que parecia "dois braços". A alça de arame não segura o copo na ponte.
 7. **Uso**: o pênis puxa o copo, o copo puxa a ponte, a ponte empurra o tubo para dentro do punho, a mola comprime e a borda do punho aponta a força. Em repouso a borda está no 0 (foto 08).
 
 ### Consequências para o modelo (CAD v0.4)
@@ -41,7 +41,7 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
 1. Passo da rosca: girar o punho 10 voltas e medir a variação de comprimento (10 mm = M6 passo 1).
 2. Curso real: puxar até o 22 e medir quanto o tubo entrou no punho (modelo usa 40 mm).
 3. Força real: dinamômetro no copo, ler no 11 e no 22, comparar com a escala.
-4. A ponte é uma peça única ou dois blocos?
+4. Diâmetro do rebaixo da ponte e para que lado ele abre (mesmo lado da abertura da ferradura?). Para que serve a alça de arame do copo?
 
 ## Foto 08: kit montado com o copo (2026-10-27, noite)
 
@@ -51,7 +51,7 @@ O que a foto mostra, da barra para a base, ao longo de cada haste (medidas pela 
 |---|---|---|
 | Cilindro da barra "EPIC" | 39 | porca sextavada preta entre o cilindro e a rosca |
 | Rosca inox exposta (superior) | 40 | |
-| Porta-copo | 13 | bloco preto com braço curvo; os dois braços seguram a alça do copo |
+| Ponte | 13 | plataforma única entre as hastes, com entalhe em U para o pescoço do copo (vista de lado na foto) |
 | Tubo da escala "LB" | 50 | marcas 22 20 18 15 13 11 9 7 4 2 0; o **22 fica junto ao porta-copo e o 0 junto ao punho** |
 | Punho serrilhado | 68 | |
 | Rosca inox exposta (inferior) | 64 | depende do ajuste do punho |
@@ -60,7 +60,7 @@ O que a foto mostra, da barra para a base, ao longo de cada haste (medidas pela 
 
 Comprimento total neste ajuste: ~353 mm (borda externa da barra até a borda externa da base). Hastes a ~83 mm entre eixos.
 
-**Copo**: fica entre as duas hastes, com a válvula voltada para a barra e a boca (com a manga preta de silicone montada) voltada para a base. A alça de arame em U contorna o pescoço do copo e as duas pontas engancham nos braços dos porta-copos. A manga preta é a que estava montada; a membrana não aparece.
+**Copo**: fica entre as duas hastes, com a válvula voltada para a barra e a boca (com a manga preta de silicone montada) voltada para a base. O pescoço está encaixado no entalhe da ponte. A alça de arame em U contorna o pescoço; função a confirmar. A manga preta é a que estava montada; a membrana não aparece.
 
 **Leitura da escala em repouso**: a borda do punho está exatamente no 0. Isso sugere que a borda do punho é a referência de leitura e que, sob tração, o tubo da escala desliza para dentro do punho (o punho tem 26 mm de diâmetro e o tubo 18). Teste 1 e 2 confirmam.
 
@@ -75,7 +75,7 @@ Comprimento total neste ajuste: ~353 mm (borda externa da barra até a borda ext
 | 4 | Haste roscada | 2 (ou 4, se a superior for separada) | inox | 01, 02 |
 | 5 | Punho serrilhado | 2 | plástico ou alumínio preto | 01, 02 |
 | 6 | Tubo da escala com mola interna | 2 | alumínio preto | 01, 02 |
-| 7 | Porta-copo com braço curvo | 2 (um por haste) | plástico preto | 01, 02, 08 |
+| 7 | Ponte com entalhe para o copo | 1 | plástico preto | 01, 02, 08 |
 | 8 | Barra superior "EPIC" | 1 | alumínio anodizado | 06 |
 | 9 | Copo de vácuo com válvula e alça | 1 fotografado (de 5) | transparente + branco + inox | 03, 04, 05 |
 

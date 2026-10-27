@@ -60,13 +60,15 @@ ROSCA_SUP_EXPOSTA = 40.0 # FOTO  rosca visível entre o porta-copo e a barra (fo
 ROSCA_NA_BARRA = 30.0    # EST   quanto a haste entra no cilindro da barra
 ROSCA_NO_TAMBOR = 10.0   # EST   quanto a haste entra no tambor do pivô
 
-# ---------- Porta-copo (um bloco por haste, entre o tubo da escala e a rosca superior) ----------
-PORTA_LARG_X = 22.0      # FOTO  largura do bloco no sentido entre as hastes (foto 08)
-PORTA_LARG_Y = 20.0      # EST   largura perpendicular; medir
-PORTA_ESP = 13.0         # FOTO  espessura ao longo da haste (Z)
-PORTA_BRACO_ESP = 8.0    # EST   espessura do braço curvo (Y)
-PORTA_BRACO_X_PONTA = 18.0  # FOTO  distância do eixo do copo até a ponta do braço (onde a alça engancha)
-PORTA_BRACO_Z_PONTA = -12.0 # FOTO  ponta do braço abaixo do centro do bloco (voltada para a base)
+# ---------- Ponte (plataforma única entre as hastes, no topo dos tubos da escala) ----------
+# Descrição do usuário: plataforma com um rebaixo circular no meio, aberto de um lado, onde
+# encaixa a parte cilíndrica de cima do copo (o pescoço). A alça de arame não segura o copo.
+PONTE_COMP = 112.0       # FOTO  comprimento em X (passa pelas duas hastes)
+PONTE_LARG = 20.0        # EST   largura em Y; medir
+PONTE_ESP = 13.0         # FOTO  espessura em Z
+PONTE_ENTALHE_D = 14.0   # EST   diâmetro do rebaixo circular (pescoço 13 mm + folga); medir
+PONTE_ENTALHE_LADO = -1  # EST   para que lado o entalhe abre: -1 = -Y (lado da abertura da ferradura), +1 = +Y
+PONTE_FURO_HASTE_D = 6.6 # EST   furo liso: a ponte desliza na haste
 
 # ---------- Barra superior "EPIC" ----------
 BARRA_BOSS_D = 16.0      # FOTO  cilindros das pontas
