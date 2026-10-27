@@ -1,4 +1,4 @@
-"""Peças do extensor em build123d (modo álgebra), versão 0.2 (arquitetura observada nas fotos)."""
+"""Peças do extensor em build123d (modo álgebra), versão 0.3 (foto 08: porta-copos com braço curvo; copo pendurado entre as hastes)."""
 from build123d import *
 import parametros as P
 
@@ -64,14 +64,23 @@ def tubo_mola():
     return t
 
 
-def guia_central():
-    """Peça de duas metades que une os dois tubos e guia o pescoço do copo. Centrada."""
-    g = Box(P.GUIA_COMP, P.GUIA_LARG, P.GUIA_ESP)
-    for sx in (-1, 1):
-        g -= Pos(sx * P.HASTE_X, 0, 0) * Cylinder(P.TUBO_MOLA_D / 2 + 0.1, P.GUIA_ESP + 1)
-    g -= Cylinder(P.GUIA_FURO_CENTRAL_D / 2, P.GUIA_ESP + 1)
-    g -= Pos(0, -P.GUIA_LARG / 2, 0) * Box(P.GUIA_FURO_CENTRAL_D, P.GUIA_LARG, P.GUIA_ESP + 1)  # entalhe aberto
-    return g
+def porta_copo(lado=1):
+    """Bloco preto que fica sobre o tubo da escala, com furo para a rosca e um braço curvo
+    voltado para o eixo do copo. A alça de arame do copo engancha na ponta do braço.
+    Origem no eixo da haste, centro do bloco em z=0. lado=+1 (haste direita) ou -1."""
+    b = Box(P.PORTA_LARG_X, P.PORTA_LARG_Y, P.PORTA_ESP)
+    b -= Cylinder(P.ROSCA_D / 2 + 0.2, P.PORTA_ESP + 1)
+    # braço no plano XZ (coordenadas locais da haste direita), depois espelhado se lado=-1
+    xi = -P.PORTA_LARG_X / 2                      # face interna do bloco
+    xp = -(P.HASTE_X - P.PORTA_BRACO_X_PONTA)     # ponta do braço, no eixo da haste
+    zp = P.PORTA_BRACO_Z_PONTA
+    pts = [(xi, 3.0), (xi, -P.PORTA_ESP / 2),
+           (xp + 4, zp - 3), (xp - 2, zp - 1), (xp - 1, zp + 4), (xp + 6, zp + 2)]
+    braco = extrude(Plane.XZ * Polygon(*pts, align=None), P.PORTA_BRACO_ESP / 2, both=True)
+    b += braco
+    if lado < 0:
+        b = mirror(b, Plane.YZ)
+    return b
 
 
 def barra_superior():
@@ -153,17 +162,17 @@ def montagem(com_copo=True):
         z3 = z2 + P.PUNHO_L - P.TUBO_SOBRE_PUNHO
         partes.append((f"tubo_mola_{nome}", Pos(x, 0, z3) * tubo_mola()))
         z4 = z3 + P.TUBO_MOLA_L
-        partes.append((f"rosca_sup_{nome}", Pos(x, 0, z4) * rosca(P.ROSCA_SUP_EXPOSTA)))
-        z5 = z4 + P.ROSCA_SUP_EXPOSTA
+        partes.append((f"rosca_sup_{nome}", Pos(x, 0, z4 + P.PORTA_ESP) * rosca(P.ROSCA_SUP_EXPOSTA)))
+        z5 = z4 + P.PORTA_ESP + P.ROSCA_SUP_EXPOSTA
         partes.append((f"porca_barra_{nome}", Pos(x, 0, z5 - P.PORCA_ESP) * porca()))
-        z["guia"] = z4 - P.GUIA_ESP / 2
-        z["barra"] = z5
-    partes.append(("guia_central", Pos(0, 0, z["guia"]) * guia_central()))
+        z["porta"] = z4 + P.PORTA_ESP / 2
+        partes.append((f"porta_copo_{nome}", Pos(x, 0, z["porta"]) * porta_copo(sx)))
+        z["barra"] = z4 + P.PORTA_ESP + P.ROSCA_SUP_EXPOSTA
     partes.append(("barra_superior", Pos(0, 0, z["barra"]) * barra_superior()))
     if com_copo:
-        # alça enganchada na tira da barra: ápice da alça na altura média da tira
-        z_tira = z["barra"] + P.BARRA_BOSS_L / 2
-        z_valv_topo = z_tira - P.ALCA_COMP
-        z_boca = z_valv_topo - (P.COPO_CORPO_L + P.COPO_OMBRO_L + P.COPO_PESCOCO_L)
+        # pés da alça enganchados nas pontas dos braços dos porta-copos
+        z_pe = z["porta"] + P.PORTA_BRACO_Z_PONTA
+        z_valv = z_pe - P.VALVULA_L * 0.35
+        z_boca = z_valv - (P.COPO_CORPO_L + P.COPO_OMBRO_L + P.COPO_PESCOCO_L)
         partes.append(("copo", Pos(0, 0, z_boca) * copo()))
     return partes

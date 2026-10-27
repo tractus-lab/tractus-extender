@@ -32,7 +32,7 @@ salvar("pivo_tambor", pecas.pivo_tambor())
 salvar("porca", pecas.porca())
 salvar("punho", pecas.punho())
 salvar("tubo_mola", pecas.tubo_mola())
-salvar("guia_central", pecas.guia_central())
+salvar("porta_copo_dir", pecas.porta_copo(1))
 salvar("barra_superior", pecas.barra_superior())
 salvar("copo_foto", pecas.copo())
 salvar("membrana_foto", pecas.membrana())
@@ -51,7 +51,8 @@ def previa(nome, shape, direcao, escala=2.0):
     svg = ExportSVG(scale=escala, line_weight=0.4)
     svg.add_layer("visivel", line_color="black")
     svg.add_layer("oculto", line_type=LineType.ISO_DASH, line_color="gray", line_weight=0.2)
-    vis, hid = shape.project_to_viewport(viewport_origin=tuple(c * 800 for c in direcao), viewport_up=(0, 0, 1))
+    cima = (0, 1, 0) if abs(direcao[2]) > 0.99 else (0, 0, 1)  # vista de topo: "cima" não pode ser paralelo à direção
+    vis, hid = shape.project_to_viewport(viewport_origin=tuple(c * 800 for c in direcao), viewport_up=cima)
     svg.add_shape(vis, layer="visivel")
     svg.add_shape(hid, layer="oculto")
     caminho = os.path.join(PREV, f"{nome}.svg")
@@ -63,8 +64,8 @@ def previa(nome, shape, direcao, escala=2.0):
         print("  (PNG não gerado:", e, ")")
 
 
-for nome, direcao in {"frente": (0, -1, 0), "lado": (1, 0, 0), "iso": (1, -1, 0.7), "topo": (0, 0, 1)}.items():
+for nome, direcao in {"frente": (0, -1, 0), "lado": (1, 0, 0), "iso": (1, -1, 0.7), "topo": (0.001, 0, 1)}.items():
     previa(f"montagem_{nome}", conjunto, direcao)
-previa("base_topo", pecas.base(), (0, 0, 1), escala=4)
+previa("base_topo", pecas.base(), (0.001, 0, 1), escala=4)  # 0.001: vista exatamente axial sai vazia no build123d 0.13
 previa("copo_lado", pecas.copo(), (0, -1, 0), escala=4)
 print("Prévias em", PREV)

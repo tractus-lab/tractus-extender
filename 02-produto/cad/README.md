@@ -36,7 +36,7 @@ Saída:
 5. Commit a cada versão que faz sentido.
 
 ## Estado atual
-Versão 0.2 (2026-10-27): arquitetura observada nas fotos do P00 (base em ferradura com pivôs, hastes com punho e tubo de mola, guia central, barra superior com olhais, copo em sino com válvula e alça). Dimensões marcadas **FOTO** (±2 mm) em `parametros.py`. Não serve para fabricar. Faltam: medidas de paquímetro, rosca real, mola, interior da válvula, membrana, mangas, bomba, arredondamentos.
+Versão 0.3 (2026-10-27, noite): com a foto 08 (kit montado com o copo) ficou claro que não há guia central: cada haste tem um **porta-copo** com braço curvo, e a alça de arame do copo engancha nos dois braços. O copo fica entre as hastes, válvula para a barra e boca para a base. Comprimentos do punho e das roscas expostas atualizados pela foto 08. Versão 0.2 (mesmo dia): arquitetura observada nas fotos do P00 (base em ferradura com pivôs, hastes com punho e tubo de mola, barra superior com olhais, copo em sino com válvula e alça). Dimensões marcadas **FOTO** (±2 mm) em `parametros.py`. Não serve para fabricar. Faltam: medidas de paquímetro, rosca real, mola, interior da válvula, membrana, mangas, bomba, arredondamentos.
 
 ## Ver o modelo 3D
 Três jeitos, do mais fácil ao mais completo:

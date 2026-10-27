@@ -33,24 +33,26 @@ PIVO_PINO_L = 26.0       # EST
 ROSCA_D = 6.0            # FOTO  haste roscada, provavelmente M6 (porca 10 mm entre faces)
 PORCA_AF = 10.0          # FOTO  porca sextavada, medida entre faces
 PORCA_ESP = 5.0          # FOTO
-ROSCA_INF_EXPOSTA = 53.0 # FOTO  rosca visível entre a porca do pivô e o punho
+ROSCA_INF_EXPOSTA = 64.0 # FOTO  rosca visível entre a porca do pivô e o punho (foto 08; varia com o ajuste)
 PUNHO_D = 26.0           # FOTO  punho serrilhado (porca longa de ajuste)
-PUNHO_L = 65.0           # FOTO
+PUNHO_L = 68.0           # FOTO  (foto 08)
 TUBO_MOLA_D = 18.0       # FOTO  tubo com a escala em libras (0 a 22 lb)
 TUBO_MOLA_L = 50.0       # FOTO
 TUBO_SOBRE_PUNHO = 0.0   # DEF   quanto o tubo desliza sobre o punho (mola comprimida); 0 = sem carga
-ROSCA_SUP_EXPOSTA = 43.0 # FOTO  rosca visível entre a guia central e a barra
+ROSCA_SUP_EXPOSTA = 40.0 # FOTO  rosca visível entre o porta-copo e a barra (foto 08)
 ESCALA_LB_MAX = 22       # MED   especificação pública e impressa no tubo
 
-# ---------- Guia central (peça de duas metades no topo dos tubos) ----------
-GUIA_COMP = 112.0        # FOTO  comprimento total em X
-GUIA_LARG = 20.0         # EST   largura em Y; medir
-GUIA_ESP = 13.0          # FOTO  espessura em Z
-GUIA_FURO_CENTRAL_D = 13.0  # FOTO  entalhe central (provável passagem do pescoço do copo)
+# ---------- Porta-copo (um bloco por haste, entre o tubo da escala e a rosca superior) ----------
+PORTA_LARG_X = 22.0      # FOTO  largura do bloco no sentido entre as hastes (foto 08)
+PORTA_LARG_Y = 20.0      # EST   largura perpendicular; medir
+PORTA_ESP = 13.0         # FOTO  espessura ao longo da haste (Z)
+PORTA_BRACO_ESP = 8.0    # EST   espessura do braço curvo (Y)
+PORTA_BRACO_X_PONTA = 18.0  # FOTO  distância do eixo do copo até a ponta do braço (onde a alça engancha)
+PORTA_BRACO_Z_PONTA = -12.0 # FOTO  ponta do braço abaixo do centro do bloco (voltada para a base)
 
 # ---------- Barra superior "EPIC" ----------
 BARRA_BOSS_D = 16.0      # FOTO  cilindros das pontas
-BARRA_BOSS_L = 38.0      # FOTO
+BARRA_BOSS_L = 39.0      # FOTO  (foto 08)
 BARRA_TIRA_ESP = 4.0     # EST   espessura da tira entre os cilindros
 BARRA_TIRA_ALT = 17.0    # FOTO  altura da tira (em Z)
 BARRA_TIRA_DESLOC_Y = -6.0  # EST  tira deslocada para um lado do eixo das hastes
