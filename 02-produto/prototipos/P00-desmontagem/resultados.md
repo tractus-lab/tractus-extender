@@ -39,7 +39,7 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
 
 ### A confirmar
 1. ~~Passo da rosca~~ **Medido**: diâmetro 5,9 mm com paquímetro = M6 comercial; 10 voltas = 9,3 mm com régua (erro de leitura; passo 1,0). Rosca do Epic: **M6 x 1,0**.
-2. ~~Curso real~~ **Medido**: 2 kg na escala = 8 mm de curso (régua). Constante 4 mm/kg = 0,25 kgf/mm = 2,45 N/mm, igual à estimativa pela foto. Curso previsto no 10 kg: 40 mm (confirmar com um segundo ponto, 5 ou 10 kg).
+2. ~~Curso real~~ **Medido** (régua): 2 kg → 8,0 mm; 4 kg → 15,4 mm. Linear dentro do erro de leitura. Constante 0,255 kgf/mm = 2,5 N/mm; fundo de escala (10 kg) previsto em ~39,5 mm.
 3. Força real: dinamômetro no copo, ler no 11 e no 22, comparar com a escala.
 4. Diâmetro do rebaixo da ponte e para que lado ele abre (mesmo lado da abertura da ferradura?).
 
