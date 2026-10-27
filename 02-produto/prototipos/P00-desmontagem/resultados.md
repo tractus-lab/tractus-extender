@@ -38,7 +38,7 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
 - Constante da mola: 22 lb = 97,9 N em 40 mm → **~2,45 N/mm (0,25 kgf/mm)**. Esse é o número a confirmar com dinamômetro.
 
 ### A confirmar
-1. ~~Passo da rosca~~ **Medido**: 10 voltas do punho = 9,3 mm com régua. Compatível com M6x1 (10 mm) e com 1/4"-28 UNF (9,1 mm). Decidir com paquímetro no diâmetro (6,0 vs 6,35 mm) ou contando filetes em 10 mm (10 vs 11).
+1. ~~Passo da rosca~~ **Medido**: 10 voltas do punho = 9,3 mm com régua (M6x1 ou 1/4"-28 no Epic). Para o nosso produto, decisão 003: M6 x 1,0. Não precisa confirmar.
 2. Curso real: puxar até o 22 e medir quanto o tubo entrou no punho (modelo usa 40 mm).
 3. Força real: dinamômetro no copo, ler no 11 e no 22, comparar com a escala.
 4. Diâmetro do rebaixo da ponte e para que lado ele abre (mesmo lado da abertura da ferradura?).
