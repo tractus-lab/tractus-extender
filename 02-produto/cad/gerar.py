@@ -32,6 +32,7 @@ salvar("pivo_tambor", pecas.pivo_tambor())
 salvar("porca", pecas.porca())
 salvar("punho", pecas.punho())
 salvar("tubo_mola", pecas.tubo_mola())
+salvar("mola_repouso", pecas.mola(105.0))
 salvar("porta_copo_dir", pecas.porta_copo(1))
 salvar("barra_superior", pecas.barra_superior())
 salvar("copo_foto", pecas.copo())
@@ -66,6 +67,8 @@ def previa(nome, shape, direcao, escala=2.0):
 
 for nome, direcao in {"frente": (0, -1, 0), "lado": (1, 0, 0), "iso": (1, -1, 0.7), "topo": (0.001, 0, 1)}.items():
     previa(f"montagem_{nome}", conjunto, direcao)
+conj_carga = Compound(children=[s for _, s in pecas.montagem(carga_lb=pecas.P.ESCALA_LB_MAX)])
+previa("montagem_frente_22lb", conj_carga, (0, -1, 0))
 previa("base_topo", pecas.base(), (0.001, 0, 1), escala=4)  # 0.001: vista exatamente axial sai vazia no build123d 0.13
 previa("copo_lado", pecas.copo(), (0, -1, 0), escala=4)
 print("Prévias em", PREV)

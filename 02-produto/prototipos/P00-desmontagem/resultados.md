@@ -21,17 +21,27 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
 4. **Barra superior "EPIC"**: alumínio anodizado preto. Dois cilindros (16 × 38 mm) unidos por uma tira plana de ~17 mm de altura; olhal (~11 mm, furo ~5 mm) na ponta de cada cilindro. Comprimento total ~117 mm.
 5. **Copo de vácuo**: transparente (acrílico ou policarbonato), formato de sino. Corpo ~47 mm de diâmetro externo e ~44 mm de altura, três anéis externos junto à boca (passo ~9,5 mm, diâmetro ~49 mm nos anéis), ombro cônico, pescoço ~13 × 7 mm, corpo de válvula branco ~20 × 28 mm com marca vermelha, alça triangular de arame inox (~39 mm de comprimento, ~33 mm de largura, arame ~2 mm). Comprimento total com alça ~92 mm. **Tamanho nominal a confirmar** (provável 40 ou 44).
 
-## Funcionamento (descrição do usuário, 2026-10-27)
-- Uma haste roscada única atravessa cada lado do aparelho da base até a barra superior: é o "parafuso".
-- O punho serrilhado é uma porca comprida nessa rosca. Girar faz subir ou descer e define o comprimento do aparelho.
-- Dentro do tubo da escala há uma mola com medidor de força. Ao puxar, a mola comprime e a escala mostra a força em libras (0 a 22 lb).
-- Uso: girar o punho até o comprimento que estica, ler a força.
+## Funcionamento (confirmado pelo usuário em 2026-10-27, à noite)
 
-### A confirmar (define as peças internas)
-1. Ao puxar a barra com a base presa, o que desliza: o tubo da escala desce sobre o punho, ou a rosca superior sai do tubo?
-2. Onde se lê o número: borda do punho, borda da guia central ou janela no tubo?
-3. Passo da rosca: girar o punho 10 voltas e medir a variação de comprimento (10 mm = M6 padrão).
-4. ~~Como o copo se prende?~~ **Resolvido pela foto 08**: a alça de arame do copo engancha nos braços curvos dos dois porta-copos, um em cada haste. A barra "EPIC" não segura o copo; ela só une as pontas das hastes e tem os olhais para a fita.
+1. **Haste roscada única por lado**, de ponta a ponta: fixa no tambor do pivô embaixo e na barra "EPIC" em cima, com contraporca nas duas pontas. Não gira.
+2. **Base em ferradura**: apoia o corpo; o pivô deixa mudar o ângulo entre a base e as hastes.
+3. **Barra "EPIC"**: só proteção das pontas e batente. Sem função mecânica.
+4. **Punho serrilhado** (castanha): gira guiado pela rosca e define o comprimento do aparelho. Esconde a mola.
+5. **Tubo da escala** (mais fino, marcado em libras): preso ao punho por dentro, pela mola, e com a "ponte" no topo.
+6. **Ponte** entre as duas hastes, no topo do tubo: segura a ponta do copo pela alça de arame. (Na foto 08 aparecem dois blocos com braço, um por haste, e a alça entre eles; confirmar se é uma peça única atrás do copo ou dois blocos.)
+7. **Uso**: o pênis puxa o copo, o copo puxa a ponte, a ponte empurra o tubo para dentro do punho, a mola comprime e a borda do punho aponta a força. Em repouso a borda está no 0 (foto 08).
+
+### Consequências para o modelo (CAD v0.4)
+- O punho precisa de rosca interna só num trecho curto (estimado 13 mm) e de um furo liso de ~18,5 mm para o tubo entrar.
+- A ponte e o tubo deslizam na haste com furo liso; só o punho rosqueia.
+- A mola não cabe só no punho: para um curso de 40 mm (distância entre o 0 e o 22 na foto 08) ela precisa passar por dentro do tubo e apoiar na ponte. Comprimento livre estimado ~105 mm, 65 mm a 22 lb.
+- Constante da mola: 22 lb = 97,9 N em 40 mm → **~2,45 N/mm (0,25 kgf/mm)**. Esse é o número a confirmar com dinamômetro.
+
+### A confirmar
+1. Passo da rosca: girar o punho 10 voltas e medir a variação de comprimento (10 mm = M6 passo 1).
+2. Curso real: puxar até o 22 e medir quanto o tubo entrou no punho (modelo usa 40 mm).
+3. Força real: dinamômetro no copo, ler no 11 e no 22, comparar com a escala.
+4. A ponte é uma peça única ou dois blocos?
 
 ## Foto 08: kit montado com o copo (2026-10-27, noite)
 

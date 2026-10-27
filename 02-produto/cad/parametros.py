@@ -30,17 +30,35 @@ PIVO_PINO_D = 4.0        # EST  pino da articulação (eixo X)
 PIVO_PINO_L = 26.0       # EST
 
 # ---------- Hastes (de baixo para cima) ----------
+# Mecanismo (descrição do usuário, 2026-10-27, confirmado pela foto 08):
+#   a haste roscada é UMA peça por lado, fixa no tambor do pivô e na barra; não gira.
+#   O punho é a castanha: rosca interna curta embaixo e furo liso em cima. Girar o punho
+#   muda o comprimento do aparelho. Dentro do punho há uma mola de compressão em volta da
+#   haste, que continua para dentro do tubo da escala e apoia no porta-copo (o tubo é aberto
+#   embaixo: uma mola só no punho não teria curso de 40 mm). O tubo é fixo ao porta-copo e entra
+#   deslizando no punho; sob tração a mola comprime e a borda do punho aponta a força (lb).
 ROSCA_D = 6.0            # FOTO  haste roscada, provavelmente M6 (porca 10 mm entre faces)
-PORCA_AF = 10.0          # FOTO  porca sextavada, medida entre faces
+PORCA_AF = 10.0          # FOTO  porca sextavada (contraporca), medida entre faces
 PORCA_ESP = 5.0          # FOTO
 ROSCA_INF_EXPOSTA = 64.0 # FOTO  rosca visível entre a porca do pivô e o punho (foto 08; varia com o ajuste)
-PUNHO_D = 26.0           # FOTO  punho serrilhado (porca longa de ajuste)
+PUNHO_D = 26.0           # FOTO  punho serrilhado (castanha)
 PUNHO_L = 68.0           # FOTO  (foto 08)
+PUNHO_PORCA_L = 13.0     # EST   trecho com rosca interna, na parte de baixo do punho
+PUNHO_FURO_D = 18.5      # EST   furo liso onde o tubo da escala desliza (folga de 0,25 mm no raio)
 TUBO_MOLA_D = 18.0       # FOTO  tubo com a escala em libras (0 a 22 lb)
-TUBO_MOLA_L = 50.0       # FOTO
-TUBO_SOBRE_PUNHO = 0.0   # DEF   quanto o tubo desliza sobre o punho (mola comprimida); 0 = sem carga
-ROSCA_SUP_EXPOSTA = 40.0 # FOTO  rosca visível entre o porta-copo e a barra (foto 08)
+TUBO_MOLA_PAREDE = 1.0   # EST
+TUBO_MOLA_VISIVEL = 50.0 # FOTO  trecho fora do punho em repouso
+TUBO_DENTRO_PUNHO = 12.0 # EST   trecho dentro do punho em repouso; comprimento total = visível + dentro
+CURSO_ESCALA = 40.0      # FOTO  deslocamento do 0 ao 22 lb (distância entre as marcas na foto 08)
 ESCALA_LB_MAX = 22       # MED   especificação pública e impressa no tubo
+MOLA_D_EXT = 15.0        # EST   mola de compressão em volta da haste (furo interno > 6 mm)
+MOLA_ARAME_D = 1.6       # EST
+MOLA_ESPIRAS = 14        # EST   espiras ativas (comprimento livre ~105 mm, 65 mm a 22 lb, bloco ~22 mm)
+MOLA_K = ESCALA_LB_MAX * 4.448 / CURSO_ESCALA  # N/mm, calculado: ~2,4 N/mm (0,25 kgf/mm)
+CARGA_LB = 0.0           # DEF   estado mostrado na montagem: 0 = repouso; 22 = escala toda
+ROSCA_SUP_EXPOSTA = 40.0 # FOTO  rosca visível entre o porta-copo e a barra (foto 08), em repouso
+ROSCA_NA_BARRA = 30.0    # EST   quanto a haste entra no cilindro da barra
+ROSCA_NO_TAMBOR = 10.0   # EST   quanto a haste entra no tambor do pivô
 
 # ---------- Porta-copo (um bloco por haste, entre o tubo da escala e a rosca superior) ----------
 PORTA_LARG_X = 22.0      # FOTO  largura do bloco no sentido entre as hastes (foto 08)
