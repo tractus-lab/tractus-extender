@@ -8,7 +8,8 @@ Fases do projeto, do zero ao produto vendido. Marque `[x]` quando concluir.
 - [x] Listar hipóteses que precisam ser validadas
 
 ## Fase 1 — Pesquisa e validação
-- [ ] Comprar e desmontar 1 Epic Extender + 1 genérico chinês (P00)
+- [ ] Desmontar e medir o Epic Extender (P00): fotos feitas em 2026-10-27, faltam medidas
+- [ ] Comprar 1 genérico chinês com copo de vácuo para comparar
 - [ ] Busca de patentes no INPI e Espacenet (família BR)
 - [ ] Levantamento manual de preços e avaliações no Mercado Livre e Shopee
 - [ ] Ler políticas de produtos adultos de Mercado Livre, Shopee, Amazon, Meta Ads, Google Ads

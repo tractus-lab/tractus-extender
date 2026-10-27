@@ -31,6 +31,6 @@ As pastas seguem a ordem natural do projeto. Nada impede trabalhar em paralelo, 
 
 ## Estado atual
 
-- **Fase:** Ideia descrita; pesquisa inicial feita
-- **Última atualização:** 2026-10-25
-- **Próximos passos:** (1) comprar 1 Epic Extender e 1 genérico chinês e seguir `02-produto/engenharia/mecanica/como-fazer-o-blueprint.md`; (2) preencher `levantamento-dimensional.md` e atualizar `02-produto/cad/parametros.py`; (3) busca de patentes no INPI; (4) levantamento manual de preços no Mercado Livre e Shopee.
+- **Fase:** P00 em andamento (Epic Extender em mãos, fotografado, CAD v0.2 pela foto)
+- **Última atualização:** 2026-10-27
+- **Próximos passos:** (1) fotografar o resto do kit e medir com paquímetro, preenchendo `02-produto/engenharia/mecanica/levantamento-dimensional.md`; (2) trocar valores FOTO por MED em `02-produto/cad/parametros.py`; (3) confirmar o mecanismo da mola; (4) busca de patentes no INPI; (5) preços no Mercado Livre e Shopee.

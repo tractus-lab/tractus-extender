@@ -36,7 +36,7 @@ Saída:
 5. Commit a cada versão que faz sentido.
 
 ## Estado atual
-Versão 0.1: geometria simplificada com dimensões **estimadas**. Serve para validar o pipeline e ter algo para olhar. Não serve para fabricar. Faltam: rosca real nas hastes, mola, válvula do copo, bomba, arredondamentos, almofada com forma ergonômica.
+Versão 0.2 (2026-10-27): arquitetura observada nas fotos do P00 (base em ferradura com pivôs, hastes com punho e tubo de mola, guia central, barra superior com olhais, copo em sino com válvula e alça). Dimensões marcadas **FOTO** (±2 mm) em `parametros.py`. Não serve para fabricar. Faltam: medidas de paquímetro, rosca real, mola, interior da válvula, membrana, mangas, bomba, arredondamentos.
 
 ## Visualizador rápido sem instalar nada
 Arraste um `.stl` em https://3dviewer.net/ ou abra o STEP no FreeCAD.

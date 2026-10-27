@@ -1,97 +1,169 @@
-"""Peças do extensor em build123d (modo álgebra). Cada função devolve um sólido."""
+"""Peças do extensor em build123d (modo álgebra), versão 0.2 (arquitetura observada nas fotos)."""
 from build123d import *
 import parametros as P
 
 
+def _cil_entre(p1, p2, d):
+    """Cilindro de diâmetro d entre dois pontos (para a alça de arame)."""
+    p1, p2 = Vector(*p1), Vector(*p2)
+    v = p2 - p1
+    return Plane(origin=p1 + v / 2, z_dir=v) * Cylinder(d / 2, v.length)
+
+
+def _porca(af, esp):
+    return extrude(RegularPolygon(af / 2 / 0.8660254, 6), esp)
+
+
+# ---------------- Base ----------------
 def base():
-    """Anel de apoio com duas orelhas furadas para as hastes."""
-    anel = Cylinder(P.BASE_D_EXT / 2, P.BASE_ESP) - Cylinder(P.BASE_D_INT / 2, P.BASE_ESP)
+    """Ferradura com lobos e rasgos para os tambores do pivô. Centrada em Z."""
+    h = P.BASE_ESP
+    b = Cylinder(P.BASE_R_EXT, h) - Cylinder(P.BASE_R_INT, h)
+    # abertura entre os lobos
+    b -= Pos(0, -(P.BASE_R_EXT + 10) / 2, 0) * Box(P.BASE_ABERTURA, P.BASE_R_EXT + 10, h + 2)
     for sx in (-1, 1):
-        x = sx * P.BASE_DIST_FUROS / 2
-        anel += Pos(x, 0, 0) * Cylinder(P.BASE_LUG_D / 2, P.BASE_ESP)
-        anel -= Pos(x, 0, 0) * Cylinder(P.BASE_FURO_D / 2, P.BASE_ESP)
-    return anel
-
-
-def almofada():
-    """Almofada que fica sob o anel (lado do corpo)."""
-    return Cylinder(P.BASE_D_EXT / 2, P.BASE_ALMOFADA_ESP) - Cylinder(P.BASE_D_INT / 2, P.BASE_ALMOFADA_ESP)
-
-
-def haste_externa():
-    """Tubo externo com pino rosqueado na base. Origem na face inferior do pino."""
-    pino = Pos(0, 0, P.HASTE_ROSCA_L / 2) * Cylinder(P.HASTE_ROSCA_D / 2, P.HASTE_ROSCA_L)
-    tubo = Pos(0, 0, P.HASTE_ROSCA_L + P.HASTE_TUBO_L / 2) * (
-        Cylinder(P.HASTE_TUBO_D_EXT / 2, P.HASTE_TUBO_L) - Cylinder(P.HASTE_TUBO_D_INT / 2, P.HASTE_TUBO_L)
-    )
-    return pino + tubo
-
-
-def haste_interna():
-    """Haste que desliza dentro do tubo externo (onde fica a mola, na realidade)."""
-    return Pos(0, 0, P.HASTE_INTERNA_L / 2) * Cylinder(P.HASTE_INTERNA_D / 2, P.HASTE_INTERNA_L)
-
-
-def jugo():
-    """Barra superior que une as duas hastes e segura o copo."""
-    comp = P.BASE_DIST_FUROS + P.JUGO_LARG
-    barra = Box(comp, P.JUGO_LARG, P.JUGO_ESP)
+        b += Pos(sx * P.BASE_LOBO_X, P.BASE_LOBO_Y, 0) * Cylinder(P.BASE_LOBO_R, h)
+    # rasgos onde os tambores do pivô se alojam (abertos para cima e para +Y)
     for sx in (-1, 1):
-        barra -= Pos(sx * P.BASE_DIST_FUROS / 2, 0, 0) * Cylinder(P.HASTE_INTERNA_D / 2 + 0.1, P.JUGO_ESP)
-    barra -= Cylinder(P.JUGO_FURO_COPO_D / 2, P.JUGO_ESP)
-    return barra
+        b -= Pos(sx * P.HASTE_X, P.PIVO_RASGO / 2, 0) * Box(P.PIVO_RASGO, P.PIVO_RASGO * 2, h + 2)
+    return b
 
 
-def copo(d_int: float):
-    """Copo de vácuo. Boca em z=0 (voltada para -z), fundo e pino para cima."""
-    r_ext = d_int / 2 + P.COPO_PAREDE
-    h_total = P.COPO_ALTURA + P.COPO_TOPO_ESP
-    corpo = Pos(0, 0, h_total / 2) * Cylinder(r_ext, h_total)
-    cavidade = Pos(0, 0, P.COPO_ALTURA / 2) * Cylinder(d_int / 2, P.COPO_ALTURA)
-    copo = corpo - cavidade
-    pino = Pos(0, 0, h_total + P.COPO_PINO_L / 2) * Cylinder(P.COPO_PINO_D / 2, P.COPO_PINO_L)
-    copo += pino
-    # bico lateral para a bomba, a meia altura
-    z_bico = P.COPO_ALTURA * 0.6
-    bico = Pos(r_ext + P.COPO_BICO_L / 2 - 1, 0, z_bico) * Rot(0, 90, 0) * Cylinder(P.COPO_BICO_D / 2, P.COPO_BICO_L + 2)
-    furo_bico = Pos(r_ext / 2 + P.COPO_BICO_L / 2, 0, z_bico) * Rot(0, 90, 0) * Cylinder(P.COPO_BICO_FURO_D / 2, r_ext + P.COPO_BICO_L + 2)
-    copo = copo + bico - furo_bico
-    return copo
+def pivo_tambor():
+    """Tambor de inox que recebe a rosca da haste. Origem na base do tambor, eixo Z."""
+    t = Pos(0, 0, P.PIVO_TAMBOR_L / 2) * Cylinder(P.PIVO_TAMBOR_D / 2, P.PIVO_TAMBOR_L)
+    t -= Pos(0, 0, P.PIVO_TAMBOR_L / 2) * Cylinder(P.ROSCA_D / 2, P.PIVO_TAMBOR_L)
+    return t
 
 
-def membrana(d_int: float):
-    """Membrana de silicone com furo central e aba que abraça a boca do copo."""
-    r_ext_copo = d_int / 2 + P.COPO_PAREDE
-    disco = Pos(0, 0, -P.MEMB_ESP / 2) * Cylinder(r_ext_copo + P.MEMB_ABA, P.MEMB_ESP)
-    furo = Cylinder(d_int * P.MEMB_FURO_FRACAO / 2, 10)
-    aba = Pos(0, 0, P.MEMB_ABA_ALT / 2) * (
-        Cylinder(r_ext_copo + P.MEMB_ABA, P.MEMB_ABA_ALT) - Cylinder(r_ext_copo, P.MEMB_ABA_ALT)
-    )
-    return disco + aba - furo
+def pivo_pino():
+    return Rot(0, 90, 0) * Cylinder(P.PIVO_PINO_D / 2, P.PIVO_PINO_L)
 
 
-def manga(d_int: float):
-    """Manga de silicone (alternativa ao copo)."""
-    return Pos(0, 0, P.MANGA_L / 2) * (
-        Cylinder(d_int / 2 + P.MANGA_PAREDE, P.MANGA_L) - Cylinder(d_int / 2, P.MANGA_L)
-    )
+# ---------------- Haste ----------------
+def porca():
+    return _porca(P.PORCA_AF, P.PORCA_ESP)
 
 
-def montagem(copo_d: float = 36):
-    """Conjunto montado: base, almofada, hastes, jugo, copo e membrana."""
-    partes = []
-    partes.append(("almofada", Pos(0, 0, -P.BASE_ALMOFADA_ESP / 2) * almofada()))
-    partes.append(("base", Pos(0, 0, P.BASE_ESP / 2) * base()))
-    z_topo_tubo = P.BASE_ESP + P.HASTE_ROSCA_L + P.HASTE_TUBO_L
-    z_topo_interna = z_topo_tubo + P.HASTE_EXTENSAO
-    for nome, sx in (("haste_esq", -1), ("haste_dir", 1)):
-        x = sx * P.BASE_DIST_FUROS / 2
-        partes.append((nome + "_externa", Pos(x, 0, P.BASE_ESP - P.HASTE_ROSCA_L) * haste_externa()))
-        partes.append((nome + "_interna", Pos(x, 0, z_topo_interna - P.HASTE_INTERNA_L) * haste_interna()))
-    z_jugo = z_topo_interna - P.JUGO_ESP / 2
-    partes.append(("jugo", Pos(0, 0, z_jugo) * jugo()))
-    # copo pendurado no jugo, boca para baixo
-    z_boca = z_jugo - P.JUGO_ESP / 2 - (P.COPO_ALTURA + P.COPO_TOPO_ESP)
-    partes.append((f"copo_{copo_d}", Pos(0, 0, z_boca) * copo(copo_d)))
-    partes.append((f"membrana_{copo_d}", Pos(0, 0, z_boca) * membrana(copo_d)))
+def rosca(comp):
+    """Trecho de haste roscada (modelada lisa). Origem na base, eixo Z."""
+    return Pos(0, 0, comp / 2) * Cylinder(P.ROSCA_D / 2, comp)
+
+
+def punho():
+    """Punho serrilhado (porca longa). Origem na base, eixo Z."""
+    p = Pos(0, 0, P.PUNHO_L / 2) * Cylinder(P.PUNHO_D / 2, P.PUNHO_L)
+    p -= Pos(0, 0, P.PUNHO_L / 2) * Cylinder(P.ROSCA_D / 2, P.PUNHO_L)
+    return p
+
+
+def tubo_mola():
+    """Tubo da escala, que abriga a mola e desliza sobre o punho. Origem na base, eixo Z."""
+    t = Pos(0, 0, P.TUBO_MOLA_L / 2) * Cylinder(P.TUBO_MOLA_D / 2, P.TUBO_MOLA_L)
+    t -= Pos(0, 0, P.TUBO_MOLA_L / 2) * Cylinder(P.TUBO_MOLA_D / 2 - 1.0, P.TUBO_MOLA_L)
+    return t
+
+
+def guia_central():
+    """Peça de duas metades que une os dois tubos e guia o pescoço do copo. Centrada."""
+    g = Box(P.GUIA_COMP, P.GUIA_LARG, P.GUIA_ESP)
+    for sx in (-1, 1):
+        g -= Pos(sx * P.HASTE_X, 0, 0) * Cylinder(P.TUBO_MOLA_D / 2 + 0.1, P.GUIA_ESP + 1)
+    g -= Cylinder(P.GUIA_FURO_CENTRAL_D / 2, P.GUIA_ESP + 1)
+    g -= Pos(0, -P.GUIA_LARG / 2, 0) * Box(P.GUIA_FURO_CENTRAL_D, P.GUIA_LARG, P.GUIA_ESP + 1)  # entalhe aberto
+    return g
+
+
+def barra_superior():
+    """Barra 'EPIC': dois cilindros com olhais, unidos por uma tira. Origem na base dos cilindros."""
+    L = P.BARRA_BOSS_L
+    b = None
+    for sx in (-1, 1):
+        boss = Pos(sx * P.HASTE_X, 0, L / 2) * Cylinder(P.BARRA_BOSS_D / 2, L)
+        boss -= Pos(sx * P.HASTE_X, 0, L / 2) * Cylinder(P.ROSCA_D / 2, L)
+        x_olhal = sx * (P.HASTE_X + P.BARRA_BOSS_D / 2 + P.BARRA_OLHAL_D / 2 - 2)
+        olhal = Pos(x_olhal, 0, L - P.BARRA_OLHAL_D / 2) * Rot(90, 0, 0) * Cylinder(P.BARRA_OLHAL_D / 2, P.BARRA_OLHAL_ESP)
+        olhal -= Pos(x_olhal, 0, L - P.BARRA_OLHAL_D / 2) * Rot(90, 0, 0) * Cylinder(P.BARRA_OLHAL_FURO_D / 2, P.BARRA_OLHAL_ESP + 1)
+        b = boss + olhal if b is None else b + boss + olhal
+    tira = Pos(0, P.BARRA_TIRA_DESLOC_Y, L / 2) * Box(2 * P.HASTE_X, P.BARRA_TIRA_ESP, P.BARRA_TIRA_ALT)
+    return b + tira
+
+
+# ---------------- Copo ----------------
+def copo(d_ext=None):
+    """Copo em forma de sino com anéis na boca, pescoço, válvula e alça de arame.
+    Boca em z=0 voltada para -Z; o copo se estende para +Z."""
+    d_ext = d_ext or P.COPO_FOTO_D_EXT
+    r = d_ext / 2
+    ri = r - P.COPO_PAREDE
+    rp = P.COPO_PESCOCO_D / 2
+    Lc, Lo, Lp = P.COPO_CORPO_L, P.COPO_OMBRO_L, P.COPO_PESCOCO_L
+    perfil_ext = [(0, 0), (r, 0), (r, Lc), (rp, Lc + Lo), (rp, Lc + Lo + Lp), (0, Lc + Lo + Lp)]
+    perfil_int = [(0, -1), (ri, -1), (ri, Lc - 1), (rp - 1.5, Lc + Lo - 2), (rp - 1.5, Lc + Lo + Lp + 1), (0, Lc + Lo + Lp + 1)]
+    solido = revolve(Plane.XZ * Polygon(*perfil_ext, align=None), Axis.Z)
+    cav = revolve(Plane.XZ * Polygon(*perfil_int, align=None), Axis.Z)
+    c = solido - cav
+    for i in range(P.COPO_ANEIS_N):
+        z = 3 + i * P.COPO_ANEIS_PASSO
+        c += Pos(0, 0, z) * (Cylinder(r + P.COPO_ANEIS_ALT, P.COPO_ANEIS_LARG) - Cylinder(r - 0.1, P.COPO_ANEIS_LARG))
+    z_valv = Lc + Lo + Lp
+    c += Pos(0, 0, z_valv + P.VALVULA_L / 2) * Cylinder(P.VALVULA_D / 2, P.VALVULA_L)
+    # alça triangular de arame, no plano XZ, presa ao corpo da válvula
+    z_pe = z_valv + P.VALVULA_L * 0.35
+    apice = (0, 0, z_valv + P.ALCA_COMP)
+    pe_e = (-P.ALCA_LARG / 2, 0, z_pe)
+    pe_d = (P.ALCA_LARG / 2, 0, z_pe)
+    d = P.ALCA_ARAME_D
+    c += _cil_entre(pe_e, apice, d) + _cil_entre(pe_d, apice, d)
+    c += _cil_entre(pe_e, pe_d, d)  # travessa que atravessa o corpo da válvula
+    c += Pos(*apice) * Sphere(d / 2)
+    return c
+
+
+def membrana(d_ext=None):
+    """Membrana de silicone sobre a boca (geometria ainda não observada)."""
+    d_ext = d_ext or P.COPO_FOTO_D_EXT
+    r = d_ext / 2 + P.COPO_ANEIS_ALT + 1
+    m = Pos(0, 0, -P.MEMB_ESP / 2) * Cylinder(r, P.MEMB_ESP)
+    m -= Cylinder((d_ext - 2 * P.COPO_PAREDE) * P.MEMB_FURO_FRACAO / 2, 10)
+    return m
+
+
+def manga(d_int):
+    return Pos(0, 0, P.MANGA_L / 2) * (Cylinder(d_int / 2 + P.MANGA_PAREDE, P.MANGA_L) - Cylinder(d_int / 2, P.MANGA_L))
+
+
+# ---------------- Montagem ----------------
+def montagem(com_copo=True):
+    """Conjunto em posição de uso: hastes perpendiculares à base, sem carga na mola."""
+    partes = [("base", base())]
+    z_base_topo = P.BASE_ESP / 2
+    z_tambor0 = z_base_topo - P.PIVO_TAMBOR_DENTRO
+    z = {}
+    for nome, sx in (("esq", -1), ("dir", 1)):
+        x = sx * P.HASTE_X
+        partes.append((f"pivo_tambor_{nome}", Pos(x, 0, z_tambor0) * pivo_tambor()))
+        partes.append((f"pivo_pino_{nome}", Pos(x, 0, z_tambor0 + P.PIVO_TAMBOR_DENTRO / 2) * pivo_pino()))
+        z0 = z_tambor0 + P.PIVO_TAMBOR_L                       # topo do tambor
+        partes.append((f"porca_pivo_{nome}", Pos(x, 0, z0) * porca()))
+        z1 = z0 + P.PORCA_ESP
+        partes.append((f"rosca_inf_{nome}", Pos(x, 0, z1) * rosca(P.ROSCA_INF_EXPOSTA)))
+        z2 = z1 + P.ROSCA_INF_EXPOSTA
+        partes.append((f"punho_{nome}", Pos(x, 0, z2) * punho()))
+        z3 = z2 + P.PUNHO_L - P.TUBO_SOBRE_PUNHO
+        partes.append((f"tubo_mola_{nome}", Pos(x, 0, z3) * tubo_mola()))
+        z4 = z3 + P.TUBO_MOLA_L
+        partes.append((f"rosca_sup_{nome}", Pos(x, 0, z4) * rosca(P.ROSCA_SUP_EXPOSTA)))
+        z5 = z4 + P.ROSCA_SUP_EXPOSTA
+        partes.append((f"porca_barra_{nome}", Pos(x, 0, z5 - P.PORCA_ESP) * porca()))
+        z["guia"] = z4 - P.GUIA_ESP / 2
+        z["barra"] = z5
+    partes.append(("guia_central", Pos(0, 0, z["guia"]) * guia_central()))
+    partes.append(("barra_superior", Pos(0, 0, z["barra"]) * barra_superior()))
+    if com_copo:
+        # alça enganchada na tira da barra: ápice da alça na altura média da tira
+        z_tira = z["barra"] + P.BARRA_BOSS_L / 2
+        z_valv_topo = z_tira - P.ALCA_COMP
+        z_boca = z_valv_topo - (P.COPO_CORPO_L + P.COPO_OMBRO_L + P.COPO_PESCOCO_L)
+        partes.append(("copo", Pos(0, 0, z_boca) * copo()))
     return partes
