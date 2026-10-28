@@ -16,6 +16,7 @@ abertura da ferradura voltada para -Y. Eixo da articulação das hastes ao longo
 BASE_R_EXT = 52.0        # FOTO  raio externo do arco (largura total ~106)
 BASE_R_INT = 30.0        # FOTO  raio interno (abertura ~60)
 BASE_ESP = 14.0          # EST   espessura (altura em Z); medir
+BASE_LOBO_ESP = 17.6     # MED   largura do lobo no pivô (paquímetro, 2026-10-27); a espessura do arco pode ser diferente
 BASE_ABERTURA = 31.0     # FOTO  vão entre os lobos
 BASE_LOBO_R = 15.0       # FOTO  raio dos lobos arredondados
 BASE_LOBO_X = 32.0       # FOTO  posição X do centro de cada lobo
@@ -26,9 +27,9 @@ HASTE_X = 41.5           # FOTO  meia distância entre hastes (entre eixos ~83)
 PIVO_TAMBOR_D = 12.1     # MED   paquímetro (2026-10-27)
 PIVO_TAMBOR_L = 31.0     # FOTO
 PIVO_TAMBOR_DENTRO = 10.0  # EST  quanto do tambor fica dentro do rasgo da base
-PIVO_RASGO = 13.0        # EST  largura do rasgo na base
+PIVO_RASGO = 13.0        # EST  largura do rasgo na base (tambor 12,1 + folga); lobo tem 17,6, sobra ~2,7 mm de parede por lado
 PIVO_PINO_D = 4.0        # EST  pino transversal da articulação (eixo X), confirmado pelo usuário: cabeça escondida por tampa redonda de plástico na face externa do lobo; diâmetro a medir
-PIVO_PINO_L = 26.0       # EST
+PIVO_PINO_L = 17.6       # MED   = largura do lobo no pivô, de face a face no sentido do pino (paquímetro, 2026-10-27)
 PIVO_TAMPA_D = 10.0      # EST  tampa redonda de plástico que esconde o pino na face externa do lobo; medir
 
 # ---------- Hastes (de baixo para cima) ----------

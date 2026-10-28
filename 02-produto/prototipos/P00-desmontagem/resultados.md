@@ -42,7 +42,7 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
 2. ~~Curso real~~ **Medido** (régua): 2 kg → 8,0 mm; 4 kg → 15,4 mm. Linear dentro do erro de leitura. Constante 0,255 kgf/mm = 2,5 N/mm; fundo de escala (10 kg) previsto em ~39,5 mm.
 3. Força real: dinamômetro no copo, ler no 11 e no 22, comparar com a escala.
 4. Diâmetro do rebaixo da ponte e para que lado ele abre (mesmo lado da abertura da ferradura?).
-5. ~~Como o tambor gira na base~~ **Pino transversal com tampa plástica** (confirmado). Faltam: comprimento do tambor, largura do rasgo, diâmetro da tampa.
+5. ~~Como o tambor gira na base~~ **Pino transversal com tampa plástica** (confirmado). Lobo com 17,6 mm de largura no pivô (paquímetro). Faltam: comprimento do tambor e diâmetro da tampa.
 
 ## Foto 08: kit montado com o copo (2026-10-27, noite)
 
