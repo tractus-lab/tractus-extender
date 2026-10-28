@@ -5,7 +5,7 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
 ## Arquitetura observada (muda tudo em relação ao modelo v0.1)
 
 1. **Base em ferradura**, não anel fechado. **Medido (2026-10-28):** 96 mm de largura externa, 18 mm de altura, faixa do arco com 20,2 mm de largura radial (abertura interna ~56 mm). Vão entre os lobos ~31 mm (foto). Dois lobos arredondados nas pontas. Plástico preto fosco (provavelmente nylon ou ABS, talvez com revestimento macio: confirmar ao toque). **Dois materiais** (usuário, 2026-10-27): a metade de cima é plástico rígido e a metade de baixo, que encosta na virilha, é uma borracha relativamente dura mas confortável (sobremoldagem ou peça colada). As peças de plástico do kit são de boa qualidade.
-2. **Articulação nas hastes.** Cada haste rosqueia num tambor de inox (12,1 × ~31 mm) alojado numa **caixa de articulação montada em cima do lobo** da base (não dentro dele: o rasgo não entra na ferradura), com 17,6 mm de largura. Os dois tambores giram em torno de um mesmo eixo, formando uma dobradiça que deixa a estrutura inclinar em relação à base e dobrar para guardar. O eixo é um **pino transversal**, com a cabeça escondida por uma **tampa redonda de plástico** na face externa de cada lobo (usuário, 2026-10-27). Nas fotos a tampa se confunde com o lobo.
+2. **Articulação nas hastes.** Cada haste rosqueia num tambor de inox (12,1 mm de diâmetro, ~31 mm de comprimento) articulado num **garfo de plástico montado em cima da ferradura** (não dentro dela). **Medido (2026-10-28):** o garfo tem 14,8 mm no sentido do pino e 17,6 mm no sentido da rotação; suas duas bochechas têm 4,2 mm cada, deixando um vão de 6,4 mm. A ponta de baixo do tambor é rebaixada por dois planos numa **lingueta de 5,6 mm** que entra nesse vão com 0,4 mm de folga por lado, o que facilita a montagem. Os dois tambores giram em torno de um mesmo eixo, formando uma dobradiça que deixa a estrutura inclinar em relação à base e dobrar para guardar. O eixo é um **pino transversal**, com a cabeça escondida por uma **tampa redonda de plástico** na face externa de cada garfo (usuário, 2026-10-27). Nas fotos a tampa se confunde com o lobo.
 3. **Hastes, de baixo para cima** (comprimentos ao longo do eixo):
    | Trecho | Comp. (mm) | Diâm. (mm) | Observação |
    |---|---|---|---|
@@ -43,7 +43,7 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
 2. ~~Curso real~~ **Medido** (régua): 2 kg → 8,0 mm; 4 kg → 15,4 mm. Linear dentro do erro de leitura. Constante 0,255 kgf/mm = 2,5 N/mm; fundo de escala (10 kg) previsto em ~39,5 mm.
 3. Força real: dinamômetro no copo, ler no 11 e no 22, comparar com a escala.
 4. ~~Diâmetro do rebaixo da ponte~~ **Medido** (chapa 4,5; rebaixo 20 × 1,5; furo 12). Falta: para que lado o rasgo abre (mesmo lado da abertura da ferradura?) e se há cubos de 13 mm em volta das hastes.
-5. ~~Como o tambor gira na base~~ **Pino transversal com tampa plástica, em caixa sobre o lobo** (confirmado). Caixa com 17,6 mm de largura (paquímetro). Faltam: altura e profundidade da caixa, comprimento do tambor, diâmetro da tampa.
+5. ~~Como o tambor gira na base~~ **Pino transversal com tampa plástica, em garfo sobre a ferradura** (confirmado). Garfo 14,8 × 17,6 mm, bochechas 4,2, lingueta do tambor 5,6 (paquímetro, 2026-10-28). Faltam só altura do garfo, comprimento do tambor, pino e tampa (estético).
 
 ## Foto 08: kit montado com o copo (2026-10-27, noite)
 

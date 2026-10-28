@@ -66,7 +66,7 @@ Todas as medidas em mm, pesos em g, forças em kgf. Medir duas vezes. Se os valo
 | Força real na marca 3 | | |
 | Força real na marca máxima | | |
 | Rosca de conexão com a base: diâmetro e passo | 5,9 mm (paquímetro), passo 1,0 (10 voltas = 9,3 mm, régua) | M6 x 1,0 confirmado (2026-10-27) |
-| Pivô (caixa sobre o lobo): largura, altura, profundidade; tambor; pino; tampa | caixa 17,6 mm de largura; tambor 12,1 mm (paquímetro, 2026-10-27) | altura e profundidade da caixa, comprimento do tambor, diâmetro da tampa a medir |
+| Pivô (garfo sobre a ferradura): largura, altura, profundidade; tambor; pino; tampa | garfo 14,8 mm no sentido do pino (bochechas de 4,2 mm cada) × 17,6 mm no sentido da rotação; tambor 12,1 mm com lingueta de 5,6 mm na ponta (paquímetro, 2026-10-27/28) | altura do garfo, comprimento do tambor, pino e tampa a medir (estético) |
 | Rosca de conexão com extensões: diâmetro e passo | | |
 | Extensões: comprimentos disponíveis | | |
 | Mola: diâmetro do arame, diâmetro externo, espiras, comprimento livre | | |

@@ -38,14 +38,17 @@ def _placa_base():
 
 
 def _caixa_pivo(x):
-    """Caixa de articulação em cima do lobo: bloco com topo arredondado, rasgo e furo do pino."""
+    """Garfo de articulação em cima da ferradura: bloco com topo arredondado (raio = metade do comprimento no sentido
+    da rotação), duas bochechas de PIVO_BOCHECHA_ESP separadas pelo vão onde entra a lingueta do tambor, e furo do pino."""
     z_topo = P.BASE_ESP / 2
     z_pino = z_topo + P.PIVO_PINO_ALT
     caixa = Pos(x, 0, z_topo + P.PIVO_PINO_ALT / 2) * Box(P.PIVO_CAIXA_X, P.PIVO_CAIXA_Y, P.PIVO_PINO_ALT)
     caixa += Pos(x, 0, z_pino) * Rot(0, 90, 0) * Cylinder(P.PIVO_CAIXA_Y / 2, P.PIVO_CAIXA_X)
     caixa = _arred(caixa, P.RAIO_ARESTA_PEQ)
-    caixa -= Pos(x, P.PIVO_CAIXA_Y / 4, z_pino + P.PIVO_CAIXA_Y / 2) * Box(P.PIVO_RASGO, P.PIVO_CAIXA_Y * 1.5 + 2, P.PIVO_CAIXA_Y + 2)
-    caixa -= Pos(x, 0, z_pino) * Rot(0, 90, 0) * Cylinder(P.PIVO_RASGO / 2, P.PIVO_CAIXA_X + 2)
+    # vão entre as bochechas: atravessa todo o Y (a lingueta gira nele) e desce até pouco abaixo da ponta da lingueta
+    z_piso = z_pino - P.PIVO_TAMBOR_ABAIXO_PINO - 0.5
+    alt_vao = P.PIVO_CAIXA_Y + P.PIVO_PINO_ALT + 2
+    caixa -= Pos(x, 0, z_piso + alt_vao / 2) * Box(P.PIVO_GARFO_VAO, P.PIVO_CAIXA_Y + 2, alt_vao)
     caixa -= Pos(x, 0, z_pino) * Rot(0, 90, 0) * Cylinder(P.PIVO_PINO_D / 2, P.PIVO_CAIXA_X + 2)
     return caixa
 
@@ -71,11 +74,19 @@ def base():
 
 
 def pivo_tambor():
-    """Tambor de inox que recebe a rosca da haste; furo transversal para o pino.
-    Origem na ponta de baixo do tambor, eixo Z."""
+    """Tambor de inox que recebe a rosca da haste. A ponta de baixo é rebaixada por dois planos numa lingueta de
+    PIVO_LINGUETA_ESP (sentido X, do pino) com a ponta arredondada em torno do eixo do pino; furo transversal para o pino.
+    Origem na ponta de baixo da lingueta, eixo Z."""
     t = Pos(0, 0, P.PIVO_TAMBOR_L / 2) * Cylinder(P.PIVO_TAMBOR_D / 2, P.PIVO_TAMBOR_L)
     t -= Pos(0, 0, P.PIVO_TAMBOR_L / 2) * Cylinder(P.ROSCA_D / 2, P.PIVO_TAMBOR_L)
-    t -= Pos(0, 0, P.PIVO_TAMBOR_ABAIXO_PINO) * Rot(0, 90, 0) * Cylinder(P.PIVO_PINO_D / 2, P.PIVO_TAMBOR_D + 2)
+    d = P.PIVO_TAMBOR_D + 2
+    for sx in (-1, 1):  # os dois planos da lingueta
+        t -= Pos(sx * (P.PIVO_LINGUETA_ESP / 2 + d / 2), 0, P.PIVO_LINGUETA_L / 2 - 1) * Box(d, d, P.PIVO_LINGUETA_L + 2)
+    # ponta arredondada: abaixo do pino só fica o que está dentro do raio PIVO_TAMBOR_ABAIXO_PINO em torno do eixo do pino
+    z_pino = P.PIVO_TAMBOR_ABAIXO_PINO
+    canto = Pos(0, 0, z_pino / 2 - 1) * Box(d, d, z_pino + 2) - Pos(0, 0, z_pino) * Rot(0, 90, 0) * Cylinder(z_pino, d)
+    t -= canto
+    t -= Pos(0, 0, z_pino) * Rot(0, 90, 0) * Cylinder(P.PIVO_PINO_D / 2, d)
     return t
 
 
