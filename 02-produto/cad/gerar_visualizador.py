@@ -19,7 +19,7 @@ GRUPOS = {
 }
 ROTULOS = {
     "base_plastico": "Ferradura, metade de cima", "base_borracha": "Ferradura, face de borracha",
-    "pivo_tambor": "Tambor do pivô", "pivo_pino": "Pino do pivô", "pivo_tampa": "Tampa do pivô",
+    "pivo_tambor": "Tambor do pivô", "pivo_pino": "Pino do pivô", "pivo_tampa_ext": "Tampa do pivô, face externa", "pivo_tampa_int": "Tampa do pivô, face interna",
     "porca_pivo": "Contraporca do pivô", "porca_barra": "Contraporca da barra", "rosca": "Haste roscada M6",
     "punho": "Punho (castanha)", "tubo_mola": "Tubo da escala", "mola": "Mola", "ponte": "Ponte",
     "barra_superior": "Barra superior", "copo": "Copo de vácuo", "manga": "Manga de silicone", "membrana": "Membrana",
@@ -60,7 +60,7 @@ for chave, (rotulo, prefixos) in GRUPOS.items():
     manifest.append({"arquivo": f"{chave}.json", "grupo": chave, "rotulo": rotulo, "pecas": len(sols), "triangulos": len(tri) // 9, "lista": lista})
     print(f"  {chave:9s} {len(sols):2d} peças  {len(tri)//9:6d} triângulos  {kb} KB json")
 bb = Compound(children=[s for _, s in partes]).bounding_box()
-manifest_obj = {"versao": "0.8.2", "data": "2026-10-28", "grupos": manifest,
+manifest_obj = {"versao": "0.8.3", "data": "2026-10-28", "grupos": manifest,
                 "bbox_mm": [round(bb.size.X, 1), round(bb.size.Y, 1), round(bb.size.Z, 1)]}
 json.dump(manifest_obj, open(os.path.join(OUT, "manifest.json"), "w"), ensure_ascii=False, indent=1)
 print("Saída em", OUT)

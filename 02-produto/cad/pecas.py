@@ -96,7 +96,7 @@ def pivo_pino():
 
 
 def pivo_tampa(lado=1):
-    """Tampa redonda de plástico na face externa da caixa, escondendo o pino. Centrada no eixo do pino."""
+    """Tampa redonda de plástico numa face do garfo (lado=+1 ou -1 em X), escondendo o pino. Há uma em cada face. Centrada no eixo do pino."""
     t = _arred(Cylinder(P.PIVO_TAMPA_D / 2, P.PIVO_TAMPA_ESP), P.PIVO_TAMPA_ESP * 0.45)
     return Pos(lado * (P.PIVO_CAIXA_X / 2 + P.PIVO_TAMPA_ESP / 2), 0, 0) * Rot(0, 90, 0) * t
 
@@ -256,7 +256,8 @@ def montagem(com_copo=True, carga_lb=None):
         x = sx * P.HASTE_X
         partes.append((f"pivo_tambor_{nome}", Pos(x, 0, z_tambor0) * pivo_tambor()))
         partes.append((f"pivo_pino_{nome}", Pos(x, 0, z_pino) * pivo_pino()))
-        partes.append((f"pivo_tampa_{nome}", Pos(x, 0, z_pino) * pivo_tampa(sx)))
+        partes.append((f"pivo_tampa_ext_{nome}", Pos(x, 0, z_pino) * pivo_tampa(sx)))   # tampa na face externa do garfo
+        partes.append((f"pivo_tampa_int_{nome}", Pos(x, 0, z_pino) * pivo_tampa(-sx)))  # e outra na face interna (usuário, 2026-10-28)
         z0 = z_tambor0 + P.PIVO_TAMBOR_L                       # topo do tambor
         partes.append((f"porca_pivo_{nome}", Pos(x, 0, z0) * porca()))
         z1 = z0 + P.PORCA_ESP                                  # início da rosca exposta
