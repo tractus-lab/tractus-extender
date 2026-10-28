@@ -2,7 +2,8 @@
 Parâmetros dimensionais do extensor. Todas as medidas em milímetros.
 
 Status de cada valor:
-  FOTO = estimado a partir das fotos de 2026-10-27 sobre papel milimetrado (±2 mm)
+  FOTO = estimado a partir das fotos de 2026-10-27 sobre papel milimetrado (±2 mm em comprimentos;
+         diâmetros saem 2 a 4 mm maiores por sombra e desfoque: punho 26→21,6, tubo 18→15,6 medidos)
   EST  = chute sem base fotográfica
   MED  = medido com paquímetro no produto real
   DEF  = definido por nós (não é medida do Epic)
@@ -42,18 +43,18 @@ ROSCA_PASSO = 1.0        # MED   M6 x 1,0 (diâmetro 5,9 confirma; 10 voltas = 9
 PORCA_AF = 10.0          # FOTO  porca sextavada (contraporca), medida entre faces
 PORCA_ESP = 5.0          # FOTO
 ROSCA_INF_EXPOSTA = 64.0 # FOTO  rosca visível entre a porca do pivô e o punho (foto 08; varia com o ajuste)
-PUNHO_D = 26.0           # FOTO  punho serrilhado (castanha)
+PUNHO_D = 21.6           # MED   paquímetro (2026-10-27); a foto dava 26
 PUNHO_L = 68.0           # FOTO  (foto 08)
 PUNHO_PORCA_L = 13.0     # EST   trecho com rosca interna, na parte de baixo do punho
-PUNHO_FURO_D = 18.5      # EST   furo liso onde o tubo da escala desliza (folga de 0,25 mm no raio)
-TUBO_MOLA_D = 18.0       # FOTO  tubo com a escala em libras (0 a 22 lb)
+PUNHO_FURO_D = 16.1      # EST   furo liso onde o tubo da escala desliza (tubo 15,6 + folga)
+TUBO_MOLA_D = 15.6       # MED   paquímetro (2026-10-27); a foto dava 18
 TUBO_MOLA_PAREDE = 1.0   # EST
 TUBO_MOLA_VISIVEL = 50.0 # FOTO  trecho fora do punho em repouso
 TUBO_DENTRO_PUNHO = 12.0 # EST   trecho dentro do punho em repouso; comprimento total = visível + dentro
 CURSO_ESCALA = 39.5      # MED   2 kg = 8,0 mm e 4 kg = 15,4 mm (régua, 2026-10-27) → 0,255 kgf/mm → 10 kg ≈ 39,5 mm
 ESCALA_LB_MAX = 22       # MED   escala em libras numa face do tubo; na face oposta há escala em kg (0 a ~10)
-MOLA_D_EXT = 15.0        # EST   mola de compressão em volta da haste (furo interno > 6 mm)
-MOLA_ARAME_D = 1.6       # EST
+MOLA_D_EXT = 12.5        # EST   mola em volta da haste M6, dentro do tubo (furo interno do tubo ~13,6)
+MOLA_ARAME_D = 1.4       # EST
 MOLA_ESPIRAS = 14        # EST   espiras ativas (comprimento livre ~105 mm, 65 mm a 22 lb, bloco ~22 mm)
 MOLA_K = ESCALA_LB_MAX * 4.448 / CURSO_ESCALA  # MED   ~2,5 N/mm (0,255 kgf/mm); linear nos dois pontos medidos
 CARGA_LB = 0.0           # DEF   estado mostrado na montagem: 0 = repouso; 22 = escala toda

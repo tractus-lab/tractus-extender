@@ -12,8 +12,8 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
    | Tambor do pivô (inox) | 31 | 12 | parte dentro da base |
    | Porca sextavada preta | 5 | 10 entre faces | rosca provável M6 |
    | Haste roscada inox exposta | 53 | 6 | |
-   | Punho serrilhado preto | 65 | 26 | porca longa de ajuste |
-   | Tubo da escala (preto, "LB 0–22") | 50 | 18 | abriga a mola |
+   | Punho serrilhado preto | 68 | **21,6 (paquímetro)** | castanha; foto dava 26 |
+   | Tubo da escala (preto, "LB 0–22" / kg) | 50 visível | **15,6 (paquímetro)** | foto dava 18 |
    | Ponte | 13 | 112 | plataforma única; rebaixo circular aberto de um lado para o pescoço do copo |
    | Haste roscada inox exposta | 43 | 6 | varia com o ajuste |
    | Cilindro da barra superior | 38 | 16 | com porca por baixo |
@@ -82,6 +82,9 @@ Comprimento total neste ajuste: ~353 mm (borda externa da barra até a borda ext
 Fotos: 01–02 kit dobrado, 03–05 copo solto, 06 barra, 07 base, 08 kit montado com copo.
 
 Ainda não fotografados: demais copos, membranas, demais mangas de silicone, bomba, fita coesiva, extensões de haste (se houver), embalagem, manual.
+
+### Viés das medidas por foto
+Diâmetros medidos por contagem de pixels saem 2 a 4 mm maiores que o real (sombra e desfoque nas bordas): punho 26→21,6, tubo 18→15,6. Comprimentos sofrem menos. Tratar todo diâmetro FOTO como teto.
 
 ## Qualidade percebida (primeira impressão pelas fotos)
 - Acabamento muito bom: anodização uniforme, serrilhado limpo, inox polido.

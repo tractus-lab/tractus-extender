@@ -56,10 +56,10 @@ Todas as medidas em mm, pesos em g, forças em kgf. Medir duas vezes. Se os valo
 |---|---|---|
 | Comprimento mínimo (retraída, sem extensões) | | |
 | Comprimento máximo (sem extensões) | | |
-| Diâmetro externo do tubo externo | | |
-| Diâmetro externo do tubo interno | | |
+| Diâmetro externo do tubo externo (punho serrilhado) | 21,6 mm (paquímetro, 2026-10-27) | foto dava 26 |
+| Diâmetro externo do tubo interno (escala) | 15,6 mm (paquímetro, 2026-10-27) | foto dava 18 |
 | Curso da mola | 2 kg → 8,0 mm; 4 kg → 15,4 mm (régua, 2026-10-27) | linear; 0,255 kgf/mm = 2,5 N/mm; ~39,5 mm no 10 kg |
-| Escala impressa: unidades e marcas | | |
+| Escala impressa: unidades e marcas | lb numa face (22 20 18 15 13 11 9 7 4 2 0), kg na oposta | marcas de kg a registrar |
 | Força real na marca 1 (dinamômetro) | | |
 | Força real na marca 2 | | |
 | Força real na marca 3 | | |
