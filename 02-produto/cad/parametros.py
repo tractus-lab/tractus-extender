@@ -99,8 +99,11 @@ BARRA_OLHAL_ESP = 4.0    # EST
 COPO_TAMANHOS = [28, 32, 36, 40, 44]  # MED  especificação pública (diâmetro interno)
 COPO_FOTO_D_EXT = 39.4   # MED   diâmetro EXTERNO do corpo (paquímetro, 2026-10-27); foto dava 47
 COPO_PAREDE = 2.5        # EST
-COPO_CORPO_L = 36.6      # MED   sino completo (cilindro + ombro) = 43,6 mm com paquímetro (2026-10-27), sem pescoço e válvula; cilindro = 43,6 - ombro
-COPO_OMBRO_L = 7.0       # FOTO  transição cônica até o pescoço (parte dos 43,6 medidos)
+COPO_SINO_L = 43.6       # MED   altura do sino (cilindro + domo), sem pescoço e válvula (paquímetro, 2026-10-27)
+COPO_DOMO_L = 14.0       # EST   altura do domo (parte abaulada, formato de glande); cilindro = sino - domo
+COPO_CORPO_L = COPO_SINO_L - COPO_DOMO_L  # parte cilíndrica, onde ficam os anéis e a manga
+COPO_OVAL = 0.93         # EST   seção levemente oval: diâmetro em Y = COPO_OVAL x diâmetro em X (usuário: "meio oval")
+COPO_OMBRO_L = COPO_DOMO_L  # compatibilidade: o antigo ombro cônico virou domo
 COPO_ANEIS_N = 3         # FOTO  anéis externos junto à boca
 COPO_ANEIS_PASSO = 9.5   # FOTO
 COPO_ANEIS_ALT = 2.0     # EST   quanto o anel sobressai

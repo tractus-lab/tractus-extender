@@ -157,23 +157,38 @@ def barra_superior():
 
 
 # ---------------- Copo ----------------
+def _perfil_sino(r, rp, Lc, Ld, z0=0.0, folga_topo=0.0):
+    """Meio perfil (plano XZ) de um sino: base plana em z0, parede cilíndrica até Lc, domo suave
+    (spline, formato de glande) até o raio do pescoço rp em Lc+Ld. Fechado no eixo."""
+    topo = Lc + Ld + folga_topo
+    pts = [Line((0, z0), (r, z0)), Line((r, z0), (r, Lc)),
+           Spline((r, Lc), (r * 0.80, Lc + Ld * 0.62), (rp, Lc + Ld), tangents=((0, 1), (-1, 0.25)))]
+    if folga_topo > 0:
+        pts.append(Line((rp, Lc + Ld), (rp, topo)))
+    pts += [Line((rp, topo), (0, topo)), Line((0, topo), (0, z0))]
+    return make_face([Plane.XZ * e for e in pts])
+
+
 def copo(d_ext=None):
-    """Copo em forma de sino com anéis na boca, pescoço e válvula (sem a alça de arame).
-    Boca em z=0 voltada para -Z; o copo se estende para +Z."""
+    """Copo em forma de glande: cilindro com anéis na boca, domo abaulado, pescoço e válvula.
+    Seção levemente oval (COPO_OVAL). Boca em z=0 voltada para -Z; o copo se estende para +Z."""
     d_ext = d_ext or P.COPO_FOTO_D_EXT
     r = d_ext / 2
     ri = r - P.COPO_PAREDE
     rp = P.COPO_PESCOCO_D / 2
-    Lc, Lo, Lp = P.COPO_CORPO_L, P.COPO_OMBRO_L, P.COPO_PESCOCO_L
-    perfil_ext = [(0, 0), (r, 0), (r, Lc), (rp, Lc + Lo), (rp, Lc + Lo + Lp), (0, Lc + Lo + Lp)]
-    perfil_int = [(0, -1), (ri, -1), (ri, Lc - 1), (rp - 1.5, Lc + Lo - 2), (rp - 1.5, Lc + Lo + Lp + 1), (0, Lc + Lo + Lp + 1)]
-    solido = revolve(Plane.XZ * Polygon(*perfil_ext, align=None), Axis.Z)
-    cav = revolve(Plane.XZ * Polygon(*perfil_int, align=None), Axis.Z)
-    c = solido - cav
+    Lc, Ld, Lp = P.COPO_CORPO_L, P.COPO_DOMO_L, P.COPO_PESCOCO_L
+    sino = revolve(_perfil_sino(r, rp, Lc, Ld), Axis.Z)
+    cav = revolve(_perfil_sino(ri, rp - 1.5, Lc - 1, Ld, z0=-1, folga_topo=Lp + 2), Axis.Z)
+    c = sino - cav
     c = _arred(c, P.RAIO_ARESTA_PEQ, c.edges().filter_by(Plane.XY).filter_by_position(Axis.Z, -0.5, 0.5))  # boca
     for i in range(P.COPO_ANEIS_N):
         z = 3 + i * P.COPO_ANEIS_PASSO
         c += Pos(0, 0, z) * (Cylinder(r + P.COPO_ANEIS_ALT, P.COPO_ANEIS_LARG) - Cylinder(r - 0.1, P.COPO_ANEIS_LARG))
+    if P.COPO_OVAL != 1.0:
+        c = scale(c, by=(1.0, P.COPO_OVAL, 1.0))  # seção oval; o pescoço e a válvula ficam redondos
+    # pescoço redondo (encaixa no rebaixo circular da ponte), furado
+    c += Pos(0, 0, Lc + Ld + Lp / 2) * (Cylinder(rp, Lp) - Cylinder(rp - 1.5, Lp + 1))
+    Lo = Ld
     z_valv = Lc + Lo + Lp
     c += Pos(0, 0, z_valv + P.VALVULA_L / 2) * Cylinder(P.VALVULA_D / 2, P.VALVULA_L)
     # A alça triangular de arame do copo original foi deixada de fora: serve a outro sistema de tração
