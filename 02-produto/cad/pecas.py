@@ -198,4 +198,7 @@ def montagem(com_copo=True, carga_lb=None):
         # pescoço do copo encaixado no entalhe da ponte (centrado na espessura dela)
         z_boca = z["ponte"] - P.COPO_PESCOCO_L / 2 - (P.COPO_CORPO_L + P.COPO_OMBRO_L)
         partes.append(("copo", Pos(0, 0, z_boca) * copo()))
+        # manga de silicone esticada sobre a boca do copo (anéis dão o atrito), descendo para a pele
+        d_esticada = P.COPO_FOTO_D_EXT + 2 * P.COPO_ANEIS_ALT + 0.2
+        partes.append(("manga", Pos(0, 0, z_boca - (P.MANGA_L - P.MANGA_SOBRE_COPO)) * manga(d_esticada)))
     return partes

@@ -13,7 +13,8 @@ GRUPOS = {
     "plastico": ("Plástico preto (base, punhos, ponte, tampas do pivô)", ["base", "punho_", "ponte", "pivo_tampa_"]),
     "inox": ("Inox (tambores, pinos, hastes, porcas, molas)", ["pivo_", "rosca_", "porca_", "mola_"]),
     "aluminio": ("Alumínio anodizado (tubos da escala, barra)", ["tubo_mola", "barra_superior"]),
-    "copo": ("Copo de vácuo (transparente) com válvula e alça", ["copo"]),
+    "copo": ("Copo de vácuo (transparente) com válvula", ["copo"]),
+    "silicone": ("Silicone (manga sobre o copo)", ["manga", "membrana"]),
 }
 partes = pecas.montagem()
 manifest = []

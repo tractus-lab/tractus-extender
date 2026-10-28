@@ -20,6 +20,7 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
    Entre eixos das hastes: ~83 mm.
 4. **Barra superior "EPIC"**: alumínio anodizado preto. Dois cilindros (16 × 38 mm) unidos por uma tira plana de ~17 mm de altura; olhal (~11 mm, furo ~5 mm) na ponta de cada cilindro. Comprimento total ~117 mm.
 5. **Copo de vácuo**: transparente (acrílico ou policarbonato), formato de sino para a glande. **Sino: 43,6 mm de altura e 39,4 mm de diâmetro (paquímetro, 2026-10-27)**, sem contar a parte de cima; a foto dava 47 de diâmetro (viés). Três anéis externos junto à boca (passo ~9,5 mm), ombro cônico, pescoço ~13 × 7 mm que encaixa no rebaixo da ponte, e um corpo de válvula branco ~20 × 28 mm com marca vermelha. A válvula é **giratória**: abre ou fecha a passagem de ar. Uso: encosta o copo, bombeia ou empurra com a válvula aberta, fecha a válvula e a glande fica presa pela sucção. Geometria interna da válvula ainda não levantada. **Tamanho nominal a confirmar**: 39,4 por fora dá tamanho 36; por dentro, 40.
+6. **Manga de silicone** (ou borracha; confirmar material): tubo que veste a boca do copo, segurado pelos anéis salientes, e desce pelo pênis fazendo a vedação. **Parede 2,5 mm, diâmetro 32,4 mm, altura 83,4 mm (paquímetro, 2026-10-27)**. É a manga que aparece montada na foto 08. Diâmetro assumido como interno em repouso; esticada sobre o copo de 39,4.
 
 ## Funcionamento (confirmado pelo usuário em 2026-10-27, à noite)
 
@@ -79,6 +80,7 @@ Comprimento total neste ajuste: ~353 mm (borda externa da barra até a borda ext
 | 7 | Ponte com entalhe para o copo | 1 | plástico preto | 01, 02, 08 |
 | 8 | Barra superior "EPIC" | 1 | alumínio anodizado | 06 |
 | 9 | Copo de vácuo com válvula giratória (alça fora do escopo) | 1 fotografado (de 5) | transparente + branco | 03, 04, 05, 08 |
+| 10 | Manga de vedação | 1 medida (de 3) | silicone ou borracha | 08 |
 
 Fotos: 01–02 kit dobrado, 03–05 copo solto, 06 barra, 07 base, 08 kit montado com copo.
 

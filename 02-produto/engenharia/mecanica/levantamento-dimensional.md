@@ -110,11 +110,11 @@ Todas as medidas em mm, pesos em g, forças em kgf. Medir duas vezes. Se os valo
 ## Mangas de silicone
 | Medida | 21 | 26 | 32 |
 |---|---|---|---|
-| Diâmetro interno em repouso | | | |
+| Diâmetro interno em repouso | | | 32,4 mm? (medido 32,4; interno ou externo a confirmar) |
 | Diâmetro externo | | | |
-| Comprimento | | | |
-| Espessura | | | |
-| Como engata na haste | | | |
+| Comprimento | | | 83,4 mm (paquímetro, 2026-10-27) |
+| Espessura | | | 2,5 mm (paquímetro, 2026-10-27) |
+| Como engata na haste | | | veste a boca do copo; os 3 anéis salientes do copo seguram por atrito |
 | Dureza aparente | | | |
 
 ## Testes funcionais
