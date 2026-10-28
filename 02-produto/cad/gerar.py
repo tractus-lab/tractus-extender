@@ -37,6 +37,7 @@ salvar("ponte", pecas.ponte())
 salvar("barra_superior", pecas.barra_superior())
 salvar("copo_foto", pecas.copo())
 salvar("membrana_foto", pecas.membrana())
+salvar("manga_montada_no_copo", pecas.manga_montada(P.MANGA_FOTO_D, P.COPO_FOTO_D_EXT))
 for d in P.MANGA_TAMANHOS:
     salvar(f"manga_{d}", pecas.manga(d))
 
@@ -71,4 +72,5 @@ conj_carga = Compound(children=[s for _, s in pecas.montagem(carga_lb=pecas.P.ES
 previa("montagem_frente_22lb", conj_carga, (0, -1, 0))
 previa("base_topo", pecas.base(), (0.001, 0, 1), escala=4)  # 0.001: vista exatamente axial sai vazia no build123d 0.13
 previa("copo_lado", pecas.copo(), (0, -1, 0), escala=4)
+previa("copo_com_manga", Compound(children=[pecas.copo(), Pos(0, 0, -(pecas.P.MANGA_L - pecas.P.MANGA_SOBRE_COPO)) * pecas.manga_montada(pecas.P.MANGA_FOTO_D, pecas.P.COPO_FOTO_D_EXT)]), (0, -1, 0), escala=4)
 print("Prévias em", PREV)

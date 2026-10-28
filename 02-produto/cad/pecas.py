@@ -157,7 +157,21 @@ def membrana(d_ext=None):
 
 
 def manga(d_int):
+    """Manga de silicone em repouso: tubo reto. Origem na ponta de baixo, eixo Z."""
     return Pos(0, 0, P.MANGA_L / 2) * (Cylinder(d_int / 2 + P.MANGA_PAREDE, P.MANGA_L) - Cylinder(d_int / 2, P.MANGA_L))
+
+
+def manga_montada(d_int_repouso, d_ext_copo):
+    """Manga vestida no copo (foto 09): o trecho de cima está esticado sobre os anéis do copo,
+    há uma transição curta e o resto fica no diâmetro de repouso. Parede afina onde estica.
+    Origem na ponta de baixo, eixo Z; a boca do copo fica em z = MANGA_L - MANGA_SOBRE_COPO."""
+    L, S, T = P.MANGA_L, P.MANGA_SOBRE_COPO, P.MANGA_TRANSICAO
+    ri, re = d_int_repouso / 2, d_int_repouso / 2 + P.MANGA_PAREDE
+    ri2 = d_ext_copo / 2 + P.COPO_ANEIS_ALT + 0.1
+    re2 = ri2 + P.MANGA_PAREDE * (ri / ri2)  # volume de parede conservado, aproximado
+    ext = [(0, 0), (re, 0), (re, L - S - T), (re2, L - S), (re2, L), (0, L)]
+    inte = [(0, -1), (ri, -1), (ri, L - S - T), (ri2, L - S), (ri2, L + 1), (0, L + 1)]
+    return revolve(Plane.XZ * Polygon(*ext, align=None), Axis.Z) - revolve(Plane.XZ * Polygon(*inte, align=None), Axis.Z)
 
 
 # ---------------- Montagem ----------------
@@ -199,6 +213,5 @@ def montagem(com_copo=True, carga_lb=None):
         z_boca = z["ponte"] - P.COPO_PESCOCO_L / 2 - (P.COPO_CORPO_L + P.COPO_OMBRO_L)
         partes.append(("copo", Pos(0, 0, z_boca) * copo()))
         # manga de silicone esticada sobre a boca do copo (anéis dão o atrito), descendo para a pele
-        d_esticada = P.COPO_FOTO_D_EXT + 2 * P.COPO_ANEIS_ALT + 0.2
-        partes.append(("manga", Pos(0, 0, z_boca - (P.MANGA_L - P.MANGA_SOBRE_COPO)) * manga(d_esticada)))
+        partes.append(("manga", Pos(0, 0, z_boca - (P.MANGA_L - P.MANGA_SOBRE_COPO)) * manga_montada(P.MANGA_FOTO_D, P.COPO_FOTO_D_EXT)))
     return partes

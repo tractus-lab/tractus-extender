@@ -113,4 +113,5 @@ MANGA_TAMANHOS = [21, 26, 32]  # MED  especificação pública
 MANGA_PAREDE = 2.5       # MED   paquímetro (2026-10-27)
 MANGA_L = 83.4           # MED   altura (paquímetro, 2026-10-27)
 MANGA_FOTO_D = 27.4      # MED   diâmetro INTERNO em repouso = 32,4 externo (paquímetro, 2026-10-27) - 2 x 2,5 de parede; estica ~44% para vestir o copo de 39,4
-MANGA_SOBRE_COPO = 25.0  # EST   quanto a manga sobe sobre a boca do copo (cobre os 3 anéis); esticada até o diâmetro externo do copo
+MANGA_SOBRE_COPO = 25.0  # EST   quanto a manga sobe sobre a boca do copo (cobre os 3 anéis)
+MANGA_TRANSICAO = 8.0    # EST   trecho em que a manga passa do diâmetro esticado ao de repouso (foto 09)
