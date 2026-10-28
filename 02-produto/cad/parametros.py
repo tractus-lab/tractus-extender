@@ -27,7 +27,7 @@ PIVO_TAMBOR_D = 12.1     # MED   paquímetro (2026-10-27)
 PIVO_TAMBOR_L = 31.0     # FOTO
 PIVO_TAMBOR_DENTRO = 10.0  # EST  quanto do tambor fica dentro do rasgo da base
 PIVO_RASGO = 13.0        # EST  largura do rasgo na base
-PIVO_PINO_D = 4.0        # EST  pino da articulação (eixo X)
+PIVO_PINO_D = 4.0        # EST  eixo da articulação (eixo X). NÃO VISTO na foto: pode ser pino, munhões do tambor ou cavidade; a confirmar
 PIVO_PINO_L = 26.0       # EST
 
 # ---------- Hastes (de baixo para cima) ----------
