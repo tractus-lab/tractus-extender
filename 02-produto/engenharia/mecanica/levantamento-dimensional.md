@@ -80,6 +80,7 @@ Todas as medidas em mm, pesos em g, forças em kgf. Medir duas vezes. Se os valo
 | Altura total | | | | | |
 | Espessura de parede | | | | | |
 | Diâmetro do engate com a haste | | | | | |
+| Copo fotografado (tamanho a confirmar): sino 43,6 mm de altura (sem pescoço/válvula), 39,4 mm de diâmetro (por fora ou por dentro? a confirmar), paquímetro 2026-10-27 | | | | | |
 | Tipo do engate (esfera, rosca, pino) | | | | | |
 | Conexão da bomba: diâmetro, tipo de válvula | | | | | |
 | Como a membrana se fixa | | | | | |

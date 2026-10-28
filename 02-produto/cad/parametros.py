@@ -92,17 +92,17 @@ BARRA_OLHAL_ESP = 4.0    # EST
 
 # ---------- Copo de vácuo (o fotografado; tamanho a confirmar) ----------
 COPO_TAMANHOS = [28, 32, 36, 40, 44]  # MED  especificação pública (diâmetro interno)
-COPO_FOTO_D_EXT = 47.0   # FOTO  diâmetro externo do corpo do copo fotografado
+COPO_FOTO_D_EXT = 39.4   # MED*  paquímetro 39,4 (2026-10-27); assumido como diâmetro EXTERNO do corpo, confirmar (foto dava 47)
 COPO_PAREDE = 2.5        # EST
-COPO_CORPO_L = 44.0      # FOTO  altura da parte cilíndrica
-COPO_OMBRO_L = 7.0       # FOTO  transição cônica até o pescoço
+COPO_CORPO_L = 36.6      # MED   sino completo (cilindro + ombro) = 43,6 mm com paquímetro (2026-10-27), sem pescoço e válvula; cilindro = 43,6 - ombro
+COPO_OMBRO_L = 7.0       # FOTO  transição cônica até o pescoço (parte dos 43,6 medidos)
 COPO_ANEIS_N = 3         # FOTO  anéis externos junto à boca
 COPO_ANEIS_PASSO = 9.5   # FOTO
 COPO_ANEIS_ALT = 2.0     # EST   quanto o anel sobressai
 COPO_ANEIS_LARG = 2.0    # EST
 COPO_PESCOCO_D = 13.0    # FOTO
 COPO_PESCOCO_L = 7.0     # FOTO
-VALVULA_D = 20.0         # FOTO  corpo da válvula (branco, com marca vermelha)
+VALVULA_D = 20.0         # FOTO  corpo da válvula (branco, com marca vermelha) (válvula GIRATÓRIA: abre/fecha a passagem de ar para a sucção; geometria interna a levantar)
 VALVULA_L = 28.0         # FOTO
 # Alça de arame do copo: não modelada (é de outro sistema de tração; fora do projeto)
 
