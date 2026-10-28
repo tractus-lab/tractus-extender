@@ -51,6 +51,13 @@
   .grupos label { display: flex; align-items: center; gap: 10px; font-size: 13px; cursor: pointer; }
   .grupos input { accent-color: var(--accent); margin: 0; }
   .amostra { width: 14px; height: 14px; border-radius: 3px; border: 1px solid var(--line); flex: none; }
+  .grupo-linha { display: flex; align-items: center; gap: 6px; }
+  .grupo-linha label { flex: 1; min-width: 0; }
+  .abrir { font-size: 11px; padding: 2px 7px; line-height: 1.4; flex: none; }
+  .pecas { display: none; flex-direction: column; gap: 4px; margin: 4px 0 2px 24px; padding: 0; list-style: none; }
+  .pecas.aberto { display: flex; }
+  .pecas label { font-size: 12px; color: var(--muted); }
+  .pecas label:hover { color: var(--fg); }
   .vistas { display: flex; flex-wrap: wrap; gap: 6px; }
   button {
     font: inherit; font-size: 13px; color: var(--fg); background: transparent;
@@ -78,9 +85,9 @@
     <h1>Extensor CAD <span class="versao">v0.2</span></h1>
     <button id="recolher" type="button" aria-expanded="true">Recolher</button>
   </div>
-  <p class="sub">Arquitetura observada nas fotos do Epic Extender em 2026-10-27. Dimensões estimadas pela grade do papel, com erro de cerca de 2 mm. Não serve para fabricar.</p>
+  <p class="sub">Engenharia reversa do Epic Extender (P00). Mistura medidas de paquímetro e estimativas por foto; ver status de cada valor em <code>parametros.py</code>. Não serve para fabricar.</p>
 
-  <p class="rotulo">Grupos por material</p>
+  <p class="rotulo">Peças, por material</p>
   <ul class="grupos" id="grupos"></ul>
 
   <p class="rotulo">Vistas</p>
@@ -195,16 +202,48 @@
       if (m.transparente) { mat.transparent = true; mat.opacity = 0.38; mat.depthWrite = false; mat.side = THREE.DoubleSide; }
       var li = document.createElement("li");
       var id = "grupo-" + g.grupo;
-      li.innerHTML = '<label for="' + id + '"><input type="checkbox" id="' + id + '" checked><span class="amostra" style="background:' + m.amostra + '"></span><span>' + g.rotulo + ' · ' + g.pecas + (g.pecas === 1 ? ' peça' : ' peças') + '</span></label>';
+      li.innerHTML = '<div class="grupo-linha"><label for="' + id + '"><input type="checkbox" id="' + id + '" checked><span class="amostra" style="background:' + m.amostra + '"></span><span>' + g.rotulo + ' · ' + g.pecas + (g.pecas === 1 ? ' peça' : ' peças') + '</span></label>' +
+        '<button type="button" class="abrir" aria-expanded="false" aria-label="Mostrar peças de ' + g.rotulo + '">peças</button></div><ul class="pecas"></ul>';
       lista.appendChild(li);
+      var caixaGrupo = li.querySelector("input");
+      var ulPecas = li.querySelector(".pecas");
+      var botaoAbrir = li.querySelector(".abrir");
+      botaoAbrir.addEventListener("click", function () {
+        var aberto = ulPecas.classList.toggle("aberto");
+        botaoAbrir.setAttribute("aria-expanded", String(aberto));
+        botaoAbrir.textContent = aberto ? "fechar" : "peças";
+      });
       fetch(g.arquivo).then(function (r) { return r.json(); }).then(function (tri) {
-        var geometria = new THREE.BufferGeometry();
-        geometria.setAttribute("position", new THREE.Float32BufferAttribute(tri, 3));
-        geometria.computeVertexNormals();
-        var malha = new THREE.Mesh(geometria, mat);
-        malha.renderOrder = m.transparente ? 2 : 1;
-        modelo.add(malha);
-        li.querySelector("input").addEventListener("change", function (e) { malha.visible = e.target.checked; });
+        var todos = new Float32Array(tri);
+        var malhas = [];
+        var caixasPeca = [];
+        var lista_pecas = g.lista && g.lista.length ? g.lista : [{ nome: g.grupo, rotulo: g.rotulo, inicio: 0, n: tri.length / 9 }];
+        lista_pecas.forEach(function (p, i) {
+          var geometria = new THREE.BufferGeometry();
+          geometria.setAttribute("position", new THREE.BufferAttribute(todos.subarray(p.inicio * 9, (p.inicio + p.n) * 9), 3));
+          geometria.computeVertexNormals();
+          var malha = new THREE.Mesh(geometria, mat);
+          malha.renderOrder = m.transparente ? 2 : 1;
+          modelo.add(malha);
+          malhas.push(malha);
+          var liP = document.createElement("li");
+          var idP = id + "-" + i;
+          liP.innerHTML = '<label for="' + idP + '"><input type="checkbox" id="' + idP + '" checked><span>' + p.rotulo + '</span></label>';
+          ulPecas.appendChild(liP);
+          var caixaPeca = liP.querySelector("input");
+          caixasPeca.push(caixaPeca);
+          caixaPeca.addEventListener("change", function (e) {
+            malha.visible = e.target.checked;
+            var ligadas = caixasPeca.filter(function (c) { return c.checked; }).length;
+            caixaGrupo.checked = ligadas > 0;
+            caixaGrupo.indeterminate = ligadas > 0 && ligadas < caixasPeca.length;
+          });
+        });
+        caixaGrupo.addEventListener("change", function (e) {
+          caixaGrupo.indeterminate = false;
+          malhas.forEach(function (ma) { ma.visible = e.target.checked; });
+          caixasPeca.forEach(function (c) { c.checked = e.target.checked; });
+        });
         if (--pendentes === 0) {
           caixa.setFromObject(modelo);
           caixa.getCenter(centro);
