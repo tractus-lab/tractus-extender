@@ -12,10 +12,15 @@ Sistema de coordenadas da montagem: base no plano XY, hastes ao longo de +Z,
 abertura da ferradura voltada para -Y. Eixo da articulação das hastes ao longo de X.
 """
 
+# ---------- Acabamento ----------
+RAIO_ARESTA = 2.0        # DEF   raio de arredondamento das arestas externas das peças grandes (requisito: nada pontudo)
+RAIO_ARESTA_PEQ = 1.0    # DEF   idem, peças pequenas (olhais, tampas, boca do copo)
+
 # ---------- Base (ferradura) ----------
 BASE_R_EXT = 52.0        # FOTO  raio externo do arco (largura total ~106)
 BASE_R_INT = 30.0        # FOTO  raio interno (abertura ~60)
-BASE_ESP = 14.0          # EST   espessura (altura em Z); medir
+BASE_ESP = 14.0          # EST   espessura total (altura em Z); medir
+BASE_BORRACHA_ESP = 7.0  # EST   metade de baixo da ferradura, em borracha firme (contato com a virilha); metade de cima em plástico (usuário, 2026-10-27)
 BASE_ABERTURA = 31.0     # FOTO  vão entre os lobos
 BASE_LOBO_R = 15.0       # FOTO  raio dos lobos arredondados
 BASE_LOBO_X = 32.0       # FOTO  posição X do centro de cada lobo

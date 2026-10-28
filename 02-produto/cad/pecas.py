@@ -1,4 +1,4 @@
-"""Peças do extensor em build123d (modo álgebra), versão 0.6 (pivô em caixa sobre o lobo da ferradura, com pino e tampa)."""
+"""Peças do extensor em build123d (modo álgebra), versão 0.7 (arestas arredondadas; ferradura em plástico + borracha)."""
 from build123d import *
 import parametros as P
 
@@ -10,33 +10,64 @@ def _cil_entre(p1, p2, d):
     return Plane(origin=p1 + v / 2, z_dir=v) * Cylinder(d / 2, v.length)
 
 
+def _arred(forma, r, arestas=None):
+    """Arredonda arestas (fillet). Se o kernel não conseguir com esse raio, tenta a metade; se ainda
+    assim falhar, devolve a forma sem arredondar (avisa no console)."""
+    for raio in (r, r / 2, r / 4):
+        try:
+            return fillet(arestas if arestas is not None else forma.edges(), raio)
+        except Exception:
+            continue
+    print(f"  (aviso: arredondamento de {r} mm não aplicado)")
+    return forma
+
+
 def _porca(af, esp):
     return extrude(RegularPolygon(af / 2 / 0.8660254, 6), esp)
 
 
 # ---------------- Base ----------------
-def base():
-    """Ferradura com lobos e, em cima de cada lobo, a caixa de articulação do pivô com rasgo.
-    Superfície inferior em z = -BASE_ESP/2, superior em z = +BASE_ESP/2."""
+def _placa_base():
+    """Ferradura inteira (sem as caixas do pivô), arestas arredondadas. Centrada em Z."""
     h = P.BASE_ESP
     b = Cylinder(P.BASE_R_EXT, h) - Cylinder(P.BASE_R_INT, h)
-    # abertura entre os lobos
     b -= Pos(0, -(P.BASE_R_EXT + 10) / 2, 0) * Box(P.BASE_ABERTURA, P.BASE_R_EXT + 10, h + 2)
     for sx in (-1, 1):
         b += Pos(sx * P.BASE_LOBO_X, P.BASE_LOBO_Y, 0) * Cylinder(P.BASE_LOBO_R, h)
-    # caixas de articulação em cima dos lobos: bloco com topo arredondado em torno do eixo do pino
-    z_topo = h / 2
+    return _arred(b, P.RAIO_ARESTA)
+
+
+def _caixa_pivo(x):
+    """Caixa de articulação em cima do lobo: bloco com topo arredondado, rasgo e furo do pino."""
+    z_topo = P.BASE_ESP / 2
     z_pino = z_topo + P.PIVO_PINO_ALT
+    caixa = Pos(x, 0, z_topo + P.PIVO_PINO_ALT / 2) * Box(P.PIVO_CAIXA_X, P.PIVO_CAIXA_Y, P.PIVO_PINO_ALT)
+    caixa += Pos(x, 0, z_pino) * Rot(0, 90, 0) * Cylinder(P.PIVO_CAIXA_Y / 2, P.PIVO_CAIXA_X)
+    caixa = _arred(caixa, P.RAIO_ARESTA_PEQ)
+    caixa -= Pos(x, P.PIVO_CAIXA_Y / 4, z_pino + P.PIVO_CAIXA_Y / 2) * Box(P.PIVO_RASGO, P.PIVO_CAIXA_Y * 1.5 + 2, P.PIVO_CAIXA_Y + 2)
+    caixa -= Pos(x, 0, z_pino) * Rot(0, 90, 0) * Cylinder(P.PIVO_RASGO / 2, P.PIVO_CAIXA_X + 2)
+    caixa -= Pos(x, 0, z_pino) * Rot(0, 90, 0) * Cylinder(P.PIVO_PINO_D / 2, P.PIVO_CAIXA_X + 2)
+    return caixa
+
+
+def base_plastico():
+    """Metade de cima da ferradura (plástico) com as caixas do pivô. z de -BASE_ESP/2+BASE_BORRACHA_ESP até o topo das caixas."""
+    plano = Plane.XY.offset(-P.BASE_ESP / 2 + P.BASE_BORRACHA_ESP)
+    b = split(_placa_base(), bisect_by=plano, keep=Keep.TOP)
     for sx in (-1, 1):
-        x = sx * P.HASTE_X
-        caixa = Pos(x, 0, z_topo + P.PIVO_PINO_ALT / 2) * Box(P.PIVO_CAIXA_X, P.PIVO_CAIXA_Y, P.PIVO_PINO_ALT)
-        caixa += Pos(x, 0, z_pino) * Rot(0, 90, 0) * Cylinder(P.PIVO_CAIXA_Y / 2, P.PIVO_CAIXA_X)
-        # rasgo onde o tambor gira (aberto para cima e para +Y, para dobrar)
-        caixa -= Pos(x, P.PIVO_CAIXA_Y / 4, z_pino + P.PIVO_CAIXA_Y / 2) * Box(P.PIVO_RASGO, P.PIVO_CAIXA_Y * 1.5 + 2, P.PIVO_CAIXA_Y + 2)
-        caixa -= Pos(x, 0, z_pino) * Rot(0, 90, 0) * Cylinder(P.PIVO_RASGO / 2, P.PIVO_CAIXA_X + 2)
-        caixa -= Pos(x, 0, z_pino) * Rot(0, 90, 0) * Cylinder(P.PIVO_PINO_D / 2, P.PIVO_CAIXA_X + 2)
-        b += caixa
+        b += _caixa_pivo(sx * P.HASTE_X)
     return b
+
+
+def base_borracha():
+    """Metade de baixo da ferradura, em borracha firme: é a face que encosta na virilha."""
+    plano = Plane.XY.offset(-P.BASE_ESP / 2 + P.BASE_BORRACHA_ESP)
+    return split(_placa_base(), bisect_by=plano, keep=Keep.BOTTOM)
+
+
+def base():
+    """Ferradura completa (plástico + borracha), para exportação individual."""
+    return base_plastico() + base_borracha()
 
 
 def pivo_tambor():
@@ -55,7 +86,8 @@ def pivo_pino():
 
 def pivo_tampa(lado=1):
     """Tampa redonda de plástico na face externa da caixa, escondendo o pino. Centrada no eixo do pino."""
-    return Pos(lado * (P.PIVO_CAIXA_X / 2 + P.PIVO_TAMPA_ESP / 2), 0, 0) * Rot(0, 90, 0) * Cylinder(P.PIVO_TAMPA_D / 2, P.PIVO_TAMPA_ESP)
+    t = _arred(Cylinder(P.PIVO_TAMPA_D / 2, P.PIVO_TAMPA_ESP), P.PIVO_TAMPA_ESP * 0.45)
+    return Pos(lado * (P.PIVO_CAIXA_X / 2 + P.PIVO_TAMPA_ESP / 2), 0, 0) * Rot(0, 90, 0) * t
 
 
 # ---------------- Haste ----------------
@@ -73,6 +105,7 @@ def punho():
     """Punho serrilhado = castanha. Rosca interna curta embaixo (modelada como furo de 6 mm) e
     furo liso de PUNHO_FURO_D em cima, onde a mola fica e o tubo da escala desliza. Origem na base."""
     p = Pos(0, 0, P.PUNHO_L / 2) * Cylinder(P.PUNHO_D / 2, P.PUNHO_L)
+    p = _arred(p, P.RAIO_ARESTA)
     p -= Pos(0, 0, P.PUNHO_PORCA_L / 2) * Cylinder(P.ROSCA_D / 2, P.PUNHO_PORCA_L)
     furo_l = P.PUNHO_L - P.PUNHO_PORCA_L
     p -= Pos(0, 0, P.PUNHO_PORCA_L + furo_l / 2 + 0.5) * Cylinder(P.PUNHO_FURO_D / 2, furo_l + 1)
@@ -100,7 +133,7 @@ def mola(comp):
 def ponte():
     """Plataforma única entre as hastes. Furos lisos para as hastes e, no meio, um rebaixo circular
     aberto para um lado, onde o pescoço do copo encaixa. Centrada na origem."""
-    g = Box(P.PONTE_COMP, P.PONTE_LARG, P.PONTE_ESP)
+    g = _arred(Box(P.PONTE_COMP, P.PONTE_LARG, P.PONTE_ESP), P.RAIO_ARESTA)
     for sx in (-1, 1):
         g -= Pos(sx * P.HASTE_X, 0, 0) * Cylinder(P.PONTE_FURO_HASTE_D / 2, P.PONTE_ESP + 1)
     g -= Cylinder(P.PONTE_ENTALHE_D / 2, P.PONTE_ESP + 1)
@@ -113,13 +146,13 @@ def barra_superior():
     L = P.BARRA_BOSS_L
     b = None
     for sx in (-1, 1):
-        boss = Pos(sx * P.HASTE_X, 0, L / 2) * Cylinder(P.BARRA_BOSS_D / 2, L)
+        boss = _arred(Pos(sx * P.HASTE_X, 0, L / 2) * Cylinder(P.BARRA_BOSS_D / 2, L), P.RAIO_ARESTA)
         boss -= Pos(sx * P.HASTE_X, 0, L / 2) * Cylinder(P.ROSCA_D / 2, L)
         x_olhal = sx * (P.HASTE_X + P.BARRA_BOSS_D / 2 + P.BARRA_OLHAL_D / 2 - 2)
         olhal = Pos(x_olhal, 0, L - P.BARRA_OLHAL_D / 2) * Rot(90, 0, 0) * Cylinder(P.BARRA_OLHAL_D / 2, P.BARRA_OLHAL_ESP)
         olhal -= Pos(x_olhal, 0, L - P.BARRA_OLHAL_D / 2) * Rot(90, 0, 0) * Cylinder(P.BARRA_OLHAL_FURO_D / 2, P.BARRA_OLHAL_ESP + 1)
         b = boss + olhal if b is None else b + boss + olhal
-    tira = Pos(0, P.BARRA_TIRA_DESLOC_Y, L / 2) * Box(2 * P.HASTE_X, P.BARRA_TIRA_ESP, P.BARRA_TIRA_ALT)
+    tira = _arred(Pos(0, P.BARRA_TIRA_DESLOC_Y, L / 2) * Box(2 * P.HASTE_X, P.BARRA_TIRA_ESP, P.BARRA_TIRA_ALT), P.RAIO_ARESTA_PEQ)
     return b + tira
 
 
@@ -137,6 +170,7 @@ def copo(d_ext=None):
     solido = revolve(Plane.XZ * Polygon(*perfil_ext, align=None), Axis.Z)
     cav = revolve(Plane.XZ * Polygon(*perfil_int, align=None), Axis.Z)
     c = solido - cav
+    c = _arred(c, P.RAIO_ARESTA_PEQ, c.edges().filter_by(Plane.XY).filter_by_position(Axis.Z, -0.5, 0.5))  # boca
     for i in range(P.COPO_ANEIS_N):
         z = 3 + i * P.COPO_ANEIS_PASSO
         c += Pos(0, 0, z) * (Cylinder(r + P.COPO_ANEIS_ALT, P.COPO_ANEIS_LARG) - Cylinder(r - 0.1, P.COPO_ANEIS_LARG))
@@ -180,7 +214,7 @@ def montagem(com_copo=True, carga_lb=None):
     para dentro do punho (0 = repouso, ESCALA_LB_MAX = curso todo)."""
     carga = P.CARGA_LB if carga_lb is None else carga_lb
     desloc = P.CURSO_ESCALA * carga / P.ESCALA_LB_MAX
-    partes = [("base", base())]
+    partes = [("base_plastico", base_plastico()), ("base_borracha", base_borracha())]
     z_base_topo = P.BASE_ESP / 2
     z_pino = z_base_topo + P.PIVO_PINO_ALT
     z_tambor0 = z_pino - P.PIVO_TAMBOR_ABAIXO_PINO
