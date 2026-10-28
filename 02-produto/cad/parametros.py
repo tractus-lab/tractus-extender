@@ -17,10 +17,10 @@ RAIO_ARESTA = 2.0        # DEF   raio de arredondamento das arestas externas das
 RAIO_ARESTA_PEQ = 1.0    # DEF   idem, peças pequenas (olhais, tampas, boca do copo)
 
 # ---------- Base (ferradura) ----------
-BASE_R_EXT = 52.0        # FOTO  raio externo do arco (largura total ~106)
-BASE_R_INT = 30.0        # FOTO  raio interno (abertura ~60)
-BASE_ESP = 14.0          # EST   espessura total (altura em Z); medir
-BASE_BORRACHA_ESP = 7.0  # EST   metade de baixo da ferradura, em borracha firme (contato com a virilha); metade de cima em plástico (usuário, 2026-10-27)
+BASE_R_EXT = 48.0        # MED   raio externo do arco: largura externa 96 mm (paquímetro, 2026-10-28)
+BASE_R_INT = 27.8        # MED   raio interno = 48 − 20,2 (faixa do arco com 20,2 mm de largura radial, paquímetro, 2026-10-28)
+BASE_ESP = 18.0          # MED   altura total da ferradura em Z, plástico + borracha (paquímetro, 2026-10-28)
+BASE_BORRACHA_ESP = 9.0  # EST   metade de baixo da ferradura, em borracha firme (contato com a virilha); metade de cima em plástico (usuário, 2026-10-27)
 BASE_ABERTURA = 31.0     # FOTO  vão entre os lobos
 BASE_LOBO_R = 15.0       # FOTO  raio dos lobos arredondados
 BASE_LOBO_X = 32.0       # FOTO  posição X do centro de cada lobo
@@ -128,5 +128,5 @@ MANGA_TAMANHOS = [21, 26, 32]  # MED  especificação pública
 MANGA_PAREDE = 2.5       # MED   paquímetro (2026-10-27)
 MANGA_L = 83.4           # MED   altura (paquímetro, 2026-10-27)
 MANGA_FOTO_D = 27.4      # MED   diâmetro INTERNO em repouso = 32,4 externo (paquímetro, 2026-10-27) - 2 x 2,5 de parede; estica ~44% para vestir o copo de 39,4
-MANGA_SOBRE_COPO = 25.0  # EST   quanto a manga sobe sobre a boca do copo (cobre os 3 anéis)
+MANGA_SOBRE_COPO = 25.0  # DEF   quanto a manga sobe sobre a boca do copo; posição arbitrária no uso real (usuário, 2026-10-28), só precisa cobrir os 3 anéis
 MANGA_TRANSICAO = 8.0    # EST   trecho em que a manga passa do diâmetro esticado ao de repouso (foto 09)

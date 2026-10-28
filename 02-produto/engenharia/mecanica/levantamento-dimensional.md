@@ -41,9 +41,10 @@ Todas as medidas em mm, pesos em g, forças em kgf. Medir duas vezes. Se os valo
 ## Base
 | Medida | Valor | Observação |
 |---|---|---|
-| Diâmetro externo do anel | | |
+| Largura externa da ferradura | 96 mm (paquímetro, 2026-10-28) | raio externo do arco 48 mm |
 | Diâmetro interno do anel | | |
-| Espessura (altura) do anel | | |
+| Altura da ferradura (Z) | 18 mm (paquímetro, 2026-10-28) | plástico + borracha; proporção entre os dois a medir (CAD assume 9 + 9) |
+| Largura radial do arco (de cima) | 20,2 mm (paquímetro, 2026-10-28) | interpretação a confirmar; raio interno = 48 − 20,2 = 27,8 |
 | Distância entre centros dos furos das hastes | | |
 | Diâmetro dos furos das hastes | | rosca? inserto metálico? |
 | Formato da seção (retangular, oval, em D) | | |
@@ -114,7 +115,7 @@ Todas as medidas em mm, pesos em g, forças em kgf. Medir duas vezes. Se os valo
 | Diâmetro externo | | | |
 | Comprimento | | | 83,4 mm (paquímetro, 2026-10-27) |
 | Espessura | | | 2,5 mm (paquímetro, 2026-10-27) |
-| Como engata na haste | | | veste a boca do copo; os 3 anéis salientes do copo seguram por atrito |
+| Como engata na haste | | | veste a boca do copo; os 3 anéis salientes do copo seguram por atrito; posição ao longo do copo é arbitrária (usuário, 2026-10-28) |
 | Dureza aparente | | | |
 
 ## Testes funcionais
