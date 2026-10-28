@@ -116,7 +116,7 @@ COPO_ANEIS_ALT = 2.0     # EST   quanto o anel sobressai
 COPO_ANEIS_LARG = 2.0    # EST
 COPO_PESCOCO_D = 11.5    # EST   passa no furo de 12 da ponte com folga
 COPO_PESCOCO_L = 7.0     # FOTO  mais alto que o piso do rebaixo (3 mm): sobra ~4 mm para o copo subir e sair pelo rasgo; medir
-VALVULA_D = 19.6         # EST   corpo da válvula = encaixe no rebaixo de 20 da ponte, com folga pequena (usuário) (válvula GIRATÓRIA: abre/fecha a passagem de ar para a sucção; geometria interna a levantar)
+VALVULA_D = 19.9         # DEF   encaixe do copo no rebaixo de 20 da ponte com 0,1 mm de folga no diâmetro (usuário, 2026-10-27)
 VALVULA_L = 28.0         # FOTO
 # Alça de arame do copo: não modelada (é de outro sistema de tração; fora do projeto)
 
