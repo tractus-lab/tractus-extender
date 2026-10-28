@@ -76,13 +76,19 @@ ROSCA_NA_BARRA = 30.0    # EST   quanto a haste entra no cilindro da barra
 ROSCA_NO_TAMBOR = 10.0   # EST   quanto a haste entra no tambor do pivô
 
 # ---------- Ponte (plataforma única entre as hastes, no topo dos tubos da escala) ----------
-# Descrição do usuário: plataforma com um rebaixo circular no meio, aberto de um lado, onde
-# encaixa a parte cilíndrica de cima do copo (o pescoço). A alça de arame não segura o copo.
+# Encaixe do copo (usuário, 2026-10-27): rasgo em U, aberto de um lado, por onde o pescoço entra; na
+# face de cima, um rebaixo circular FECHADO onde o corpo da válvula assenta. O pescoço é mais alto que
+# o piso do rebaixo, então o copo tem folga para subir e descer. Sob tração o copo desce, a válvula
+# assenta no rebaixo e o copo fica preso (não sai pelo lado). Com folga, sobe e sai pelo rasgo.
 PONTE_COMP = 112.0       # FOTO  comprimento em X (passa pelas duas hastes)
 PONTE_LARG = 20.0        # EST   largura em Y; medir
-PONTE_ESP = 13.0         # FOTO  espessura em Z
-PONTE_ENTALHE_D = 14.0   # EST   diâmetro do rebaixo circular (pescoço 13 mm + folga); medir
-PONTE_ENTALHE_LADO = -1  # EST   para que lado o entalhe abre: -1 = -Y (lado da abertura da ferradura), +1 = +Y
+PONTE_ESP = 4.5          # MED   espessura da chapa (paquímetro, 2026-10-27)
+PONTE_CUBO_ESP = 13.0    # FOTO  altura do cubo em volta de cada haste (o que a foto 08 mostrava como bloco de 13 mm); a confirmar
+PONTE_CUBO_D = 20.0      # EST   diâmetro do cubo em volta da haste
+PONTE_ENTALHE_D = 12.0   # MED   furo/rasgo por onde passa o pescoço (paquímetro, 2026-10-27)
+PONTE_ENTALHE_LADO = -1  # EST   para que lado o rasgo abre: -1 = -Y (lado da abertura da ferradura), +1 = +Y
+PONTE_REBAIXO_D = 20.0   # MED   diâmetro do rebaixo circular (paquímetro, 2026-10-27); o encaixe do copo tem o mesmo tamanho, com folga pequena
+PONTE_REBAIXO_PROF = 1.5 # MED   chapa 4,5 - 3,0 no rebaixo (paquímetro, 2026-10-27)
 PONTE_FURO_HASTE_D = 6.6 # EST   furo liso: a ponte desliza na haste
 
 # ---------- Barra superior "EPIC" ----------
@@ -108,9 +114,9 @@ COPO_ANEIS_N = 3         # FOTO  anéis externos junto à boca
 COPO_ANEIS_PASSO = 9.5   # FOTO
 COPO_ANEIS_ALT = 2.0     # EST   quanto o anel sobressai
 COPO_ANEIS_LARG = 2.0    # EST
-COPO_PESCOCO_D = 13.0    # FOTO
-COPO_PESCOCO_L = 7.0     # FOTO
-VALVULA_D = 20.0         # FOTO  corpo da válvula (branco, com marca vermelha) (válvula GIRATÓRIA: abre/fecha a passagem de ar para a sucção; geometria interna a levantar)
+COPO_PESCOCO_D = 11.5    # EST   passa no furo de 12 da ponte com folga
+COPO_PESCOCO_L = 7.0     # FOTO  mais alto que o piso do rebaixo (3 mm): sobra ~4 mm para o copo subir e sair pelo rasgo; medir
+VALVULA_D = 19.6         # EST   corpo da válvula = encaixe no rebaixo de 20 da ponte, com folga pequena (usuário) (válvula GIRATÓRIA: abre/fecha a passagem de ar para a sucção; geometria interna a levantar)
 VALVULA_L = 28.0         # FOTO
 # Alça de arame do copo: não modelada (é de outro sistema de tração; fora do projeto)
 

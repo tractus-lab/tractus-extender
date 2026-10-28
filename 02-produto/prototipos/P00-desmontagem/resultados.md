@@ -14,7 +14,7 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
    | Haste roscada inox exposta | 53 | 6 | |
    | Punho serrilhado preto | 68 | **21,6 (paquímetro)** | castanha; foto dava 26 |
    | Tubo da escala (preto, "LB 0–22" / kg) | 50 visível | **15,6 (paquímetro)** | foto dava 18 |
-   | Ponte | 13 | 112 | plataforma única; rebaixo circular aberto de um lado para o pescoço do copo |
+   | Ponte | **4,5 (chapa, paquímetro)**; 13 nos cubos das hastes (foto) | 112 | rasgo de 12 para o pescoço + rebaixo fechado de 20 × 1,5 (encaixe fechadura) |
    | Haste roscada inox exposta | 43 | 6 | varia com o ajuste |
    | Cilindro da barra superior | 38 | 16 | com porca por baixo |
    Entre eixos das hastes: ~83 mm.
@@ -29,7 +29,7 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
 3. **Barra "EPIC"**: só proteção das pontas e batente. Sem função mecânica.
 4. **Punho serrilhado** (castanha): gira guiado pela rosca e define o comprimento do aparelho. Esconde a mola.
 5. **Tubo da escala** (mais fino, marcado em libras): preso ao punho por dentro, pela mola, e com a "ponte" no topo.
-6. **Ponte** entre as duas hastes, no topo dos tubos: plataforma única com um rebaixo circular no meio, aberto de um lado, onde encaixa o pescoço cilíndrico do copo. Na foto 08 ela aparece de lado, e o entalhe visto de perfil é o que parecia "dois braços". A alça de arame não segura o copo na ponte.
+6. **Ponte** entre as duas hastes, no topo dos tubos: chapa de **4,5 mm** (paquímetro). No meio, furo/rasgo de **12 mm** por onde o pescoço do copo entra pelo lado, e na face de cima um rebaixo circular fechado de **20 mm** de diâmetro e **1,5 mm** de profundidade (chapa fica com 3 mm ali). O encaixe do copo tem os mesmos 20 mm, com folga pequena. É um encaixe tipo fechadura: com folga o copo sobe e o pescoço sai pelo rasgo; sob tração o copo desce, o corpo da válvula assenta no rebaixo e fica preso. Os "13 mm" da foto 08 devem ser cubos em volta das hastes; a confirmar.
 7. **Uso**: o pênis puxa o copo, o copo puxa a ponte, a ponte empurra o tubo para dentro do punho, a mola comprime e a borda do punho aponta a força. Em repouso a borda está no 0 (foto 08).
 
 ### Consequências para o modelo (CAD v0.4)
@@ -42,7 +42,7 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
 1. ~~Passo da rosca~~ **Medido**: diâmetro 5,9 mm com paquímetro = M6 comercial; 10 voltas = 9,3 mm com régua (erro de leitura; passo 1,0). Rosca do Epic: **M6 x 1,0**.
 2. ~~Curso real~~ **Medido** (régua): 2 kg → 8,0 mm; 4 kg → 15,4 mm. Linear dentro do erro de leitura. Constante 0,255 kgf/mm = 2,5 N/mm; fundo de escala (10 kg) previsto em ~39,5 mm.
 3. Força real: dinamômetro no copo, ler no 11 e no 22, comparar com a escala.
-4. Diâmetro do rebaixo da ponte e para que lado ele abre (mesmo lado da abertura da ferradura?).
+4. ~~Diâmetro do rebaixo da ponte~~ **Medido** (chapa 4,5; rebaixo 20 × 1,5; furo 12). Falta: para que lado o rasgo abre (mesmo lado da abertura da ferradura?) e se há cubos de 13 mm em volta das hastes.
 5. ~~Como o tambor gira na base~~ **Pino transversal com tampa plástica, em caixa sobre o lobo** (confirmado). Caixa com 17,6 mm de largura (paquímetro). Faltam: altura e profundidade da caixa, comprimento do tambor, diâmetro da tampa.
 
 ## Foto 08: kit montado com o copo (2026-10-27, noite)

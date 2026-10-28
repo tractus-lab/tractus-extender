@@ -1,4 +1,4 @@
-"""Peças do extensor em build123d (modo álgebra), versão 0.7 (arestas arredondadas; ferradura em plástico + borracha)."""
+"""Peças do extensor em build123d (modo álgebra), versão 0.8 (encaixe copo–ponte tipo fechadura: rasgo em U + rebaixo circular)."""
 from build123d import *
 import parametros as P
 
@@ -131,13 +131,20 @@ def mola(comp):
 
 
 def ponte():
-    """Plataforma única entre as hastes. Furos lisos para as hastes e, no meio, um rebaixo circular
-    aberto para um lado, onde o pescoço do copo encaixa. Centrada na origem."""
-    g = _arred(Box(P.PONTE_COMP, P.PONTE_LARG, P.PONTE_ESP), P.RAIO_ARESTA)
+    """Chapa única entre as hastes (4,5 mm) com um cubo em volta de cada haste (furo liso: desliza).
+    No meio: furo/rasgo em U de 12 mm para o pescoço do copo, aberto para um lado, e na face de cima um
+    rebaixo circular fechado de 20 mm x 1,5 mm onde o corpo da válvula assenta sob tração (fechadura).
+    Origem: eixo entre as hastes, z = 0 na base dos cubos; a face de cima da chapa fica em z = PONTE_CUBO_ESP."""
+    topo = P.PONTE_CUBO_ESP
+    chapa = Pos(0, 0, topo - P.PONTE_ESP / 2) * Box(P.PONTE_COMP, P.PONTE_LARG, P.PONTE_ESP)
+    g = _arred(chapa, min(P.RAIO_ARESTA, P.PONTE_ESP / 2 - 0.3))
     for sx in (-1, 1):
-        g -= Pos(sx * P.HASTE_X, 0, 0) * Cylinder(P.PONTE_FURO_HASTE_D / 2, P.PONTE_ESP + 1)
-    g -= Cylinder(P.PONTE_ENTALHE_D / 2, P.PONTE_ESP + 1)
-    g -= Pos(0, P.PONTE_ENTALHE_LADO * P.PONTE_LARG / 2, 0) * Box(P.PONTE_ENTALHE_D, P.PONTE_LARG, P.PONTE_ESP + 1)
+        cubo = _arred(Pos(sx * P.HASTE_X, 0, topo / 2) * Cylinder(P.PONTE_CUBO_D / 2, topo), P.RAIO_ARESTA_PEQ)
+        g += cubo
+        g -= Pos(sx * P.HASTE_X, 0, topo / 2) * Cylinder(P.PONTE_FURO_HASTE_D / 2, topo + 2)
+    g -= Pos(0, 0, topo / 2) * Cylinder(P.PONTE_ENTALHE_D / 2, topo + 2)
+    g -= Pos(0, P.PONTE_ENTALHE_LADO * P.PONTE_LARG / 2, topo / 2) * Box(P.PONTE_ENTALHE_D, P.PONTE_LARG, topo + 2)
+    g -= Pos(0, 0, topo) * Cylinder(P.PONTE_REBAIXO_D / 2, 2 * P.PONTE_REBAIXO_PROF)
     return g
 
 
@@ -250,16 +257,17 @@ def montagem(com_copo=True, carga_lb=None):
         z4 = z_tubo0 + P.TUBO_MOLA_VISIVEL + P.TUBO_DENTRO_PUNHO  # topo do tubo = base da ponte
         z_mola0 = z2 + P.PUNHO_PORCA_L                         # mola: do fundo do furo do punho até a ponte
         partes.append((f"mola_{nome}", Pos(x, 0, z_mola0) * mola(z4 - z_mola0)))
-        z["ponte"] = z4 + P.PONTE_ESP / 2
-        z["barra"] = z_punho_topo + P.TUBO_MOLA_VISIVEL + P.PONTE_ESP + P.ROSCA_SUP_EXPOSTA  # fixa: não depende da carga
+        z["ponte"] = z4                                        # base dos cubos da ponte = topo dos tubos
+        z["barra"] = z_punho_topo + P.TUBO_MOLA_VISIVEL + P.PONTE_CUBO_ESP + P.ROSCA_SUP_EXPOSTA  # fixa: não depende da carga
         partes.append((f"porca_barra_{nome}", Pos(x, 0, z["barra"] - P.PORCA_ESP) * porca()))
         comp_rosca = (z["barra"] + P.ROSCA_NA_BARRA) - (z0 - P.ROSCA_NO_TAMBOR)
         partes.append((f"rosca_{nome}", Pos(x, 0, z0 - P.ROSCA_NO_TAMBOR) * rosca(comp_rosca)))
     partes.append(("ponte", Pos(0, 0, z["ponte"]) * ponte()))
     partes.append(("barra_superior", Pos(0, 0, z["barra"]) * barra_superior()))
     if com_copo:
-        # pescoço do copo encaixado no entalhe da ponte (centrado na espessura dela)
-        z_boca = z["ponte"] - P.COPO_PESCOCO_L / 2 - (P.COPO_CORPO_L + P.COPO_OMBRO_L)
+        # copo em posição de uso (tracionado): corpo da válvula assentado no piso do rebaixo da ponte
+        z_valv = z["ponte"] + P.PONTE_CUBO_ESP - P.PONTE_REBAIXO_PROF
+        z_boca = z_valv - (P.COPO_CORPO_L + P.COPO_OMBRO_L + P.COPO_PESCOCO_L)
         partes.append(("copo", Pos(0, 0, z_boca) * copo()))
         # manga de silicone esticada sobre a boca do copo (anéis dão o atrito), descendo para a pele
         partes.append(("manga", Pos(0, 0, z_boca - (P.MANGA_L - P.MANGA_SOBRE_COPO)) * manga_montada(P.MANGA_FOTO_D, P.COPO_FOTO_D_EXT)))
