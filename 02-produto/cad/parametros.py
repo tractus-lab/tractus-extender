@@ -23,7 +23,7 @@ BASE_LOBO_Y = -36.0      # FOTO  posição Y do centro de cada lobo
 
 # ---------- Articulação (pivô) ----------
 HASTE_X = 41.5           # FOTO  meia distância entre hastes (entre eixos ~83)
-PIVO_TAMBOR_D = 12.0     # FOTO  tambor de inox onde a haste rosqueia
+PIVO_TAMBOR_D = 12.1     # MED   paquímetro (2026-10-27)
 PIVO_TAMBOR_L = 31.0     # FOTO
 PIVO_TAMBOR_DENTRO = 10.0  # EST  quanto do tambor fica dentro do rasgo da base
 PIVO_RASGO = 13.0        # EST  largura do rasgo na base

@@ -9,7 +9,7 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
 3. **Hastes, de baixo para cima** (comprimentos ao longo do eixo):
    | Trecho | Comp. (mm) | Diâm. (mm) | Observação |
    |---|---|---|---|
-   | Tambor do pivô (inox) | 31 | 12 | parte dentro da base |
+   | Tambor do pivô (inox) | 31 | **12,1 (paquímetro)** | parte dentro da base |
    | Porca sextavada preta | 5 | 10 entre faces | rosca provável M6 |
    | Haste roscada inox exposta | 53 | 6 | |
    | Punho serrilhado preto | 68 | **21,6 (paquímetro)** | castanha; foto dava 26 |
