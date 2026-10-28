@@ -92,7 +92,7 @@ BARRA_OLHAL_ESP = 4.0    # EST
 
 # ---------- Copo de vácuo (o fotografado; tamanho a confirmar) ----------
 COPO_TAMANHOS = [28, 32, 36, 40, 44]  # MED  especificação pública (diâmetro interno)
-COPO_FOTO_D_EXT = 39.4   # MED*  paquímetro 39,4 (2026-10-27); assumido como diâmetro EXTERNO do corpo, confirmar (foto dava 47)
+COPO_FOTO_D_EXT = 39.4   # MED   diâmetro EXTERNO do corpo (paquímetro, 2026-10-27); foto dava 47
 COPO_PAREDE = 2.5        # EST
 COPO_CORPO_L = 36.6      # MED   sino completo (cilindro + ombro) = 43,6 mm com paquímetro (2026-10-27), sem pescoço e válvula; cilindro = 43,6 - ombro
 COPO_OMBRO_L = 7.0       # FOTO  transição cônica até o pescoço (parte dos 43,6 medidos)
@@ -112,5 +112,5 @@ MEMB_FURO_FRACAO = 0.55  # EST
 MANGA_TAMANHOS = [21, 26, 32]  # MED  especificação pública
 MANGA_PAREDE = 2.5       # MED   paquímetro (2026-10-27)
 MANGA_L = 83.4           # MED   altura (paquímetro, 2026-10-27)
-MANGA_FOTO_D = 32.4      # MED*  diâmetro da manga que estava montada (paquímetro); assumido INTERNO em repouso, confirmar
+MANGA_FOTO_D = 27.4      # MED   diâmetro INTERNO em repouso = 32,4 externo (paquímetro, 2026-10-27) - 2 x 2,5 de parede; estica ~44% para vestir o copo de 39,4
 MANGA_SOBRE_COPO = 25.0  # EST   quanto a manga sobe sobre a boca do copo (cobre os 3 anéis); esticada até o diâmetro externo do copo

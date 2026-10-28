@@ -76,11 +76,11 @@ Todas as medidas em mm, pesos em g, forças em kgf. Medir duas vezes. Se os valo
 |---|---|---|---|---|---|
 | Diâmetro interno da boca | | | | | |
 | Diâmetro interno do corpo | | | | | |
-| Diâmetro externo | | | | | |
+| Diâmetro externo | | | 32,4 mm (paquímetro, 2026-10-27) | | |
 | Altura total | | | | | |
 | Espessura de parede | | | | | |
 | Diâmetro do engate com a haste | | | | | |
-| Copo fotografado (tamanho a confirmar): sino 43,6 mm de altura (sem pescoço/válvula), 39,4 mm de diâmetro (por fora ou por dentro? a confirmar), paquímetro 2026-10-27 | | | | | |
+| Copo fotografado (tamanho a confirmar): sino 43,6 mm de altura (sem pescoço/válvula), 39,4 mm de diâmetro externo, paquímetro 2026-10-27 | | | | | |
 | Tipo do engate (esfera, rosca, pino) | | | | | |
 | Conexão da bomba: diâmetro, tipo de válvula | | | | | |
 | Como a membrana se fixa | | | | | |
@@ -110,7 +110,7 @@ Todas as medidas em mm, pesos em g, forças em kgf. Medir duas vezes. Se os valo
 ## Mangas de silicone
 | Medida | 21 | 26 | 32 |
 |---|---|---|---|
-| Diâmetro interno em repouso | | | 32,4 mm? (medido 32,4; interno ou externo a confirmar) |
+| Diâmetro interno em repouso | | | 27,4 mm (= 32,4 externo − 2 × 2,5) |
 | Diâmetro externo | | | |
 | Comprimento | | | 83,4 mm (paquímetro, 2026-10-27) |
 | Espessura | | | 2,5 mm (paquímetro, 2026-10-27) |
