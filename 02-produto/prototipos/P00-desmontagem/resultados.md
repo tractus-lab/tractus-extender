@@ -87,6 +87,9 @@ Fotos: 01–02 kit dobrado, 03–05 copo solto, 06 barra, 07 base, 08 kit montad
 Ainda não fotografados: demais copos, membranas, demais mangas de silicone, bomba, fita coesiva, extensões de haste (se houver), embalagem, manual.
 
 ### Viés das medidas por foto
+
+Entre-eixos das hastes: foto 83 mm, paquímetro 75,7 mm (erro de +7 mm, o maior até agora: a perspectiva da foto 08 abre as hastes). Com o valor medido, os garfos do pivô (14,8 mm) cabem dentro da ferradura de 96 mm com 2,75 mm de sobra por lado, o que fecha a inconsistência apontada na v0.8.1.
+
 Diâmetros medidos por contagem de pixels saem 2 a 4 mm maiores que o real (sombra e desfoque nas bordas): punho 26→21,6, tubo 18→15,6. Comprimentos sofrem menos. Tratar todo diâmetro FOTO como teto.
 
 ## Qualidade percebida (primeira impressão pelas fotos)

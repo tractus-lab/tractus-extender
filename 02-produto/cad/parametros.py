@@ -30,7 +30,7 @@ BASE_LOBO_Y = -36.0      # FOTO  posição Y do centro de cada lobo
 # O pivô fica EM CIMA do lobo da ferradura, não dentro dele (usuário, 2026-10-27): uma caixa de
 # articulação com rasgo, onde o tambor gira em torno de um pino transversal (eixo X). A cabeça do
 # pino é escondida por uma tampa redonda de plástico na face externa da caixa.
-HASTE_X = 41.5           # FOTO  meia distância entre hastes (entre eixos ~83)
+HASTE_X = 37.85          # MED   meia distância entre eixos das hastes: 81,6 de borda externa a externa − 5,9 de rosca = 75,7 (paquímetro, 2026-10-28); a foto dava 83
 PIVO_TAMBOR_D = 12.1     # MED   paquímetro (2026-10-27)
 PIVO_TAMBOR_L = 31.0     # FOTO  comprimento total do tambor
 PIVO_CAIXA_X = 14.8      # MED   largura do garfo no sentido do pino = 2 bochechas de 4,2 + lingueta de 5,6 + 0,8 de folga (paquímetro, 2026-10-28)
@@ -83,7 +83,7 @@ ROSCA_NO_TAMBOR = 10.0   # EST   quanto a haste entra no tambor do pivô
 # face de cima, um rebaixo circular FECHADO onde o corpo da válvula assenta. O pescoço é mais alto que
 # o piso do rebaixo, então o copo tem folga para subir e descer. Sob tração o copo desce, a válvula
 # assenta no rebaixo e o copo fica preso (não sai pelo lado). Com folga, sobe e sai pelo rasgo.
-PONTE_COMP = 112.0       # FOTO  comprimento em X (passa pelas duas hastes)
+PONTE_COMP = 2 * HASTE_X + 29.0  # FOTO  comprimento em X: ~14,5 mm além de cada haste (foto); acompanha o entre-eixos medido
 PONTE_LARG = 20.0        # EST   largura em Y; medir
 PONTE_ESP = 4.5          # MED   espessura da chapa (paquímetro, 2026-10-27)
 PONTE_CUBO_ESP = 13.0    # FOTO  altura do cubo em volta de cada haste (o que a foto 08 mostrava como bloco de 13 mm); a confirmar
