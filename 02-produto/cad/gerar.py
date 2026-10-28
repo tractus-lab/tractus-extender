@@ -49,14 +49,30 @@ bb = conjunto.bounding_box()
 print(f"  montagem  {bb.size.X:.1f} x {bb.size.Y:.1f} x {bb.size.Z:.1f} mm")
 
 
+def _add_arestas(svg, arestas, camada):
+    """Adiciona aresta por aresta, pulando as degeneradas (arcos de elipse com início = fim fazem o exportador
+    do build123d 0.13 falhar numa asserção do svgpathtools)."""
+    puladas = 0
+    for a in arestas:
+        try:
+            if a.length < 1e-3:
+                puladas += 1
+                continue
+            svg.add_shape(a, layer=camada)
+        except Exception:
+            puladas += 1
+    if puladas:
+        print(f"  ({camada}: {puladas} arestas degeneradas puladas)")
+
+
 def previa(nome, shape, direcao, escala=2.0):
     svg = ExportSVG(scale=escala, line_weight=0.4)
     svg.add_layer("visivel", line_color="black")
     svg.add_layer("oculto", line_type=LineType.ISO_DASH, line_color="gray", line_weight=0.2)
     cima = (0, 1, 0) if abs(direcao[2]) > 0.99 else (0, 0, 1)  # vista de topo: "cima" não pode ser paralelo à direção
     vis, hid = shape.project_to_viewport(viewport_origin=tuple(c * 800 for c in direcao), viewport_up=cima)
-    svg.add_shape(vis, layer="visivel")
-    svg.add_shape(hid, layer="oculto")
+    _add_arestas(svg, vis, "visivel")
+    _add_arestas(svg, hid, "oculto")
     caminho = os.path.join(PREV, f"{nome}.svg")
     svg.write(caminho)
     try:
