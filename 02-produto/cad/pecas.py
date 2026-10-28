@@ -266,7 +266,7 @@ def montagem(com_copo=True, carga_lb=None):
     partes.append(("barra_superior", Pos(0, 0, z["barra"]) * barra_superior()))
     if com_copo:
         # copo em posição de uso (tracionado): corpo da válvula assentado no piso do rebaixo da ponte
-        z_valv = z["ponte"] + P.PONTE_CUBO_ESP - P.PONTE_REBAIXO_PROF
+        z_valv = z["ponte"] + P.PONTE_CUBO_ESP - P.PONTE_REBAIXO_PROF + P.COPO_FOLGA_ASSENTO
         z_boca = z_valv - (P.COPO_CORPO_L + P.COPO_OMBRO_L + P.COPO_PESCOCO_L)
         partes.append(("copo", Pos(0, 0, z_boca) * copo()))
         # manga de silicone esticada sobre a boca do copo (anéis dão o atrito), descendo para a pele

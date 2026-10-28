@@ -117,6 +117,7 @@ COPO_ANEIS_LARG = 2.0    # EST
 COPO_PESCOCO_D = 11.5    # EST   passa no furo de 12 da ponte com folga
 COPO_PESCOCO_L = 7.0     # FOTO  mais alto que o piso do rebaixo (3 mm): sobra ~4 mm para o copo subir e sair pelo rasgo; medir
 VALVULA_D = 19.9         # DEF   encaixe do copo no rebaixo de 20 da ponte com 0,1 mm de folga no diâmetro (usuário, 2026-10-27)
+COPO_FOLGA_ASSENTO = 0.1 # DEF   folga vertical entre o corpo da válvula e o piso do rebaixo na montagem (usuário: não ficar rente)
 VALVULA_L = 28.0         # FOTO
 # Alça de arame do copo: não modelada (é de outro sistema de tração; fora do projeto)
 
