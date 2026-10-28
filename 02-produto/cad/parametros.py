@@ -16,21 +16,27 @@ abertura da ferradura voltada para -Y. Eixo da articulação das hastes ao longo
 BASE_R_EXT = 52.0        # FOTO  raio externo do arco (largura total ~106)
 BASE_R_INT = 30.0        # FOTO  raio interno (abertura ~60)
 BASE_ESP = 14.0          # EST   espessura (altura em Z); medir
-BASE_LOBO_ESP = 17.6     # MED   largura do lobo no pivô (paquímetro, 2026-10-27); a espessura do arco pode ser diferente
 BASE_ABERTURA = 31.0     # FOTO  vão entre os lobos
 BASE_LOBO_R = 15.0       # FOTO  raio dos lobos arredondados
 BASE_LOBO_X = 32.0       # FOTO  posição X do centro de cada lobo
 BASE_LOBO_Y = -36.0      # FOTO  posição Y do centro de cada lobo
 
 # ---------- Articulação (pivô) ----------
+# O pivô fica EM CIMA do lobo da ferradura, não dentro dele (usuário, 2026-10-27): uma caixa de
+# articulação com rasgo, onde o tambor gira em torno de um pino transversal (eixo X). A cabeça do
+# pino é escondida por uma tampa redonda de plástico na face externa da caixa.
 HASTE_X = 41.5           # FOTO  meia distância entre hastes (entre eixos ~83)
 PIVO_TAMBOR_D = 12.1     # MED   paquímetro (2026-10-27)
-PIVO_TAMBOR_L = 31.0     # FOTO
-PIVO_TAMBOR_DENTRO = 10.0  # EST  quanto do tambor fica dentro do rasgo da base
-PIVO_RASGO = 13.0        # EST  largura do rasgo na base (tambor 12,1 + folga); lobo tem 17,6, sobra ~2,7 mm de parede por lado
-PIVO_PINO_D = 4.0        # EST  pino transversal da articulação (eixo X), confirmado pelo usuário: cabeça escondida por tampa redonda de plástico na face externa do lobo; diâmetro a medir
-PIVO_PINO_L = 17.6       # MED   = largura do lobo no pivô, de face a face no sentido do pino (paquímetro, 2026-10-27)
-PIVO_TAMPA_D = 10.0      # EST  tampa redonda de plástico que esconde o pino na face externa do lobo; medir
+PIVO_TAMBOR_L = 31.0     # FOTO  comprimento total do tambor
+PIVO_CAIXA_X = 17.6      # MED   largura da caixa de articulação no sentido do pino (paquímetro, 2026-10-27)
+PIVO_CAIXA_Y = 20.0      # EST   profundidade da caixa (perpendicular ao pino); medir
+PIVO_CAIXA_ALT = 16.0    # EST   altura da caixa acima da superfície da ferradura; medir
+PIVO_PINO_ALT = 9.0      # EST   altura do eixo do pino acima da superfície da ferradura
+PIVO_TAMBOR_ABAIXO_PINO = 6.0  # EST  quanto o tambor desce abaixo do eixo do pino
+PIVO_RASGO = 13.0        # EST   largura do rasgo da caixa (tambor 12,1 + folga); sobra ~2,3 mm de parede por lado
+PIVO_PINO_D = 4.0        # EST   pino transversal; medir
+PIVO_TAMPA_D = 10.0      # EST   tampa redonda de plástico na face externa; medir
+PIVO_TAMPA_ESP = 1.5     # EST
 
 # ---------- Hastes (de baixo para cima) ----------
 # Mecanismo (descrição do usuário, 2026-10-27, confirmado pela foto 08):

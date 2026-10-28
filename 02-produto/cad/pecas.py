@@ -1,4 +1,4 @@
-"""Peças do extensor em build123d (modo álgebra), versão 0.5 (ponte única com entalhe para o pescoço do copo)."""
+"""Peças do extensor em build123d (modo álgebra), versão 0.6 (pivô em caixa sobre o lobo da ferradura, com pino e tampa)."""
 from build123d import *
 import parametros as P
 
@@ -16,28 +16,46 @@ def _porca(af, esp):
 
 # ---------------- Base ----------------
 def base():
-    """Ferradura com lobos e rasgos para os tambores do pivô. Centrada em Z."""
+    """Ferradura com lobos e, em cima de cada lobo, a caixa de articulação do pivô com rasgo.
+    Superfície inferior em z = -BASE_ESP/2, superior em z = +BASE_ESP/2."""
     h = P.BASE_ESP
     b = Cylinder(P.BASE_R_EXT, h) - Cylinder(P.BASE_R_INT, h)
     # abertura entre os lobos
     b -= Pos(0, -(P.BASE_R_EXT + 10) / 2, 0) * Box(P.BASE_ABERTURA, P.BASE_R_EXT + 10, h + 2)
     for sx in (-1, 1):
         b += Pos(sx * P.BASE_LOBO_X, P.BASE_LOBO_Y, 0) * Cylinder(P.BASE_LOBO_R, h)
-    # rasgos onde os tambores do pivô se alojam (abertos para cima e para +Y)
+    # caixas de articulação em cima dos lobos: bloco com topo arredondado em torno do eixo do pino
+    z_topo = h / 2
+    z_pino = z_topo + P.PIVO_PINO_ALT
     for sx in (-1, 1):
-        b -= Pos(sx * P.HASTE_X, P.PIVO_RASGO / 2, 0) * Box(P.PIVO_RASGO, P.PIVO_RASGO * 2, h + 2)
+        x = sx * P.HASTE_X
+        caixa = Pos(x, 0, z_topo + P.PIVO_PINO_ALT / 2) * Box(P.PIVO_CAIXA_X, P.PIVO_CAIXA_Y, P.PIVO_PINO_ALT)
+        caixa += Pos(x, 0, z_pino) * Rot(0, 90, 0) * Cylinder(P.PIVO_CAIXA_Y / 2, P.PIVO_CAIXA_X)
+        # rasgo onde o tambor gira (aberto para cima e para +Y, para dobrar)
+        caixa -= Pos(x, P.PIVO_CAIXA_Y / 4, z_pino + P.PIVO_CAIXA_Y / 2) * Box(P.PIVO_RASGO, P.PIVO_CAIXA_Y * 1.5 + 2, P.PIVO_CAIXA_Y + 2)
+        caixa -= Pos(x, 0, z_pino) * Rot(0, 90, 0) * Cylinder(P.PIVO_RASGO / 2, P.PIVO_CAIXA_X + 2)
+        caixa -= Pos(x, 0, z_pino) * Rot(0, 90, 0) * Cylinder(P.PIVO_PINO_D / 2, P.PIVO_CAIXA_X + 2)
+        b += caixa
     return b
 
 
 def pivo_tambor():
-    """Tambor de inox que recebe a rosca da haste. Origem na base do tambor, eixo Z."""
+    """Tambor de inox que recebe a rosca da haste; furo transversal para o pino.
+    Origem na ponta de baixo do tambor, eixo Z."""
     t = Pos(0, 0, P.PIVO_TAMBOR_L / 2) * Cylinder(P.PIVO_TAMBOR_D / 2, P.PIVO_TAMBOR_L)
     t -= Pos(0, 0, P.PIVO_TAMBOR_L / 2) * Cylinder(P.ROSCA_D / 2, P.PIVO_TAMBOR_L)
+    t -= Pos(0, 0, P.PIVO_TAMBOR_ABAIXO_PINO) * Rot(0, 90, 0) * Cylinder(P.PIVO_PINO_D / 2, P.PIVO_TAMBOR_D + 2)
     return t
 
 
 def pivo_pino():
-    return Rot(0, 90, 0) * Cylinder(P.PIVO_PINO_D / 2, P.PIVO_PINO_L)
+    """Pino transversal (eixo X), centrado na origem."""
+    return Rot(0, 90, 0) * Cylinder(P.PIVO_PINO_D / 2, P.PIVO_CAIXA_X)
+
+
+def pivo_tampa(lado=1):
+    """Tampa redonda de plástico na face externa da caixa, escondendo o pino. Centrada no eixo do pino."""
+    return Pos(lado * (P.PIVO_CAIXA_X / 2 + P.PIVO_TAMPA_ESP / 2), 0, 0) * Rot(0, 90, 0) * Cylinder(P.PIVO_TAMPA_D / 2, P.PIVO_TAMPA_ESP)
 
 
 # ---------------- Haste ----------------
@@ -150,12 +168,14 @@ def montagem(com_copo=True, carga_lb=None):
     desloc = P.CURSO_ESCALA * carga / P.ESCALA_LB_MAX
     partes = [("base", base())]
     z_base_topo = P.BASE_ESP / 2
-    z_tambor0 = z_base_topo - P.PIVO_TAMBOR_DENTRO
+    z_pino = z_base_topo + P.PIVO_PINO_ALT
+    z_tambor0 = z_pino - P.PIVO_TAMBOR_ABAIXO_PINO
     z = {}
     for nome, sx in (("esq", -1), ("dir", 1)):
         x = sx * P.HASTE_X
         partes.append((f"pivo_tambor_{nome}", Pos(x, 0, z_tambor0) * pivo_tambor()))
-        partes.append((f"pivo_pino_{nome}", Pos(x, 0, z_tambor0 + P.PIVO_TAMBOR_DENTRO / 2) * pivo_pino()))
+        partes.append((f"pivo_pino_{nome}", Pos(x, 0, z_pino) * pivo_pino()))
+        partes.append((f"pivo_tampa_{nome}", Pos(x, 0, z_pino) * pivo_tampa(sx)))
         z0 = z_tambor0 + P.PIVO_TAMBOR_L                       # topo do tambor
         partes.append((f"porca_pivo_{nome}", Pos(x, 0, z0) * porca()))
         z1 = z0 + P.PORCA_ESP                                  # início da rosca exposta

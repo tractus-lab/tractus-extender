@@ -5,7 +5,7 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
 ## Arquitetura observada (muda tudo em relação ao modelo v0.1)
 
 1. **Base em ferradura**, não anel fechado. Arco de ~106 mm de largura e ~99 mm de altura em planta, abertura interna ~60 mm, vão entre os lobos ~31 mm. Dois lobos arredondados nas pontas. Plástico preto fosco (provavelmente nylon ou ABS, talvez com revestimento macio: confirmar ao toque).
-2. **Articulação nas hastes.** Cada haste rosqueia num tambor de inox (12,1 × ~31 mm) alojado num rasgo do lobo da base. Os dois tambores giram em torno de um mesmo eixo, formando uma dobradiça que deixa a estrutura inclinar em relação à base e dobrar para guardar. O eixo é um **pino transversal**, com a cabeça escondida por uma **tampa redonda de plástico** na face externa de cada lobo (usuário, 2026-10-27). Nas fotos a tampa se confunde com o lobo.
+2. **Articulação nas hastes.** Cada haste rosqueia num tambor de inox (12,1 × ~31 mm) alojado numa **caixa de articulação montada em cima do lobo** da base (não dentro dele: o rasgo não entra na ferradura), com 17,6 mm de largura. Os dois tambores giram em torno de um mesmo eixo, formando uma dobradiça que deixa a estrutura inclinar em relação à base e dobrar para guardar. O eixo é um **pino transversal**, com a cabeça escondida por uma **tampa redonda de plástico** na face externa de cada lobo (usuário, 2026-10-27). Nas fotos a tampa se confunde com o lobo.
 3. **Hastes, de baixo para cima** (comprimentos ao longo do eixo):
    | Trecho | Comp. (mm) | Diâm. (mm) | Observação |
    |---|---|---|---|
@@ -42,7 +42,7 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
 2. ~~Curso real~~ **Medido** (régua): 2 kg → 8,0 mm; 4 kg → 15,4 mm. Linear dentro do erro de leitura. Constante 0,255 kgf/mm = 2,5 N/mm; fundo de escala (10 kg) previsto em ~39,5 mm.
 3. Força real: dinamômetro no copo, ler no 11 e no 22, comparar com a escala.
 4. Diâmetro do rebaixo da ponte e para que lado ele abre (mesmo lado da abertura da ferradura?).
-5. ~~Como o tambor gira na base~~ **Pino transversal com tampa plástica** (confirmado). Lobo com 17,6 mm de largura no pivô (paquímetro). Faltam: comprimento do tambor e diâmetro da tampa.
+5. ~~Como o tambor gira na base~~ **Pino transversal com tampa plástica, em caixa sobre o lobo** (confirmado). Caixa com 17,6 mm de largura (paquímetro). Faltam: altura e profundidade da caixa, comprimento do tambor, diâmetro da tampa.
 
 ## Foto 08: kit montado com o copo (2026-10-27, noite)
 
