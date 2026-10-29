@@ -46,8 +46,11 @@ Só kits com copo; os de laço (tipo Andropenis) ficam fora do interesse do proj
 
 ### Extensores completos (hastes + base + copo de vácuo), os mais baratos
 
-AliExpress em português, preços em R$ já com o site em modo Brasil (frete e imposto de importação não incluídos; a
-Remessa Conforme cobra 20 % + ICMS em compras até US$ 50). Levantado em 2026-10-29.
+AliExpress em português, preços em R$ já com o site em modo Brasil. A lista não traz "impostos inclusos": o ICMS
+aparece no checkout. Regra vigente (MP 1.357/2026, desde 2026-05-12, aprovada no Congresso em 2026-09-03 e aguardando
+sanção): compra de pessoa física até US$ 50 (produto + frete) em site do Remessa Conforme paga 0 % de imposto de
+importação e só ICMS de 17 a 20 % "por dentro" (cerca de 20 a 25 % sobre o preço). Acima de US$ 50: 60 % menos US$ 30,
+mais ICMS. Um anúncio de R$ 140 fica em uns R$ 170–180 pagos. Levantado em 2026-10-29.
 
 | Produto | Preço | Vendas | Link |
 |---|---|---|---|
