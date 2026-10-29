@@ -6,9 +6,27 @@
 - Prazo: o processo leva mais de um ano, mas o pedido já dá prioridade.
 - Custo: taxa reduzida para microempresa e MEI.
 
-**Nome(s) candidato(s):**
-**Resultado da busca no INPI:**
-**Classes a registrar:**
+**Critérios para o nome** (definidos em 2026-10-29): discreto na fatura do cartão, na nota fiscal e na etiqueta do
+pacote (não diz o que é o produto); soa técnico e sério, não "sex shop"; fácil de falar e escrever em português;
+sem dono no INPI; `.com.br` livre; funciona também para a bomba a vácuo futura.
+
+**Candidatos** (domínio `.com.br` verificado no Registro.br em 2026-10-29; busca na web sem marca igual no Brasil;
+INPI ainda não consultado):
+
+| Nome | Origem | `.com.br` | Observação |
+|---|---|---|---|
+| **Prolato** | "prolato" = forma alongada no eixo (esferoide prolato); termo de geometria | livre | Primeira escolha: discreto, técnico, pronunciável, nenhuma empresa com esse nome achada |
+| Alonge | francês *allonge* (extensão); em direito brasileiro, folha anexada que prolonga um documento | livre | Elegante, lembra "alongar" sem dizer; nenhuma marca achada |
+| Distende | verbo distender (esticar, relaxar) | livre | Mais literal; também usado em medicina |
+| Prolonga | verbo | livre | Muito literal, entrega o produto |
+| Longus | latim, "longo" | livre | Soa a suplemento; fraco |
+| Extendo | latim, "estendo" | livre | Existe agência de marketing latino-americana Extendo (Incubeta); classe diferente, mas gera confusão |
+| Tendo, Amplio, Vetor, Tensor, Axial, Tenaz, Amplus, Firmus | — | ocupados | descartados |
+
+**Resultado da busca no INPI:** pendente (buscar "Prolato" e "Alonge" em busca.inpi.gov.br, marcas nominativas e
+mistas, classes 10 e 35).
+**Classes a registrar:** 10 (aparelhos e artigos para uso sexual estão na classe 10 da Classificação de Nice) e 35
+(comércio). Avaliar 44 se houver serviço de orientação.
 
 ## Desenho industrial
 Protege a aparência do produto (forma, padrão). Mais rápido e barato que patente. Vale a pena se a forma é diferenciada e copiável.
