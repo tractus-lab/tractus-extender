@@ -239,15 +239,17 @@ def ponte():
 
 
 def barra_superior():
-    """Barra 'EPIC': dois cilindros com olhais, unidos por uma tira. Origem na base dos cilindros."""
+    """Barra 'EPIC': dois cilindros unidos por uma tira (olhais opcionais). Origem na base dos cilindros."""
     L = P.BARRA_BOSS_L
     b = None
     for sx in (-1, 1):
         boss = _arred(Pos(sx * P.HASTE_X, 0, L / 2) * Cylinder(P.BARRA_BOSS_D / 2, L), P.RAIO_ARESTA)
-        x_olhal = sx * (P.HASTE_X + P.BARRA_BOSS_D / 2 + P.BARRA_OLHAL_D / 2 - 2)
-        olhal = Pos(x_olhal, 0, L - P.BARRA_OLHAL_D / 2) * Rot(90, 0, 0) * Cylinder(P.BARRA_OLHAL_D / 2, P.BARRA_OLHAL_ESP)
-        olhal -= Pos(x_olhal, 0, L - P.BARRA_OLHAL_D / 2) * Rot(90, 0, 0) * Cylinder(P.BARRA_OLHAL_FURO_D / 2, P.BARRA_OLHAL_ESP + 1)
-        b = boss + olhal if b is None else b + boss + olhal
+        if P.BARRA_COM_OLHAIS:   # olhais de função desconhecida, fora do modelo por padrão (ver parametros.py)
+            x_olhal = sx * (P.HASTE_X + P.BARRA_BOSS_D / 2 + P.BARRA_OLHAL_D / 2 - 2)
+            olhal = Pos(x_olhal, 0, L - P.BARRA_OLHAL_D / 2) * Rot(90, 0, 0) * Cylinder(P.BARRA_OLHAL_D / 2, P.BARRA_OLHAL_ESP)
+            olhal -= Pos(x_olhal, 0, L - P.BARRA_OLHAL_D / 2) * Rot(90, 0, 0) * Cylinder(P.BARRA_OLHAL_FURO_D / 2, P.BARRA_OLHAL_ESP + 1)
+            boss += olhal
+        b = boss if b is None else b + boss
     # tira em '[' (planta): perna saindo de cada cilindro para o lado, travessa cruzando no desvio
     e, dy = P.BARRA_TIRA_ESP, P.BARRA_TIRA_DESLOC_Y
     planta = Pos(0, dy) * Rectangle(2 * P.HASTE_X + e, e)

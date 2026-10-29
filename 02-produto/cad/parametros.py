@@ -124,6 +124,9 @@ BARRA_TIRA_DESLOC_Y = +27.6  # MED  desvio da tira para fora do plano das hastes
                              #      Sem isso a tira bateria na válvula do copo quando a ponte sobe. Lado: +Y, para TRÁS (o oposto
                              #      à abertura da ponte), confirmado pelo usuário em 2026-10-29.
 BARRA_DOBRA_R = 3.0          # EST  raio das dobras da tira em planta
+# Olhais (anéis com furo) na ponta de cada cilindro da barra: função desconhecida; o usuário não usa e suspeita que
+# sejam para algum método alternativo de tração (elástico ou cordão). Ficam fora do modelo (usuário, 2026-10-29).
+BARRA_COM_OLHAIS = False # DEF   True para modelar os olhais do Epic
 BARRA_OLHAL_D = 11.0     # FOTO  olhal nas pontas
 BARRA_OLHAL_FURO_D = 5.0 # FOTO
 BARRA_OLHAL_ESP = 4.0    # EST
