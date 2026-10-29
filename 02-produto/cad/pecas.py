@@ -212,7 +212,13 @@ def barra_superior():
         olhal = Pos(x_olhal, 0, L - P.BARRA_OLHAL_D / 2) * Rot(90, 0, 0) * Cylinder(P.BARRA_OLHAL_D / 2, P.BARRA_OLHAL_ESP)
         olhal -= Pos(x_olhal, 0, L - P.BARRA_OLHAL_D / 2) * Rot(90, 0, 0) * Cylinder(P.BARRA_OLHAL_FURO_D / 2, P.BARRA_OLHAL_ESP + 1)
         b = boss + olhal if b is None else b + boss + olhal
-    tira = _arred(Pos(0, P.BARRA_TIRA_DESLOC_Y, L / 2) * Box(2 * P.HASTE_X, P.BARRA_TIRA_ESP, P.BARRA_TIRA_ALT), P.RAIO_ARESTA_PEQ)
+    # tira em '[' (planta): perna saindo de cada cilindro para o lado, travessa cruzando no desvio
+    e, dy = P.BARRA_TIRA_ESP, P.BARRA_TIRA_DESLOC_Y
+    planta = Pos(0, dy) * Rectangle(2 * P.HASTE_X + e, e)
+    for sx in (-1, 1):
+        planta += Pos(sx * P.HASTE_X, dy / 2) * Rectangle(e, abs(dy) + e)
+    planta = _arred_2d(planta.face(), P.BARRA_DOBRA_R, ignorar_x0=False)
+    tira = _arred(extrude(planta, P.BARRA_TIRA_ALT / 2, both=True).moved(Pos(0, 0, L / 2)), P.RAIO_ARESTA_PEQ)
     return b + tira
 
 

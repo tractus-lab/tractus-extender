@@ -106,7 +106,10 @@ BARRA_BOSS_D = 16.0      # FOTO  cilindros das pontas
 BARRA_BOSS_L = 39.0      # FOTO  (foto 08)
 BARRA_TIRA_ESP = 4.0     # EST   espessura da tira entre os cilindros
 BARRA_TIRA_ALT = 17.0    # FOTO  altura da tira (em Z)
-BARRA_TIRA_DESLOC_Y = -6.0  # EST  tira deslocada para um lado do eixo das hastes
+BARRA_TIRA_DESLOC_Y = -27.6  # MED  desvio da tira para fora do plano das hastes (usuário, 2026-10-28): a tira sai de cada cilindro,
+                             #      anda 27,6 mm para o lado e só então cruza de um lado ao outro, formando um '[' visto de cima.
+                             #      Sem isso a tira bateria na válvula do copo quando a ponte sobe. Lado (−Y, o da abertura da ponte): EST
+BARRA_DOBRA_R = 3.0          # EST  raio das dobras da tira em planta
 BARRA_OLHAL_D = 11.0     # FOTO  olhal nas pontas
 BARRA_OLHAL_FURO_D = 5.0 # FOTO
 BARRA_OLHAL_ESP = 4.0    # EST
