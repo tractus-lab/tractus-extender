@@ -1,4 +1,4 @@
-"""Peças do extensor em build123d (modo álgebra), versão 0.8 (encaixe copo–ponte tipo fechadura: rasgo em U + rebaixo circular)."""
+"""Peças do extensor em build123d (modo álgebra), versão 0.9.3 (ferradura: anel > 180°, curva para fora, pás paralelas, abaulada)."""
 import math
 from build123d import *
 import parametros as P
@@ -45,32 +45,57 @@ def _arred_2d(face, r, ignorar_x0=True):
     return face
 
 
+def _p(c, r, ang):
+    return (c[0] + r * math.cos(math.radians(ang)), c[1] + r * math.sin(math.radians(ang)))
+
+
+def _arco(c, r, a1, a2):
+    """Arco de circunferência (centro c, raio r) do ângulo a1 ao a2, em graus, no sentido indicado."""
+    return ThreePointArc(_p(c, r, a1), _p(c, r, (a1 + a2) / 2), _p(c, r, a2))
+
+
 def _contorno_base():
-    """Metade direita da ferradura em planta (x >= 0), já arredondada; a esquerda é espelho.
-    Anel cortado pela reta do lado externo do braço, braço reto até a pá, pá em estádio inclinada para fora."""
-    y0, y1 = P.BASE_BRACO_Y0, P.BASE_BRACO_Y1
-    A = Vector(math.sqrt(P.BASE_R_EXT**2 - y0**2), y0)                 # lado externo: braço sai do anel aqui
-    B = Vector(P.BASE_PA_X + P.BASE_PA_LARG / 2, y1)                    # canto externo da pá
-    d = (B - A).normalized()
-    n = Vector(d.Y, -d.X)
-    if (Vector(P.BASE_R_EXT, -20) - A).dot(n) < 0:
-        n = -n
-    L = 300
-    cortador = Polygon(*[(q.X, q.Y) for q in (A - d * L, A + d * L, A + d * L + n * L, A - d * L + n * L)], align=None)
-    anel = Circle(P.BASE_R_EXT) - Circle(P.BASE_R_INT) - cortador - Pos(0, y0 - 100) * Rectangle(2 * P.BASE_R_INT, 200)
-    braco = Polygon((A.X, A.Y), (math.sqrt(P.BASE_R_INT**2 - y0**2), y0), (P.BASE_PA_X - P.BASE_PA_LARG / 2, y1), (B.X, B.Y), align=None)
-    Lp = (y1 - P.BASE_PONTA_Y) + P.BASE_PA_LARG
-    pa = Pos(P.BASE_PA_X, (y1 + P.BASE_PONTA_Y) / 2) * Rot(0, 0, -90 + P.BASE_PA_INCL) * SlotOverall(Lp, P.BASE_PA_LARG)
-    metade = (anel + braco + pa) & Pos(100, 0) * Rectangle(200, 400)      # só x >= 0
-    return _arred_2d(metade.face(), P.BASE_R_JUNCAO)
+    """Ferradura em planta, como na foto 07: o anel (faixa de 20,2 mm) segue além de 180° por BASE_ARCO_EXTRA em
+    cada lado; aí cada braço faz uma curva para fora (linha média com raio BASE_R_DOBRA, tangente ao anel) até ficar
+    vertical, e desce como pá reta, paralela ao eixo, até BASE_PONTA_Y com cantos arredondados. Tudo tangente:
+    nenhum vértice vivo, para o abaulado 3D passar sem reclamar."""
+    w = P.BASE_R_EXT - P.BASE_R_INT
+    rm = (P.BASE_R_EXT + P.BASE_R_INT) / 2
+    ro, ri = P.BASE_R_DOBRA - w / 2, P.BASE_R_DOBRA + w / 2
+    beta = P.BASE_ARCO_EXTRA
+    c = _p((0, 0), rm + P.BASE_R_DOBRA, -beta)       # centro da curva para fora, lado direito (colinear com a origem)
+    cl = (-c[0], c[1])
+    xo, xi = P.BASE_PA_X + w / 2, P.BASE_PA_X - w / 2
+    yq = c[1]                                        # altura em que a pá fica vertical
+    yc = P.BASE_PONTA_Y + P.BASE_R_PONTA
+    rp = P.BASE_R_PONTA
+    arestas = [
+        _arco((0, 0), P.BASE_R_EXT, 90, -beta),                       # anel externo, lado direito (horário)
+        _arco(c, ro, 180 - beta, 180),                                # curva para fora, borda externa
+        Line((xo, yq), (xo, yc)),
+        _arco((xo - rp, yc), rp, 0, -90),
+        Line((xo - rp, P.BASE_PONTA_Y), (xi + rp, P.BASE_PONTA_Y)),
+        _arco((xi + rp, yc), rp, -90, -180),
+        Line((xi, yc), (xi, yq)),
+        _arco(c, ri, 180, 180 - beta),                                # curva para fora, borda interna
+        _arco((0, 0), P.BASE_R_INT, -beta, 180 + beta),               # anel interno, passando pelo topo
+        _arco(cl, ri, beta, 0),
+        Line((-xi, yq), (-xi, yc)),
+        _arco((-xi - rp, yc), rp, 0, -90),
+        Line((-xi - rp, P.BASE_PONTA_Y), (-xo + rp, P.BASE_PONTA_Y)),
+        _arco((-xo + rp, yc), rp, -90, -180),
+        Line((-xo, yc), (-xo, yq)),
+        _arco(cl, ro, 0, beta),
+        _arco((0, 0), P.BASE_R_EXT, 180 + beta, 90),
+    ]
+    return make_face(arestas)
 
 
 def _placa_base():
-    """Ferradura inteira (sem os garfos do pivô), arestas arredondadas. Centrada em Z."""
-    metade = _contorno_base()
-    planta = metade + mirror(metade, Plane.YZ)
-    b = extrude(planta, P.BASE_ESP / 2, both=True)
-    return _arred(b, P.RAIO_ARESTA)
+    """Ferradura inteira (sem os garfos do pivô), centrada em Z, com as bordas de cima e de baixo abauladas."""
+    b = extrude(_contorno_base(), P.BASE_ESP / 2, both=True)
+    grupos = b.edges().group_by(Axis.Z)
+    return _arred(b, P.BASE_ABAULADO_R, grupos[0] + grupos[-1])
 
 
 def _caixa_pivo(x):
@@ -78,7 +103,8 @@ def _caixa_pivo(x):
     da rotação), duas bochechas de PIVO_BOCHECHA_ESP separadas pelo vão onde entra a lingueta do tambor, e furo do pino."""
     z_topo = P.BASE_ESP / 2
     z_pino = z_topo + P.PIVO_PINO_ALT
-    caixa = Pos(x, 0, z_topo + P.PIVO_PINO_ALT / 2) * Box(P.PIVO_CAIXA_X, P.PIVO_CAIXA_Y, P.PIVO_PINO_ALT)
+    alt = P.PIVO_PINO_ALT + P.BASE_ABAULADO_R                      # começa dentro da placa, abaixo do abaulado
+    caixa = Pos(x, 0, z_pino - alt / 2) * Box(P.PIVO_CAIXA_X, P.PIVO_CAIXA_Y, alt)
     caixa += Pos(x, 0, z_pino) * Rot(0, 90, 0) * Cylinder(P.PIVO_CAIXA_Y / 2, P.PIVO_CAIXA_X)
     caixa = _arred(caixa, P.RAIO_ARESTA_PEQ)
     # vão entre as bochechas: atravessa todo o Y (a lingueta gira nele) e desce até pouco abaixo da ponta da lingueta

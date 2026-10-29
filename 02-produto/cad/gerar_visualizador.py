@@ -60,7 +60,7 @@ for chave, (rotulo, prefixos) in GRUPOS.items():
     manifest.append({"arquivo": f"{chave}.json", "grupo": chave, "rotulo": rotulo, "pecas": len(sols), "triangulos": len(tri) // 9, "lista": lista})
     print(f"  {chave:9s} {len(sols):2d} peças  {len(tri)//9:6d} triângulos  {kb} KB json")
 bb = Compound(children=[s for _, s in partes]).bounding_box()
-manifest_obj = {"versao": "0.9.2", "data": "2026-10-28", "grupos": manifest,
+manifest_obj = {"versao": "0.9.3", "data": "2026-10-29", "grupos": manifest,
                 "bbox_mm": [round(bb.size.X, 1), round(bb.size.Y, 1), round(bb.size.Z, 1)]}
 json.dump(manifest_obj, open(os.path.join(OUT, "manifest.json"), "w"), ensure_ascii=False, indent=1)
 print("Saída em", OUT)

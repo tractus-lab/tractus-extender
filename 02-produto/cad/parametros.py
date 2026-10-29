@@ -21,16 +21,20 @@ BASE_R_EXT = 48.0        # MED   raio externo do arco: largura externa 96 mm (pa
 BASE_R_INT = 27.8        # MED   raio interno = 48 − 20,2 (faixa do arco com 20,2 mm de largura radial, paquímetro, 2026-10-28)
 BASE_ESP = 18.0          # MED   altura total da ferradura em Z, plástico + borracha (paquímetro, 2026-10-28)
 BASE_BORRACHA_ESP = 9.0  # EST   metade de baixo da ferradura, em borracha firme (contato com a virilha); metade de cima em plástico (usuário, 2026-10-27)
-# Forma em planta (foto 07): anel + braço reto descendo inclinado para dentro + pá arredondada apontando para a abertura.
-# O furo central fica em "buraco de fechadura": redondo em cima e um pescoço estreito entre as pás.
-BASE_BRACO_Y0 = -9.0     # EST   onde o braço sai do anel (abaixo dos garfos do pivô, que ficam em y=0)
-BASE_BRACO_Y1 = -20.0    # EST   onde o braço vira pá
-BASE_PONTA_Y = -32.0     # FOTO  ponta das pás (altura total em planta ~80 mm; foto 07, perspectiva)
-BASE_PA_X = 21.5         # FOTO  centro de cada pá em X
-BASE_PA_LARG = 21.0      # FOTO  largura da pá
-BASE_PA_INCL = 10.0      # EST   inclinação da pá, ponta virada para fora (graus)
-BASE_R_JUNCAO = 10.0     # EST   raio das curvas em S nas junções anel–braço–pá
-BASE_ABERTURA = 2 * (BASE_PA_X - BASE_PA_LARG / 2)  # 22: pescoço entre as pás (foto 07; antes 31, de outra foto)
+# Forma em planta (foto 07 + usuário): o anel segue além de 180°, cada braço curva para fora e vira uma pá reta,
+# paralela ao eixo; entre as duas pás fica a entrada do pênis.
+BASE_PA_LARG_EXT = 69.6  # MED   largura total por fora das duas pás (paquímetro, 2026-10-29)
+BASE_PA_ESP = 20.4       # MED   espessura de cada pá em planta (paquímetro, 2026-10-29); o modelo usa a faixa do anel, 20,2
+BASE_PA_X = BASE_PA_LARG_EXT / 2 - (BASE_R_EXT - BASE_R_INT) / 2   # 24,7: eixo de cada pá em X
+BASE_R_DOBRA = 16.0      # EST   raio da linha média da curva para fora (anel -> pá); borda externa fica com 16 - 10,1 = 5,9
+BASE_PONTA_Y = -50.0     # FOTO  ponta das pás (foto 07, perspectiva: ferradura quase tão alta quanto larga, ~98 mm)
+BASE_R_PONTA = 7.0       # EST   cantos da ponta das pás
+BASE_ABAULADO_R = 6.0    # EST   abaulado: arredondamento das bordas de cima e de baixo da ferradura (seção quase oval)
+BASE_ABERTURA = 2 * (BASE_PA_X - (BASE_R_EXT - BASE_R_INT) / 2)   # 29,2: vão entre as pás = entrada do pênis (medido: 69,6 − 2 × 20,4 = 28,8)
+# quanto o anel passa de 180° por lado (derivado): o anel segue até a tangente onde a curva de raio BASE_R_DOBRA
+# o leva a ficar vertical exatamente em x = BASE_PA_X
+import math as _m
+BASE_ARCO_EXTRA = _m.degrees(_m.acos((BASE_PA_X + BASE_R_DOBRA) / ((BASE_R_EXT + BASE_R_INT) / 2 + BASE_R_DOBRA)))  # ~42°
 
 # ---------- Articulação (pivô) ----------
 # O pivô fica EM CIMA do lobo da ferradura, não dentro dele (usuário, 2026-10-27): uma caixa de

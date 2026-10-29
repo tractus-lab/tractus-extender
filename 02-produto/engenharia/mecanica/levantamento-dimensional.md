@@ -46,6 +46,7 @@ Todas as medidas em mm, pesos em g, forças em kgf. Medir duas vezes. Se os valo
 | Diâmetro interno do anel | | |
 | Altura da ferradura (Z) | 18 mm (paquímetro, 2026-10-28) | plástico + borracha; proporção entre os dois a medir (CAD assume 9 + 9) |
 | Largura radial do arco (de cima) | 20,2 mm (paquímetro, 2026-10-28) | interpretação a confirmar; raio interno = 48 − 20,2 = 27,8 |
+| Pás da ferradura (lado da abertura): largura total por fora e espessura de cada pá | 69,6 mm e 20,4 mm (paquímetro, 2026-10-29) | vão entre as pás = entrada do pênis = 69,6 − 2 × 20,4 = 28,8 mm; CAD usa a faixa de 20,2 e chega a 29,2 |
 | Distância entre eixos das hastes | 75,7 mm (81,6 de borda externa a externa das roscas − 5,9; paquímetro, 2026-10-28) | foto dava 83 |
 | Diâmetro dos furos das hastes | | rosca? inserto metálico? |
 | Formato da seção (retangular, oval, em D) | | |
