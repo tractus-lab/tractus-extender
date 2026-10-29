@@ -36,6 +36,13 @@ mistas, classes 10 e 35).
 | Nome fantasia | nome comercial informado no CNPJ | nota fiscal (campo próprio), fachada, site, embalagem | ninguém, de fato |
 | Marca | o sinal que identifica o produto | produto, embalagem, anúncios | INPI, no país inteiro, por classe |
 
+O extrato do cartão **não** mostra a razão social. Mostra o descritor cadastrado na adquirente ou no gateway (por
+padrão costuma ser o nome fantasia abreviado; é editável, com a regra das bandeiras de que o cliente precisa
+reconhecer a compra). Em marketplace aparece o nome do marketplace ("MERCADOPAGO*..."). A razão social aparece na
+nota fiscal, no boleto, no Pix e na consulta pública do CNPJ; o nome fantasia aparece na nota fiscal e na consulta
+do CNPJ. Logo, um nome fantasia explícito vaza na nota fiscal (que vai por e-mail e às vezes dentro da caixa) e no
+CNPJ; o que dá para ser explícito sem custo de discrição é o **nome do produto** na página de venda.
+
 Para a discrição que o produto exige: razão social neutra (ex.: "Prolato Indústria e Comércio Ltda"); nome fantasia
 igual à marca; e o **descritor da fatura do cartão** configurado no gateway (Pagar.me, Mercado Pago, Stripe aceitam
 texto curto próprio, ex.: "PROLATO"), porque é isso que o cliente vê no extrato, não a razão social. Remetente da
