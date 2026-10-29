@@ -28,6 +28,20 @@ mistas, classes 10 e 35).
 **Classes a registrar:** 10 (aparelhos e artigos para uso sexual estão na classe 10 da Classificação de Nice) e 35
 (comércio). Avaliar 44 se houver serviço de orientação.
 
+**Razão social × nome fantasia × marca**
+
+| | O que é | Onde aparece | Quem protege |
+|---|---|---|---|
+| Razão social | nome jurídico da empresa, termina em "Ltda" (ou "Ltda" com sócio único) | CNPJ, contratos, nota fiscal, conta bancária, Junta Comercial | Junta Comercial, só dentro do estado, só contra razão social igual |
+| Nome fantasia | nome comercial informado no CNPJ | nota fiscal (campo próprio), fachada, site, embalagem | ninguém, de fato |
+| Marca | o sinal que identifica o produto | produto, embalagem, anúncios | INPI, no país inteiro, por classe |
+
+Para a discrição que o produto exige: razão social neutra (ex.: "Prolato Indústria e Comércio Ltda"); nome fantasia
+igual à marca; e o **descritor da fatura do cartão** configurado no gateway (Pagar.me, Mercado Pago, Stripe aceitam
+texto curto próprio, ex.: "PROLATO"), porque é isso que o cliente vê no extrato, não a razão social. Remetente da
+etiqueta do pacote também é escolha nossa. O que protege o nome é só o registro no INPI; razão social e nome fantasia
+não impedem outra empresa de registrar a marca antes.
+
 ## Desenho industrial
 Protege a aparência do produto (forma, padrão). Mais rápido e barato que patente. Vale a pena se a forma é diferenciada e copiável.
 
