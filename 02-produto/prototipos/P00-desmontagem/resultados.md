@@ -36,7 +36,7 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
 - O punho precisa de rosca interna só num trecho curto (estimado 13 mm) e de um furo liso de ~18,5 mm para o tubo entrar.
 - A ponte e o tubo deslizam na haste com furo liso; só o punho rosqueia.
 - A mola não cabe só no punho: para um curso de 40 mm (distância entre o 0 e o 22 na foto 08) ela precisa passar por dentro do tubo e apoiar na ponte. Comprimento livre estimado ~105 mm, 65 mm a 22 lb.
-- Constante da mola: 22 lb = 97,9 N em 40 mm → **~2,45 N/mm (0,25 kgf/mm)**. Esse é o número a confirmar com dinamômetro.
+- Constante da mola: 22 lb = 97,9 N em 40 mm → **~2,45 N/mm (0,25 kgf/mm)**. Confirmado pela medição com régua e pesos (item 2 de "A confirmar"): 0,255 kgf/mm = 2,5 N/mm. Falta só a geometria da mola (arame, diâmetro, espiras) para especificar uma equivalente.
 
 ### A confirmar
 1. ~~Passo da rosca~~ **Medido**: diâmetro 5,9 mm com paquímetro = M6 comercial; 10 voltas = 9,3 mm com régua (erro de leitura; passo 1,0). Rosca do Epic: **M6 x 1,0**.
