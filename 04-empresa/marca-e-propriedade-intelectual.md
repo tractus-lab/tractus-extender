@@ -53,6 +53,16 @@ exclusividade na busca do Google e em redes sociais; verificado em 2026-10-29):
 | Tractus Vir | tractusvir livre | *vir* = homem; explícito demais para a discrição que queremos |
 | Tractus Pro, Tractus Design | ocupados | — |
 
+Razão social e nome fantasia com "Tractus Lab": a Junta Comercial só barra razão social **idêntica ou muito
+parecida** a outra registrada **no mesmo estado** (IN DREI 81/2020, proteção estadual). A empresa dona do site
+Tractus tem razão social BMT Comércio, Imp. e Exp. de Prod. Ind. Ltda, sem "Tractus", então ela não bloqueia
+"Tractus Lab Ltda" na Junta. O que pode bloquear é outra "Tractus Alguma Coisa Ltda" no mesmo estado: conferir na
+**pesquisa de viabilidade** do portal Redesim/Junta antes de abrir, grátis e online. Nome fantasia não tem
+conferência nenhuma. O risco real está no INPI: quem tem a marca "Tractus" registrada pode pedir anulação de razão
+social ou nome fantasia que confunda **no mesmo ramo** (LPI art. 124 V e art. 195); em ramos diferentes, abrasivos
+contra artigos da classe 10, isso não se aplica. Evitar "Laboratório" por extenso na razão social, porque sugere
+atividade farmacêutica ou clínica; "Lab" é só um termo de fantasia.
+
 Atenção no INPI: o elemento distintivo é "Tractus"; "Lab", "Brasil", "Pro" são genéricos e não diferenciam de uma
 marca "Tractus" que já exista na classe 10. Buscar "Tractus" sozinho.
 
