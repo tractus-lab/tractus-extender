@@ -24,7 +24,7 @@ Sete fotos sobre papel milimetrado A3. Escala obtida por software a partir da gr
 
 ## Funcionamento (confirmado pelo usuário em 2026-10-27, à noite)
 
-1. **Haste roscada única por lado**, de ponta a ponta: fixa no tambor do pivô embaixo e na barra "EPIC" em cima, com contraporca nas duas pontas. Não gira.
+1. **Haste roscada única por lado**, de ponta a ponta: fixa no tambor do pivô embaixo e na barra "EPIC" em cima, com contraporca nas duas pontas. Não gira. Em cima (usuário, 2026-10-29): a haste atravessa o cilindro da barra e é presa por uma **porca cilíndrica com sextavado interno (Allen)** apertada por cima, contra a contraporca sextavada de baixo; a barra fica apertada entre as duas. Diâmetro, altura e chave dessa porca ainda por medir.
 2. **Base em ferradura**: apoia o corpo; o pivô deixa mudar o ângulo entre a base e as hastes.
 3. **Barra "EPIC"**: só proteção das pontas e batente. Sem função mecânica.
 4. **Punho serrilhado** (castanha): gira guiado pela rosca e define o comprimento do aparelho. Esconde a mola.

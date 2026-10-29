@@ -168,6 +168,17 @@ def porca():
     return _porca(P.PORCA_AF, P.PORCA_ESP)
 
 
+def porca_cilindrica():
+    """Porca cilíndrica com sextavado interno (Allen) que prende a barra superior por cima: tambor liso, furo
+    roscado cego por baixo e encaixe Allen na ponta de cima. Origem na base, eixo Z."""
+    c = Pos(0, 0, P.PORCA_CIL_L / 2) * Cylinder(P.PORCA_CIL_D / 2, P.PORCA_CIL_L)
+    c = _arred(c, P.RAIO_ARESTA_PEQ)
+    prof = P.PORCA_CIL_ALLEN_PROF
+    c -= Pos(0, 0, P.PORCA_CIL_L - prof) * extrude(RegularPolygon(P.PORCA_CIL_ALLEN / 2 / 0.8660254, 6), prof + 1)
+    c -= Pos(0, 0, -0.5) * Cylinder(P.ROSCA_D / 2, P.PORCA_CIL_L - prof - 1 + 0.5)
+    return c
+
+
 def rosca(comp):
     """Haste roscada (fuso), uma peça por lado. Nome comercial: barra roscada M6 inox 304. Origem na base, eixo Z.
     Com ROSCA_COM_FIO, o fio helicoidal ISO (perfil 60°, passo ROSCA_PASSO) é gerado pelo bd_warehouse e fica como
@@ -346,6 +357,7 @@ def montagem(com_copo=True, carga_lb=None):
         z["ponte"] = z4                                        # base dos cubos da ponte = topo dos tubos
         z["barra"] = z_punho_topo + P.TUBO_MOLA_VISIVEL + P.PONTE_CUBO_ESP + P.ROSCA_SUP_EXPOSTA  # fixa: não depende da carga
         partes.append((f"porca_barra_{nome}", Pos(x, 0, z["barra"] - P.PORCA_ESP) * porca()))
+        partes.append((f"porca_cil_barra_{nome}", Pos(x, 0, z["barra"] + P.BARRA_BOSS_L) * porca_cilindrica()))  # Allen por cima
         comp_rosca = (z["barra"] + P.ROSCA_NA_BARRA) - (z0 - P.ROSCA_NO_TAMBOR)
         partes.append((f"rosca_{nome}", Pos(x, 0, z0 - P.ROSCA_NO_TAMBOR) * rosca(comp_rosca)))
     partes.append(("ponte", Pos(0, 0, z["ponte"]) * ponte()))

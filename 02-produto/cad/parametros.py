@@ -69,6 +69,12 @@ ROSCA_PASSO = 1.0        # MED   M6 x 1,0 (diâmetro 5,9 confirma; 10 voltas = 9
 ROSCA_COM_FIO = True     # DEF   modelar o fio helicoidal ISO de verdade (bd_warehouse); False = cilindro liso, mais leve e rápido
 PORCA_AF = 10.0          # FOTO  porca sextavada (contraporca), medida entre faces
 PORCA_ESP = 5.0          # FOTO
+# Em cima, quem prende a barra não é outra porca sextavada: é uma porca cilíndrica com sextavado interno (Allen),
+# lisa por fora, apertada por cima do cilindro da barra contra a contraporca de baixo (usuário, 2026-10-29).
+PORCA_CIL_D = 10.0       # EST   diâmetro externo da porca cilíndrica Allen da barra
+PORCA_CIL_L = 12.0       # EST   altura
+PORCA_CIL_ALLEN = 5.0    # EST   chave Allen (entre faces do sextavado interno)
+PORCA_CIL_ALLEN_PROF = 5.0  # EST profundidade do sextavado
 ROSCA_INF_EXPOSTA = 64.0 # FOTO  rosca visível entre a porca do pivô e o punho (foto 08; varia com o ajuste)
 PUNHO_D = 21.6           # MED   paquímetro (2026-10-27); a foto dava 26
 PUNHO_L = 68.0           # FOTO  (foto 08)
@@ -86,7 +92,7 @@ MOLA_ESPIRAS = 14        # EST   espiras ativas (comprimento livre ~105 mm, 65 m
 MOLA_K = ESCALA_LB_MAX * 4.448 / CURSO_ESCALA  # MED   ~2,5 N/mm (0,255 kgf/mm); linear nos dois pontos medidos
 CARGA_LB = 0.0           # DEF   estado mostrado na montagem: 0 = repouso; 22 = escala toda
 ROSCA_SUP_EXPOSTA = 40.0 # FOTO  rosca visível entre o porta-copo e a barra (foto 08), em repouso
-ROSCA_NA_BARRA = 30.0    # EST   quanto a haste entra no cilindro da barra
+# ROSCA_NA_BARRA: definido depois da barra (depende de BARRA_BOSS_L)
 ROSCA_NO_TAMBOR = 10.0   # EST   quanto a haste entra no tambor do pivô
 
 # ---------- Ponte (plataforma única entre as hastes, no topo dos tubos da escala) ----------
@@ -118,6 +124,7 @@ BARRA_DOBRA_R = 3.0          # EST  raio das dobras da tira em planta
 BARRA_OLHAL_D = 11.0     # FOTO  olhal nas pontas
 BARRA_OLHAL_FURO_D = 5.0 # FOTO
 BARRA_OLHAL_ESP = 4.0    # EST
+ROSCA_NA_BARRA = BARRA_BOSS_L + PORCA_CIL_L - PORCA_CIL_ALLEN_PROF - 1  # DEF  a haste atravessa o cilindro da barra e entra na porca Allen até perto do sextavado
 
 # ---------- Copo de vácuo (o fotografado; tamanho a confirmar) ----------
 COPO_TAMANHOS = [28, 32, 36, 40, 44]  # MED  especificação pública (diâmetro interno)
