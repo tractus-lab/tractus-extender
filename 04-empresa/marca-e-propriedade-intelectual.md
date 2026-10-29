@@ -23,7 +23,21 @@ INPI ainda não consultado):
 | Extendo | latim, "estendo" | livre | Existe agência de marketing latino-americana Extendo (Incubeta); classe diferente, mas gera confusão |
 | Tendo, Amplio, Vetor, Tensor, Axial, Tenaz, Amplus, Firmus | — | ocupados | descartados |
 
-**Resultado da busca no INPI:** pendente (buscar "Prolato" e "Alonge" em busca.inpi.gov.br, marcas nominativas e
+Candidatos em latim (pedido do fundador; `.com.br` verificado em 2026-10-29, web sem marca igual):
+
+| Nome | Latim | `.com.br` | Observação |
+|---|---|---|---|
+| **Protendo** | *protendo*, "estendo para a frente, estico" | livre | Forte, discreto; parentes em concreto protendido (Protendit, Protendal), classe distante |
+| **Procero** | *procerus*, "alto, esbelto, de bom porte" | livre | Discreto e elegante; Prócer Automação (SC) é parecido, classe distante |
+| **Elonga** | *elongo*, "alongo, afasto" | livre | Mais transparente, soa bem em português; nenhuma marca achada |
+| Protensus / Protensio | "estendido" / "extensão" | livres | Mais longos |
+| Distendo | "distendo" | livre | Lembra distensão muscular |
+| Porrectus | "estendido, esticado" | livre | Em português lembra "porrete"; descartar |
+| Tensus | "esticado" | livre | Lembra "tenso"; descartar |
+| Praelongus, Longitudo, Prolixus, Productus, Contendo | — | livres | longos ou com sentido ruim em português |
+| Tractus, Tractio, Traho, Ductus, Auctus, Augeo, Cresco, Robur, Vigeo, Nisus, Impetus, Extensus, Intendo, Tendere | — | ocupados | descartados |
+
+**Resultado da busca no INPI:** pendente (buscar "Prolato", "Alonge", "Protendo", "Procero" e "Elonga" em busca.inpi.gov.br, marcas nominativas e
 mistas, classes 10 e 35).
 **Classes a registrar:** 10 (aparelhos e artigos para uso sexual estão na classe 10 da Classificação de Nice) e 35
 (comércio). Avaliar 44 se houver serviço de orientação.
