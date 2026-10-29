@@ -107,9 +107,15 @@ def porca():
 
 
 def rosca(comp):
-    """Haste roscada (fuso), uma peça por lado, modelada lisa. Nome comercial: barra roscada M6 inox 304.
-    Origem na base, eixo Z."""
-    return Pos(0, 0, comp / 2) * Cylinder(P.ROSCA_D / 2, comp)
+    """Haste roscada (fuso), uma peça por lado. Nome comercial: barra roscada M6 inox 304. Origem na base, eixo Z.
+    Com ROSCA_COM_FIO, o fio helicoidal ISO (perfil 60°, passo ROSCA_PASSO) é gerado pelo bd_warehouse e fica como
+    segunda forma do mesmo conjunto, sem fundir ao núcleo: a fusão booleana leva ~36 s por haste e não muda nada visualmente."""
+    if not P.ROSCA_COM_FIO:
+        return Pos(0, 0, comp / 2) * Cylinder(P.ROSCA_D / 2, comp)
+    from bd_warehouse.thread import IsoThread
+    fio = IsoThread(major_diameter=P.ROSCA_D, pitch=P.ROSCA_PASSO, length=comp, external=True, end_finishes=("fade", "fade"))
+    nucleo = Pos(0, 0, comp / 2) * Cylinder(fio.min_radius, comp)
+    return Compound(children=[nucleo, fio])
 
 
 def punho():

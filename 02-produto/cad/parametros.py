@@ -56,6 +56,7 @@ PIVO_TAMPA_ESP = 1.5     # EST
 #   deslizando no punho; sob tração a mola comprime e a borda do punho aponta a força (lb).
 ROSCA_D = 6.0            # MED   paquímetro 5,9 mm no Epic (2026-10-27) = M6 comercial; nominal 6,0
 ROSCA_PASSO = 1.0        # MED   M6 x 1,0 (diâmetro 5,9 confirma; 10 voltas = 9,3 mm foi erro de régua)
+ROSCA_COM_FIO = True     # DEF   modelar o fio helicoidal ISO de verdade (bd_warehouse); False = cilindro liso, mais leve e rápido
 PORCA_AF = 10.0          # FOTO  porca sextavada (contraporca), medida entre faces
 PORCA_ESP = 5.0          # FOTO
 ROSCA_INF_EXPOSTA = 64.0 # FOTO  rosca visível entre a porca do pivô e o punho (foto 08; varia com o ajuste)
