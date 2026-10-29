@@ -38,8 +38,10 @@ Candidatos em latim (pedido do fundador; `.com.br` verificado em 2026-10-29, web
 | Tractus, Tractio, Traho, Ductus, Auctus, Augeo, Cresco, Robur, Vigeo, Nisus, Impetus, Extensus, Intendo, Tendere | — | ocupados | descartados |
 
 **Tractus com complemento** (o fundador gostou de *tractus*, "tração, puxão, trajeto"; `tractus.com.br` é da BMT
-Comércio, Imp. e Exp. de Prod. Ind. Ltda desde 2023-06, vence 2027-06, e pode ser negociado; nenhuma marca "Tractus"
-achada na web brasileira; verificado em 2026-10-29):
+Comércio, Imp. e Exp. de Prod. Ind. Ltda desde 2023-06 e está em uso: site ativo da marca **Tractus, abrasivos
+profissionais e arames de solda**. Ou seja, já existe uma marca Tractus no Brasil, em classe distante (abrasivos e
+consumíveis de solda, classes 3/6/7). Coexistência em classe 10 é normalmente possível no INPI, mas o nome perde
+exclusividade na busca do Google e em redes sociais; verificado em 2026-10-29):
 
 | Nome | `.com.br` | Observação |
 |---|---|---|
