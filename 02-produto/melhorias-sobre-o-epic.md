@@ -8,19 +8,19 @@ Para cada ideia: qual o problema no Epic, qual a nossa solução, como vamos pro
 ## Ideias do fundador
 > Registrar aqui as ideias já existentes, uma por bloco.
 
-### M-01 — [título]
-- **Problema no Epic:**
-- **Nossa solução:**
-- **Como provar que é melhor:**
-- **Custo ou complexidade adicional:**
-- **Status:** ideia | em teste | confirmada | descartada
+### M-01 — Força máxima de 5 kg, não 10
+- **Problema no Epic:** escala até 10 kg (22 lb). Exagerado e, na visão do fundador, inseguro acima de 5 kg. Protocolos de tração usam 0,6 a 1,5 kg por horas; ninguém precisa de 10.
+- **Nossa solução:** mola e escala dimensionadas para 5 kg no fim do curso, com batente mecânico. Mola de metade da constante (≈ 1,25 N/mm) no mesmo curso de 40 mm, o que dobra a resolução da escala.
+- **Como provar que é melhor:** escala mais legível (1 kg = 8 mm em vez de 4) e teste de uso mostrando que 5 kg já é mais do que qualquer protocolo pede. Argumento de venda: "limitado por projeto".
+- **Custo ou complexidade adicional:** nenhum; a mola fica mais leve (arame ~1,3 mm) e mais barata.
+- **Status:** confirmada pelo fundador (2026-10-29)
 
-### M-02 — [título]
-- **Problema no Epic:**
-- **Nossa solução:**
-- **Como provar que é melhor:**
-- **Custo ou complexidade adicional:**
-- **Status:** ideia
+### M-02 — Curso dimensionado para gente real
+- **Problema no Epic:** hastes de 280 mm que acomodam 25 cm ou mais. Deixa o aparelho comprido, pesado, caro e difícil de esconder sob a roupa, para servir a um caso que não existe.
+- **Nossa solução:** curso para ~20 cm esticado (valor a confirmar com dados antropométricos e entrevistas), com hastes uns 5 cm mais curtas. Se houver demanda, versão longa como variante, não como padrão.
+- **Como provar que é melhor:** dados de comprimento esticado da população (percentil 95 fica bem abaixo de 20 cm); teste de discrição sob a roupa.
+- **Custo ou complexidade adicional:** negativa: menos haste, menos tubo, menos embalagem.
+- **Status:** confirmada pelo fundador (2026-10-29); valor exato em aberto
 
 ## Pontos de atenção levantados na pesquisa (a confirmar desmontando)
 Observações genéricas sobre extensores de vácuo que podem ou não valer para o Epic:

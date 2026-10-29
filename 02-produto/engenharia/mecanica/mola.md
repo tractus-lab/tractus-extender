@@ -50,3 +50,14 @@ ser inox: a mola fica dentro do tubo, sem contato com a pele).
 1. Tirar a mola do punho (soltar a contraporca de cima e a barra, puxar o tubo) e medir arame, diâmetro externo, espiras e comprimento livre com paquímetro.
 2. Ou, sem desmontar: enfiar o paquímetro de profundidade no tubo pela ponte e ler até o fim da mola.
 3. Pedir ao fabricante de molas (termos no glossário: compression spring / 压缩弹簧) com k = 2,5 N/mm ± 10 %, D ext 12, L livre 105, curso útil 45 mm, e conferir a força com pesos como no P00.
+
+## Mola do nosso produto (não do Epic)
+
+Requisito RF-01: máximo 5 kg (49 N). Duas opções com o mesmo espaço:
+
+| Opção | k | Curso a 5 kg | Arame | Externo | Espiras ativas (inox) | Comentário |
+|---|---|---|---|---|---|---|
+| A | 1,25 N/mm | 39 mm | 1,3 mm | 12 mm | ~16 | mesma escala de 40 mm do Epic, mas 1 kg = 8 mm: duas vezes mais legível; tensão a 5 kg ~650 MPa, folgada |
+| B | 2,5 N/mm (a mesma do Epic) | 20 mm | 1,6 mm | 12 mm | ~20 | aproveita a mesma mola; curso curto, escala apertada |
+
+Recomendação: **opção A**. O batente de fim de curso (RF-03) fica em 40 mm, onde a mola marca 5 kg.
