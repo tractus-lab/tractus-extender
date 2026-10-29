@@ -15,7 +15,7 @@ INPI ainda não consultado):
 
 | Nome | Origem | `.com.br` | Observação |
 |---|---|---|---|
-| **Prolato** | "prolato" = forma alongada no eixo (esferoide prolato); termo de geometria | livre | Primeira escolha: discreto, técnico, pronunciável, nenhuma empresa com esse nome achada |
+| Prolato | "prolato" = forma alongada no eixo (esferoide prolato); termo de geometria | livre | Rebaixado em 2026-10-29: o fundador achou que soa a medicamento (terminação "-ato", como sais e remédios). Discreto e livre, mas o som pesa contra |
 | Alonge | francês *allonge* (extensão); em direito brasileiro, folha anexada que prolonga um documento | livre | Elegante, lembra "alongar" sem dizer; nenhuma marca achada |
 | Distende | verbo distender (esticar, relaxar) | livre | Mais literal; também usado em medicina |
 | Prolonga | verbo | livre | Muito literal, entrega o produto |
@@ -27,7 +27,7 @@ Candidatos em latim (pedido do fundador; `.com.br` verificado em 2026-10-29, web
 
 | Nome | Latim | `.com.br` | Observação |
 |---|---|---|---|
-| **Protendo** | *protendo*, "estendo para a frente, estico" | livre | Forte, discreto; parentes em concreto protendido (Protendit, Protendal), classe distante |
+| **Protendo** | *protendo*, "estendo para a frente, estico" | livre | **Primeira escolha atual.** Forte, discreto; parentes em concreto protendido (Protendit, Protendal), classe distante |
 | **Procero** | *procerus*, "alto, esbelto, de bom porte" | livre | Discreto e elegante; Prócer Automação (SC) é parecido, classe distante |
 | **Elonga** | *elongo*, "alongo, afasto" | livre | Mais transparente, soa bem em português; nenhuma marca achada |
 | Protensus / Protensio | "estendido" / "extensão" | livres | Mais longos |
