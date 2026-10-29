@@ -1,4 +1,5 @@
 """Peças do extensor em build123d (modo álgebra), versão 0.8 (encaixe copo–ponte tipo fechadura: rasgo em U + rebaixo circular)."""
+import math
 from build123d import *
 import parametros as P
 
@@ -27,13 +28,48 @@ def _porca(af, esp):
 
 
 # ---------------- Base ----------------
+def _arred_2d(face, r, ignorar_x0=True):
+    """Arredonda os vértices de uma face 2D um a um (r, r/2, r/4), pulando os que o OCCT recusa e os do eixo x=0."""
+    for v in list(face.vertices()):
+        if ignorar_x0 and abs(v.X) < 1.0:
+            continue
+        for rr in (r, r / 2, r / 4):
+            try:
+                alvo = [w for w in face.vertices() if (Vector(w.X, w.Y, 0) - Vector(v.X, v.Y, 0)).length < 1e-3]
+                if not alvo:
+                    break
+                face = fillet(alvo, rr)
+                break
+            except Exception:
+                continue
+    return face
+
+
+def _contorno_base():
+    """Metade direita da ferradura em planta (x >= 0), já arredondada; a esquerda é espelho.
+    Anel cortado pela reta do lado externo do braço, braço reto até a pá, pá em estádio inclinada para fora."""
+    y0, y1 = P.BASE_BRACO_Y0, P.BASE_BRACO_Y1
+    A = Vector(math.sqrt(P.BASE_R_EXT**2 - y0**2), y0)                 # lado externo: braço sai do anel aqui
+    B = Vector(P.BASE_PA_X + P.BASE_PA_LARG / 2, y1)                    # canto externo da pá
+    d = (B - A).normalized()
+    n = Vector(d.Y, -d.X)
+    if (Vector(P.BASE_R_EXT, -20) - A).dot(n) < 0:
+        n = -n
+    L = 300
+    cortador = Polygon(*[(q.X, q.Y) for q in (A - d * L, A + d * L, A + d * L + n * L, A - d * L + n * L)], align=None)
+    anel = Circle(P.BASE_R_EXT) - Circle(P.BASE_R_INT) - cortador - Pos(0, y0 - 100) * Rectangle(2 * P.BASE_R_INT, 200)
+    braco = Polygon((A.X, A.Y), (math.sqrt(P.BASE_R_INT**2 - y0**2), y0), (P.BASE_PA_X - P.BASE_PA_LARG / 2, y1), (B.X, B.Y), align=None)
+    Lp = (y1 - P.BASE_PONTA_Y) + P.BASE_PA_LARG
+    pa = Pos(P.BASE_PA_X, (y1 + P.BASE_PONTA_Y) / 2) * Rot(0, 0, -90 + P.BASE_PA_INCL) * SlotOverall(Lp, P.BASE_PA_LARG)
+    metade = (anel + braco + pa) & Pos(100, 0) * Rectangle(200, 400)      # só x >= 0
+    return _arred_2d(metade.face(), P.BASE_R_JUNCAO)
+
+
 def _placa_base():
-    """Ferradura inteira (sem as caixas do pivô), arestas arredondadas. Centrada em Z."""
-    h = P.BASE_ESP
-    b = Cylinder(P.BASE_R_EXT, h) - Cylinder(P.BASE_R_INT, h)
-    b -= Pos(0, -(P.BASE_R_EXT + 10) / 2, 0) * Box(P.BASE_ABERTURA, P.BASE_R_EXT + 10, h + 2)
-    for sx in (-1, 1):
-        b += Pos(sx * P.BASE_LOBO_X, P.BASE_LOBO_Y, 0) * Cylinder(P.BASE_LOBO_R, h)
+    """Ferradura inteira (sem os garfos do pivô), arestas arredondadas. Centrada em Z."""
+    metade = _contorno_base()
+    planta = metade + mirror(metade, Plane.YZ)
+    b = extrude(planta, P.BASE_ESP / 2, both=True)
     return _arred(b, P.RAIO_ARESTA)
 
 

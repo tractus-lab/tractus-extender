@@ -21,10 +21,16 @@ BASE_R_EXT = 48.0        # MED   raio externo do arco: largura externa 96 mm (pa
 BASE_R_INT = 27.8        # MED   raio interno = 48 − 20,2 (faixa do arco com 20,2 mm de largura radial, paquímetro, 2026-10-28)
 BASE_ESP = 18.0          # MED   altura total da ferradura em Z, plástico + borracha (paquímetro, 2026-10-28)
 BASE_BORRACHA_ESP = 9.0  # EST   metade de baixo da ferradura, em borracha firme (contato com a virilha); metade de cima em plástico (usuário, 2026-10-27)
-BASE_ABERTURA = 31.0     # FOTO  vão entre os lobos
-BASE_LOBO_R = 15.0       # FOTO  raio dos lobos arredondados
-BASE_LOBO_X = 32.0       # FOTO  posição X do centro de cada lobo
-BASE_LOBO_Y = -36.0      # FOTO  posição Y do centro de cada lobo
+# Forma em planta (foto 07): anel + braço reto descendo inclinado para dentro + pá arredondada apontando para a abertura.
+# O furo central fica em "buraco de fechadura": redondo em cima e um pescoço estreito entre as pás.
+BASE_BRACO_Y0 = -9.0     # EST   onde o braço sai do anel (abaixo dos garfos do pivô, que ficam em y=0)
+BASE_BRACO_Y1 = -20.0    # EST   onde o braço vira pá
+BASE_PONTA_Y = -32.0     # FOTO  ponta das pás (altura total em planta ~80 mm; foto 07, perspectiva)
+BASE_PA_X = 21.5         # FOTO  centro de cada pá em X
+BASE_PA_LARG = 21.0      # FOTO  largura da pá
+BASE_PA_INCL = 10.0      # EST   inclinação da pá, ponta virada para fora (graus)
+BASE_R_JUNCAO = 10.0     # EST   raio das curvas em S nas junções anel–braço–pá
+BASE_ABERTURA = 2 * (BASE_PA_X - BASE_PA_LARG / 2)  # 22: pescoço entre as pás (foto 07; antes 31, de outra foto)
 
 # ---------- Articulação (pivô) ----------
 # O pivô fica EM CIMA do lobo da ferradura, não dentro dele (usuário, 2026-10-27): uma caixa de
