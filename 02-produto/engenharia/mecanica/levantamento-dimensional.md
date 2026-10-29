@@ -35,7 +35,7 @@ Todas as medidas em mm, pesos em g, forças em kgf. Medir duas vezes. Se os valo
 | 14 | Manga de silicone 26 mm | 1 | | | | |
 | 15 | Manga de silicone 32 mm | 1 | | | | |
 | 16 | Fita coesiva | | | | | largura, comprimento: |
-| 17b | Porca cilíndrica Allen da barra | 2 | aço/inox | | | prende a barra por cima; diâmetro, altura e chave a medir (CAD: 10 × 12, chave 5) |
+| 17b | Porca cilíndrica Allen da barra | 2 | aço/inox | | | embutida num rebaixo no topo do cilindro da barra; diâmetro, altura, chave e profundidade do rebaixo a medir (CAD: 10 × 12, chave 5, rente ao topo) |
 | 17a | Barra superior "EPIC" | 1 | alumínio anodizado | | 06, 08 | tira com desvio lateral de 27,6 mm para trás, lado oposto à abertura da ponte (usuário, 2026-10-28/29) |
 | 17 | Conector copo–hastes (ponte) | 1 | chapa 4,5 mm; rasgo 12 mm; rebaixo 20 × 1,5 mm (paquímetro, 2026-10-27) | | | |
 | 18 | Outros | | | | | |

@@ -30,7 +30,7 @@ Termos e siglas usados no projeto. Adicione conforme aparecerem.
 | Rosca métrica (M6, M8) | Perfil de rosca comum; o número é o diâmetro externo em mm. |
 | Rosca trapezoidal (Tr8x2) | Perfil mais robusto para fusos de carga; usado em impressoras 3D. Mais caro e grosso do que o necessário aqui. |
 | Contraporca | Segunda porca apertada contra outra peça para travar a posição (as porcas pretas junto ao tambor e à barra do Epic). |
-| Porca cilíndrica Allen | Porca em forma de tambor, lisa por fora, com rosca interna e encaixe sextavado (Allen) na ponta; no Epic prende a barra superior por cima, contra a contraporca de baixo. Também chamada porca canhão, porca com sextavado interno; em inglês barrel nut, sleeve nut ou socket cap nut. |
+| Porca cilíndrica Allen | Porca em forma de tambor, lisa por fora, com rosca interna e encaixe sextavado (Allen) na ponta; no Epic fica embutida num rebaixo no topo do cilindro da barra superior e a prende contra a contraporca de baixo. Também chamada porca canhão, porca com sextavado interno; em inglês barrel nut, sleeve nut ou socket cap nut. |
 | Inox 304 | Aço inoxidável comum para peças em contato com a pele e umidade; não enferruja em uso normal. |
 | Pivô / tambor / garfo | Articulação entre base e haste, montada em cima da ferradura: garfo de plástico com duas bochechas, tambor de inox onde a haste rosqueia (ponta rebaixada numa lingueta que entra entre as bochechas), pino transversal e uma tampa redonda de plástico em cada face escondendo o pino. Gira para mudar o ângulo base–haste. "Clevis" em inglês. |
 | Elastômero | Nome genérico dos materiais borrachudos (silicone, borracha natural, TPE, TPU). Usado quando não se sabe qual é. |

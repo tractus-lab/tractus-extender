@@ -75,6 +75,9 @@ PORCA_CIL_D = 10.0       # EST   diâmetro externo da porca cilíndrica Allen da
 PORCA_CIL_L = 12.0       # EST   altura
 PORCA_CIL_ALLEN = 5.0    # EST   chave Allen (entre faces do sextavado interno)
 PORCA_CIL_ALLEN_PROF = 5.0  # EST profundidade do sextavado
+# A porca Allen fica EMBUTIDA num furo (rebaixo) no topo do cilindro da barra (usuário, 2026-10-29).
+BARRA_REBAIXO_PROF = PORCA_CIL_L   # EST   profundidade do rebaixo: porca rente ao topo do cilindro
+BARRA_REBAIXO_FOLGA = 0.3          # EST   folga radial entre a porca e o rebaixo
 ROSCA_INF_EXPOSTA = 64.0 # FOTO  rosca visível entre a porca do pivô e o punho (foto 08; varia com o ajuste)
 PUNHO_D = 21.6           # MED   paquímetro (2026-10-27); a foto dava 26
 PUNHO_L = 68.0           # FOTO  (foto 08)
@@ -124,7 +127,7 @@ BARRA_DOBRA_R = 3.0          # EST  raio das dobras da tira em planta
 BARRA_OLHAL_D = 11.0     # FOTO  olhal nas pontas
 BARRA_OLHAL_FURO_D = 5.0 # FOTO
 BARRA_OLHAL_ESP = 4.0    # EST
-ROSCA_NA_BARRA = BARRA_BOSS_L + PORCA_CIL_L - PORCA_CIL_ALLEN_PROF - 1  # DEF  a haste atravessa o cilindro da barra e entra na porca Allen até perto do sextavado
+ROSCA_NA_BARRA = BARRA_BOSS_L - BARRA_REBAIXO_PROF + PORCA_CIL_L - PORCA_CIL_ALLEN_PROF - 1  # DEF  a haste sobe pelo cilindro da barra e entra na porca Allen embutida até perto do sextavado
 
 # ---------- Copo de vácuo (o fotografado; tamanho a confirmar) ----------
 COPO_TAMANHOS = [28, 32, 36, 40, 44]  # MED  especificação pública (diâmetro interno)

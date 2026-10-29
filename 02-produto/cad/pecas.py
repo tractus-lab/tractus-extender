@@ -245,6 +245,8 @@ def barra_superior():
     for sx in (-1, 1):
         boss = _arred(Pos(sx * P.HASTE_X, 0, L / 2) * Cylinder(P.BARRA_BOSS_D / 2, L), P.RAIO_ARESTA)
         boss -= Pos(sx * P.HASTE_X, 0, L / 2) * Cylinder(P.ROSCA_D / 2, L)
+        # rebaixo no topo onde a porca Allen fica embutida (usuário, 2026-10-29)
+        boss -= Pos(sx * P.HASTE_X, 0, L) * Cylinder(P.PORCA_CIL_D / 2 + P.BARRA_REBAIXO_FOLGA, 2 * P.BARRA_REBAIXO_PROF)
         x_olhal = sx * (P.HASTE_X + P.BARRA_BOSS_D / 2 + P.BARRA_OLHAL_D / 2 - 2)
         olhal = Pos(x_olhal, 0, L - P.BARRA_OLHAL_D / 2) * Rot(90, 0, 0) * Cylinder(P.BARRA_OLHAL_D / 2, P.BARRA_OLHAL_ESP)
         olhal -= Pos(x_olhal, 0, L - P.BARRA_OLHAL_D / 2) * Rot(90, 0, 0) * Cylinder(P.BARRA_OLHAL_FURO_D / 2, P.BARRA_OLHAL_ESP + 1)
@@ -357,7 +359,7 @@ def montagem(com_copo=True, carga_lb=None):
         z["ponte"] = z4                                        # base dos cubos da ponte = topo dos tubos
         z["barra"] = z_punho_topo + P.TUBO_MOLA_VISIVEL + P.PONTE_CUBO_ESP + P.ROSCA_SUP_EXPOSTA  # fixa: não depende da carga
         partes.append((f"porca_barra_{nome}", Pos(x, 0, z["barra"] - P.PORCA_ESP) * porca()))
-        partes.append((f"porca_cil_barra_{nome}", Pos(x, 0, z["barra"] + P.BARRA_BOSS_L) * porca_cilindrica()))  # Allen por cima
+        partes.append((f"porca_cil_barra_{nome}", Pos(x, 0, z["barra"] + P.BARRA_BOSS_L - P.BARRA_REBAIXO_PROF) * porca_cilindrica()))  # Allen embutida no topo
         comp_rosca = (z["barra"] + P.ROSCA_NA_BARRA) - (z0 - P.ROSCA_NO_TAMBOR)
         partes.append((f"rosca_{nome}", Pos(x, 0, z0 - P.ROSCA_NO_TAMBOR) * rosca(comp_rosca)))
     partes.append(("ponte", Pos(0, 0, z["ponte"]) * ponte()))
