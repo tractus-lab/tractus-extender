@@ -89,9 +89,11 @@ TUBO_MOLA_VISIVEL = 50.0 # FOTO  trecho fora do punho em repouso
 TUBO_DENTRO_PUNHO = 12.0 # EST   trecho dentro do punho em repouso; comprimento total = visível + dentro
 CURSO_ESCALA = 39.5      # MED   2 kg = 8,0 mm e 4 kg = 15,4 mm (régua, 2026-10-27) → 0,255 kgf/mm → 10 kg ≈ 39,5 mm
 ESCALA_LB_MAX = 22       # MED   escala em libras numa face do tubo; na face oposta há escala em kg (0 a ~10)
-MOLA_D_EXT = 12.5        # EST   mola em volta da haste M6, dentro do tubo (furo interno do tubo ~13,6)
-MOLA_ARAME_D = 1.4       # EST
-MOLA_ESPIRAS = 14        # EST   espiras ativas (comprimento livre ~105 mm, 65 mm a 22 lb, bloco ~22 mm)
+# Geometria da mola calculada a partir da constante medida (2,5 N/mm), do espaço (haste M6 por dentro, furo do tubo
+# ~13,6 por fora) e do curso (39 mm a 22 lb sem encostar espira): ver engenharia/mecanica/mola.md (2026-10-29).
+MOLA_D_EXT = 12.0        # EST   calculado: diâmetro externo (interno 8,8: folga de 1,4 mm por lado para a haste M6)
+MOLA_ARAME_D = 1.6       # EST   calculado: arame de 1,6 mm (1,5 ou 1,8 também fecham a conta; 1,4 ou menos não aguenta 22 lb)
+MOLA_ESPIRAS = 20        # EST   calculado: espiras ativas para 2,5 N/mm em inox 302 (G = 69 GPa); 23 se for aço mola (G = 79 GPa)
 MOLA_K = ESCALA_LB_MAX * 4.448 / CURSO_ESCALA  # MED   ~2,5 N/mm (0,255 kgf/mm); linear nos dois pontos medidos
 CARGA_LB = 0.0           # DEF   estado mostrado na montagem: 0 = repouso; 22 = escala toda
 ROSCA_SUP_EXPOSTA = 40.0 # FOTO  rosca visível entre o porta-copo e a barra (foto 08), em repouso

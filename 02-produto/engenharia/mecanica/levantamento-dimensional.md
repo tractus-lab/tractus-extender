@@ -72,7 +72,7 @@ Todas as medidas em mm, pesos em g, forças em kgf. Medir duas vezes. Se os valo
 | Pivô (garfo sobre a ferradura): largura, altura, profundidade; tambor; pino; tampa | garfo 14,8 mm no sentido do pino (bochechas de 4,2 mm cada) × 17,6 mm no sentido da rotação; tambor 12,1 mm com lingueta de 5,6 mm na ponta (paquímetro, 2026-10-27/28) | altura do garfo, comprimento do tambor, pino e tampa a medir (estético) |
 | Rosca de conexão com extensões: diâmetro e passo | | |
 | Extensões: comprimentos disponíveis | | |
-| Mola: diâmetro do arame, diâmetro externo, espiras, comprimento livre | | |
+| Mola: diâmetro do arame, diâmetro externo, espiras, comprimento livre | | estimado por cálculo a partir de k = 2,5 N/mm e do espaço (`mola.md`): arame 1,6, externo 12, 20 espiras ativas, livre ~105; medir ao desmontar o punho |
 | Material aparente (ímã atrai?) | | |
 
 ## Copos de vácuo (repetir para cada tamanho)
