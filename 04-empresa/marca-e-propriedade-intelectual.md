@@ -37,7 +37,24 @@ Candidatos em latim (pedido do fundador; `.com.br` verificado em 2026-10-29, web
 | Praelongus, Longitudo, Prolixus, Productus, Contendo | — | livres | longos ou com sentido ruim em português |
 | Tractus, Tractio, Traho, Ductus, Auctus, Augeo, Cresco, Robur, Vigeo, Nisus, Impetus, Extensus, Intendo, Tendere | — | ocupados | descartados |
 
-**Resultado da busca no INPI:** pendente (buscar "Prolato", "Alonge", "Protendo", "Procero" e "Elonga" em busca.inpi.gov.br, marcas nominativas e
+**Tractus com complemento** (o fundador gostou de *tractus*, "tração, puxão, trajeto"; `tractus.com.br` é da BMT
+Comércio, Imp. e Exp. de Prod. Ind. Ltda desde 2023-06, vence 2027-06, e pode ser negociado; nenhuma marca "Tractus"
+achada na web brasileira; verificado em 2026-10-29):
+
+| Nome | `.com.br` | Observação |
+|---|---|---|
+| **Tractus Lab** | tractuslab livre | "Lab" sugere engenharia e teste; é o padrão de marca de produto técnico |
+| **Tractus Forma** | tractusforma livre | latim de novo (*forma*), discreto, fala de formato sem dizer |
+| Tractus Brasil | tractusbrasil, tractusbr livres | neutro, mas "Brasil" não é registrável como parte distintiva |
+| Tractus Vita | tractusvita livre | "vida"; soa a suplemento |
+| Tractus Nova / Via / Modus / Axis / Vera | livres | todos neutros; Axis e Modus combinam com o produto |
+| Tractus Vir | tractusvir livre | *vir* = homem; explícito demais para a discrição que queremos |
+| Tractus Pro, Tractus Design | ocupados | — |
+
+Atenção no INPI: o elemento distintivo é "Tractus"; "Lab", "Brasil", "Pro" são genéricos e não diferenciam de uma
+marca "Tractus" que já exista na classe 10. Buscar "Tractus" sozinho.
+
+**Resultado da busca no INPI:** pendente (buscar "Prolato", "Alonge", "Protendo", "Procero", "Elonga" e "Tractus" em busca.inpi.gov.br, marcas nominativas e
 mistas, classes 10 e 35).
 **Classes a registrar:** 10 (aparelhos e artigos para uso sexual estão na classe 10 da Classificação de Nice) e 35
 (comércio). Avaliar 44 se houver serviço de orientação.
