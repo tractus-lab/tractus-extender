@@ -100,3 +100,28 @@ Para não virar slogan vazio, "melhor que o Epic" precisa ser verificável lado 
 | Acabamento | Rebarbas, folgas, ruído, aparência | | zero rebarba, folga ≤ 0,2 mm |
 | Materiais | Laudo de silicone, inox 304, PC/PMMA | | todos com laudo |
 | Garantia | Prazo | 180 dias devolução | 1 ano + peças de reposição |
+
+## Nomes das marcas de extensores e o que ensinam (2026-10-29)
+
+Levantado de memória do mercado internacional, para orientar a escolha do nosso nome. Preço em US$ aproximado.
+
+| Marca | Origem | Fixação | Como o nome é feito | Discreto? |
+|---|---|---|---|---|
+| Epic Extender | EUA | copo de vácuo | adjetivo + categoria | meio: "Extender" entrega |
+| Phallosan Forte | Suíça/Alemanha | sino de vácuo + cinto | grego *phallos* + "san" (saúde) + "forte" | não, mas soa clínico |
+| PeniMaster Pro | Alemanha | câmara de vácuo com membrana | "peni" + "master" | não |
+| Andropenis | Espanha | alça de silicone | "andro" + "penis" | não |
+| SizeGenetics | Reino Unido | alça/strap | benefício + pseudociência | meio |
+| Jes-Extender | Dinamarca (DanaLife) | alça | iniciais do fundador + categoria | meio |
+| Male Edge | Dinamarca (mesma empresa do Jes) | alça | benefício abstrato | sim |
+| Quick Extender Pro | EUA | alça dupla (DSS) | descritivo | meio |
+| X4 Labs | Canadá | híbrido alça/copo | código + "Labs" | sim |
+| RestoreX | EUA (PathRight Medical) | pinça/clamp, uso médico (Peyronie) | verbo + X | sim, soa médico |
+| ProExtender | EUA/China | alça | prefixo + categoria | meio |
+| Total Man | EUA | copo (acessório) | benefício | meio |
+
+O que se repete: (1) os premium alemães e suíços são explícitos, mas o som é de clínica, não de sex shop; (2) os
+que querem passar discrição usam adjetivo ou benefício abstrato + categoria (Epic, Male Edge, X4 Labs, RestoreX);
+(3) quase todo nome é em inglês ou latim/grego, nenhum em língua local; (4) "Extender" como sufixo é tão comum que
+virou categoria, não marca. Para nós: nome próprio discreto (Protendo, Procero) + categoria explícita só no nome
+do produto na página ("Protendo Extensor a Vácuo"), igual ao que Epic e Male Edge fazem.
