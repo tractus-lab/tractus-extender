@@ -25,7 +25,7 @@ Fases do projeto, do zero ao produto vendido. Marque `[x]` quando concluir.
 - [ ] Escrever requisitos do produto (`02-produto/requisitos.md`)
 - [ ] Especificação técnica inicial (`02-produto/especificacao-tecnica.md`)
 - [ ] Conceitos de design industrial (`02-produto/design-industrial/`)
-- [ ] Lista de materiais preliminar (`02-produto/bom.md`)
+- [x] Lista de materiais preliminar (`02-produto/bom.md`): estimativa 0.2 em 2026-10-29, sem cotação
 
 ## Fase 3 — Protótipo
 - [ ] Protótipo de aparência (como vai parecer)

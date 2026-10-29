@@ -33,5 +33,8 @@ Observações genéricas sobre extensores de vácuo que podem ou não valer para
 - **Discrição ao vestir:** hastes longas marcam a roupa. Oportunidade: perfil mais baixo, ou versão com cinto (como Phallosan) para uso sob a roupa.
 - **Instruções:** material em inglês, vídeos genéricos. Oportunidade: manual ilustrado em português e app próprio.
 
+## Montagem
+As simplificações de montagem (porca cega no lugar da Allen embutida, pino elástico sem tampas, porca cativa no punho, ponte e barra em chapa cortada a laser) estão em `montagem-facil.md`.
+
 ## Regra
 Melhorar não é adicionar. Cada peça a mais é um ponto de falha e um custo. Prefira fazer a mesma função com menos peças e melhor material.
