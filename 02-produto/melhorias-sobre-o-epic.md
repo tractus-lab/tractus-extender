@@ -22,6 +22,13 @@ Para cada ideia: qual o problema no Epic, qual a nossa solução, como vamos pro
 - **Custo ou complexidade adicional:** negativa: menos haste, menos tubo, menos embalagem.
 - **Status:** confirmada pelo fundador (2026-10-29); valor exato em aberto
 
+### M-03 — Variante longa como edição especial
+- **Problema no Epic:** um tamanho só, dimensionado para o caso extremo, que encarece e alonga o aparelho de todo mundo.
+- **Nossa solução:** versão padrão (~20 cm esticado) e uma edição longa, mais cara, com hastes 5 a 8 cm maiores e, se preciso, copo e mangas de boca maior do mesmo fornecedor. Mesmos moldes, mesma mola, mesmo limite de 5 kg; só muda o que é cortado no comprimento e a caixa.
+- **Como provar que é melhor:** custo extra de R$ 10 a 20 por kit contra preço 30 a 50 % maior; medir quantos clientes pedem a longa antes de estocar.
+- **Custo ou complexidade adicional:** segunda SKU (estoque, fotos, anúncios, dúvidas). Começar sob encomenda; só estocar com demanda comprovada.
+- **Status:** ideia (fundador, 2026-10-29)
+
 ## Pontos de atenção levantados na pesquisa (a confirmar desmontando)
 Observações genéricas sobre extensores de vácuo que podem ou não valer para o Epic:
 
