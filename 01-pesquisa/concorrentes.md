@@ -27,6 +27,28 @@ Para o Brasil, somar frete internacional, imposto de importação (60%) e ICMS: 
 
 **Pendente:** levantamento manual no Mercado Livre e Shopee (busca "extensor peniano" e "extensor peniano vácuo"), anotando preço, vendas e avaliações dos 20 primeiros anúncios. Os sites bloqueiam acesso automatizado; fazer no navegador.
 
+## Kits chineses com copo de vácuo (os que compartilham o sistema do Epic)
+
+Levantados em 2026-10-29 pela web (busca; o eBay bloqueia leitura automatizada, então os detalhes vêm dos resumos de busca).
+Todos usam o mesmo sistema do Epic: copo de vácuo transparente com válvula, manga de silicone na boca do copo, bomba
+manual. O vendedor "LovSelf" (Shenzhen) aparece em quase todos; é o mesmo citado na pesquisa de 25/10 com 12 mil vendas.
+Só kits com copo; os de laço (tipo Andropenis) ficam fora do interesse do projeto (fundador, 2026-10-29).
+
+| Anúncio | Preço (varejo) | O que vem | Link |
+|---|---|---|---|
+| Vacuum Cup Handle Male Penis Extender Stretcher Pump Hanger Enlargement Sleeve | ~US$ 10 | copo + manga + alça (versão "hanger", sem hastes) | https://www.ebay.com/itm/404757870648 |
+| Men's Vacuum Cup Set Penis Extender Stretcher Glans Extension Sleeve | ~US$ 10 a 12 | conjunto de copo com manga | https://www.ebay.com/itm/315489746927 |
+| Vacuum Cup Belt Male Penis Extender Stretcher Pump Handle Hanger | ~US$ 24 | copo + bomba + cinto (uso sob a roupa, tipo Phallosan) | https://www.ebay.com/itm/394155378746 |
+| Penis Vakuum Extender ... Cup Männer Silikon 3 Größen Hülle (LovSelf) | US$ 11,48 | copo + mangas em 3 tamanhos (como o Epic: 3 mangas) | https://www.ebay.de/itm/203989477549 |
+| Vakuum Cup Männlich Penis Extender Dehner Pumpe Aufhänger (LovSelf) | ~£8,49 o conjunto de 3 | copos em S, M, L | https://www.ebay.de/itm/204053819996 |
+| Anúncio com 21 fotos do kit completo (hastes + base + copo) | — | kit com hastes, útil para comparar peça a peça com o Epic | https://www.ebay.de/itm/185639982334 |
+| Bomba manual com manômetro (Alibaba, atacado) | US$ 4,50 avulso; US$ 3,15 acima de 1.000 | só a bomba | https://www.alibaba.com/product-introduction/Extender-Juguet-Sexual-Par-Adult-Automatic_1600384033623.html |
+
+O que isso confirma: o conjunto copo + mangas + bomba é commodity, vendido no varejo por US$ 10 a 25 e no atacado por
+US$ 4 a 8; o Epic agrega o esqueleto com mola e escala, a marca e o suporte. Para comparar materiais e acabamento, o
+passo seguinte é comprar um kit completo com hastes (o de 21 fotos, ou equivalente na Shopee) e pôr lado a lado com o
+Epic: item da fase 1 do roadmap.
+
 ## Produtos importados
 Este é o concorrente real. Um kit de vácuo chinês chega ao consumidor brasileiro por R$ 150 a 300 via Shopee. A nossa diferença precisa ser visível:
 - Qualidade de acabamento e materiais (silicone platinum, aço inox, acrílico/policarbonato de verdade).
