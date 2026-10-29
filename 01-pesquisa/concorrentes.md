@@ -44,6 +44,24 @@ Só kits com copo; os de laço (tipo Andropenis) ficam fora do interesse do proj
 | Anúncio com 21 fotos do kit completo (hastes + base + copo) | — | kit com hastes, útil para comparar peça a peça com o Epic | https://www.ebay.de/itm/185639982334 |
 | Bomba manual com manômetro (Alibaba, atacado) | US$ 4,50 avulso; US$ 3,15 acima de 1.000 | só a bomba | https://www.alibaba.com/product-introduction/Extender-Juguet-Sexual-Par-Adult-Automatic_1600384033623.html |
 
+### Extensores completos (hastes + base + copo de vácuo), os mais baratos
+
+AliExpress em português, preços em R$ já com o site em modo Brasil (frete e imposto de importação não incluídos; a
+Remessa Conforme cobra 20 % + ICMS em compras até US$ 50). Levantado em 2026-10-29.
+
+| Produto | Preço | Vendas | Link |
+|---|---|---|---|
+| "Size Master Pro" extensor dourado com copo de vácuo (2026) | R$ 141,59 | 251 | https://pt.aliexpress.com/item/1005010709777836.html |
+| "Size Master Pro PMP" sistema com copo de vácuo + bomba de estiramento | R$ 137,99 | 45 | https://pt.aliexpress.com/item/1005007539251213.html |
+| "Doctor Pro" com ventosa de vácuo Size Master e extensor | R$ 205,55 | 349 | https://pt.aliexpress.com/item/1005009916183898.html |
+| "Bellswin" sistema com ventosa redesenhada e suporte metálico ajustável | R$ 540,99 | 254 | https://pt.aliexpress.com/item/1005010341063187.html |
+| Extensor com bomba de vácuo "Tamanho mestre" | R$ 154,59 | 34 | https://pt.aliexpress.com/item/1005004984334623.html |
+| SizeDoctor traction device com vacuum pump (eBay, loja) | US$ 83 a 118 | — | https://www.ebay.de/itm/236085098424 |
+
+"Size Master" / "SizeDoctor" é o nome de fantasia mais comum do extensor genérico com copo de vácuo: hastes rosqueadas
+sem mola, base de plástico, copo com válvula, bomba manual e mangas. O mais barato completo fica em **R$ 140** no
+AliExpress, uns R$ 180 a 200 posto em casa. É o candidato para comprar e comparar peça a peça com o Epic (fase 1).
+
 O que isso confirma: o conjunto copo + mangas + bomba é commodity, vendido no varejo por US$ 10 a 25 e no atacado por
 US$ 4 a 8; o Epic agrega o esqueleto com mola e escala, a marca e o suporte. Para comparar materiais e acabamento, o
 passo seguinte é comprar um kit completo com hastes (o de 21 fotos, ou equivalente na Shopee) e pôr lado a lado com o
