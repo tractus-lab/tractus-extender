@@ -244,9 +244,6 @@ def barra_superior():
     b = None
     for sx in (-1, 1):
         boss = _arred(Pos(sx * P.HASTE_X, 0, L / 2) * Cylinder(P.BARRA_BOSS_D / 2, L), P.RAIO_ARESTA)
-        boss -= Pos(sx * P.HASTE_X, 0, L / 2) * Cylinder(P.ROSCA_D / 2, L)
-        # rebaixo no topo onde a porca Allen fica embutida (usuário, 2026-10-29)
-        boss -= Pos(sx * P.HASTE_X, 0, L) * Cylinder(P.PORCA_CIL_D / 2 + P.BARRA_REBAIXO_FOLGA, 2 * P.BARRA_REBAIXO_PROF)
         x_olhal = sx * (P.HASTE_X + P.BARRA_BOSS_D / 2 + P.BARRA_OLHAL_D / 2 - 2)
         olhal = Pos(x_olhal, 0, L - P.BARRA_OLHAL_D / 2) * Rot(90, 0, 0) * Cylinder(P.BARRA_OLHAL_D / 2, P.BARRA_OLHAL_ESP)
         olhal -= Pos(x_olhal, 0, L - P.BARRA_OLHAL_D / 2) * Rot(90, 0, 0) * Cylinder(P.BARRA_OLHAL_FURO_D / 2, P.BARRA_OLHAL_ESP + 1)
@@ -258,7 +255,13 @@ def barra_superior():
         planta += Pos(sx * P.HASTE_X, dy / 2) * Rectangle(e, abs(dy) + e)
     planta = _arred_2d(planta.face(), P.BARRA_DOBRA_R, ignorar_x0=False)
     tira = _arred(extrude(planta, P.BARRA_TIRA_ALT / 2, both=True).moved(Pos(0, 0, L / 2)), P.RAIO_ARESTA_PEQ)
-    return b + tira
+    b = b + tira
+    # furos só depois de fundir a tira, senão ela preenche o furo da haste e o rebaixo da porca onde cruza o cilindro
+    for sx in (-1, 1):
+        b -= Pos(sx * P.HASTE_X, 0, L / 2) * Cylinder(P.ROSCA_D / 2, L + 2)
+        # rebaixo no topo onde a porca Allen fica embutida (usuário, 2026-10-29)
+        b -= Pos(sx * P.HASTE_X, 0, L) * Cylinder(P.PORCA_CIL_D / 2 + P.BARRA_REBAIXO_FOLGA, 2 * P.BARRA_REBAIXO_PROF)
+    return b
 
 
 # ---------------- Copo ----------------
